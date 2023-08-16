@@ -1,0 +1,163 @@
+<%
+meta title: "COVID-INFORMED - Additional Resources",
+     description: "covid-informed",
+     keywords: %w(free html5, free template, free bootstrap, html5, css3, mobile first, responsive)
+%>
+<% content_for :head do %>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q8T209GGMN', {'custom_map': {'dimension1': 'rct'}, 'user_id': rct });
+    gtag('event','pageview', {'rct': rct});
+    gtag('send','event','eventCategory','eventAction');
+  </script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB92CN2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<% end %>
+
+<!-- RESEARCH TEAM -->
+<section id="fh5co-feature">
+  <div class="container">
+
+      <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.external_resources')%></h2>
+
+      <div class="col-md-8 col-md-offset-2">
+        <% if current_user.try(:admin?) %>
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
+          <div class="actions">
+            <%= link_to 'New External Resource', new_external_path, class: "btn btn-primary btn-lg btn-block" %>
+          </div>
+          <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <% end %>
+      </div>
+
+      <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
+          <label for="faq" class="sr-only"><%= t('resources.external.search')%></label>
+          <form id="search" method="GET" action="/<%=params[:locale]%>/resources/externals" >
+            <div class="col-md-8 form-group">
+              <input class="form-control input-lg" type="text" id="search" name="search" placeholder="<%= t('resources.external.search_for_resources')%>">
+            </div>
+            <div class="col-md-2 form-group">
+              <button class="form-control btn btn-primary" type="submit">
+                <i class="ti-search"></i>
+              </button>
+            </div>
+          </form>
+          <form id="reset" method="GET" action="/<%=params[:locale]%>/resources/externals" >
+            <div class="col-md-2 form-group">
+              <input class="form-control btn btn-primary" type="submit" value="<%= t('resources.external.all')%>">
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-10 col-md-offset-1">
+          <div class="form-group">
+            <label for="faq" class="sr-only">Filter by County</label>
+            <form id="category" method="GET" action="/<%=params[:locale]%>/resources/externals" >
+              <select class="form-control input-lg" name="search" id="category-form">
+                <option value="">All</option>
+                <option value="San Francisco">San Francisco</option>
+                <option value="Alameda">Alameda</option>
+                <option value="Fresno">Fresno</option>
+                <option value="Santa Clara">Santa Clara</option>
+                <option value="San Mateo">San Mateo</option>
+              </select>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <% if @featured.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.featured')%></h2>
+        <%= render 'featured', collection: @featured %>
+      <% end %>
+
+      <% if @general.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.general')%></h2>
+        <%= render 'general', collection: @general %>
+      <% end %>
+
+      <% if @testing.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.testing')%></h2>
+        <%= render 'testing', collection: @testing %>
+      <% end %>
+
+      <% if @vaccination.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.vaccination')%></h2>
+        <%= render 'vaccination', collection: @vaccination %>
+      <% end %>
+
+      <% if @other.any?  %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.other')%></h2>
+        <%= render 'other', collection: @other %>
+      <% end %>
+
+      <% if current_user.try(:admin?) %>
+        <% if @leftovers.any?  %>
+          <div class="fh5co-spacer fh5co-spacer-md"></div>
+          <h2 class="fh5co-uppercase-heading-lg text-center">Uncategorized Leftovers that need to be saved! (Admin only)</h2>
+          <%= render 'leftovers', collection: @leftovers %>
+        <% end %>
+
+    <div class="col-md-12 Admin-border">
+      <h1>Externals Admin List</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>En title</th>
+            <th>En source</th>
+            <th>En content</th>
+            <th>En notes</th>
+            <th>Category</th>
+            <th>Languages</th>
+            <th>Last version date</th>
+            <th>Featured?</th>
+            <th>Archived?</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @admin_externals.each do |external| %>
+            <tr>
+              <td><%= external.en_title %></td>
+              <td><%= external.en_source %></td>
+              <td><%= external.en_content %></td>
+              <td><%= external.en_notes %></td>
+              <td><%= external.category %></td>
+              <td><%= external.languages %></td>
+              <td><%= external.last_version_date %></td>
+              <td><%= external.featured %></td>
+              <td><%= external.archive %></td>
+              <td><%= link_to 'Show', external %></td>
+              <td><%= link_to 'Edit', edit_external_path(external) %></td>
+              <td><%= link_to 'Destroy', external, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <%= link_to 'New External', new_external_path %>
+    </div>
+    <% end %>
+
+  </div>
+</section>
+
+<div class="fh5co-spacer fh5co-spacer-xs"></div>
+<div class="container">
+  <div class="col-md-12 text-center">
+    <p> <%= t('disclaimer') %> </p>
+  </div>
+</div>

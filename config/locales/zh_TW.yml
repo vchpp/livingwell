@@ -1,0 +1,109 @@
+zh_TW:
+  hello: "你好"
+  welcome: "歡迎!"
+  language: "繁體中文"
+  locale: "zh_tw"
+  disclaimer: "免責聲明：本網站包含的信息僅用於教育目的。 鑑於新型冠狀病毒的快速發展情況，研究團隊試圖在本網站上提供及時信息的同時，請參閱美國疾病預防控制中心 (CDC) 的新型冠狀病毒信息網站 https://chinese.cdc.gov/coronavirus/2019-ncov/index.html"
+  navbar:
+    about: "關於"
+    messages: "信息"
+    resources: "資源"
+    faqs: "常見問題"
+    statistics: "統計數據"
+    layhealthworkers: "社區保健員"
+    external: "更多資源"
+    mission: "目的"
+    healthwise: "Healthwise 健康文章"
+  about:
+    research_team: "研究團隊"
+    research_team_titles:
+      co_investigator: "共同調查員"
+      executive_director: "行政總監"
+      student_intern: "實習生"
+      principal_investigator: "首席研究員"
+      research_staff: "研究人員"
+      community_coordinator: "社區協調員"
+      study_coordinator: "項目協調員"
+    cab_members: "社區顧問委員會成員"
+    lhw: "社區保健員"
+    title1: "健康家庭計劃: "
+    title2: "獲取資訊，保持健康"
+    mission1: "健康家庭資訊計劃 (英文簡稱為 “INFORMED”) 是為住在美國的亞裔提供關於新冠病毒最新信息的一項研究項目。 “INFORMED” 是 “Individual and Family Oriented Responsive Messaging Education”的縮寫，意思是“以個人和家庭為目標的應對通訊教育”。"
+    mission2: "健康家庭資訊計劃的目標的是了解和解决有關新冠病毒檢測和疫苗接種的障礙。我們希望提供最新信息，以應對新冠病毒疫情的快速發展情況。 此外，我們將根據社區成員的反饋，更新和修改我們的訊息。希望能幫助居住的美國的華人、越南人和苗族人增進有關新冠病毒檢測和疫苗接種的知識，並就採用安全措施、接受新冠病毒檢測及接種疫苗做出明智的決定。"
+    disclaimer: "健康家庭資訊計劃(INFORMED) 由國立衛生研究院（National Institutes of Health）授予資助，獎項編號為3R01DA036749-05S1。內容僅由作者承擔，並不一定代表美國國立衛生研究院的官方觀點。三藩市加州大學研究倫理審查委員會批准號為20-32933。"
+  messages:
+    messages: "信息"
+    read_more: "更多"
+    comments: "評論"
+    leave_comment: "輸入評論"
+    submit: "提交"
+    back: "返回"
+    show:
+      action_item_more_info: "更多有關信息，可以瀏覽:"
+      survey_link: "請前往參與項目的鏈接:"
+      cantonese_audio: "點此收聽普通話音頻"
+  resources:
+    resources: "資源"
+    external:
+      source: "來源"
+      external_resources: "更多資源"
+      search_for_resources: "尋找資源"
+      view: "閱讀"
+      search: "搜索"
+      all: "重啟"
+      contents_of_resources: "資源內容"
+      notes: "筆記"
+      external_links: "外部鏈接"
+      last_updated: "最近更新時間"
+      general: "一般"
+      testing: "檢測"
+      vaccination: "疫苗接種"
+      wellness: "更多健康資訊"
+      other: "其他"
+      featured: "推介"
+      filter: "按縣查看"
+    statistics: "統計數據"
+    layhealthworkers:
+      layhealthworkers: "社區保健員"
+      project: "關於健康家庭資訊計劃的社區保健員:"
+      project1: "健康家庭資訊計劃 (INFORMED)的社區保健員是被選出來教育他自己所在社區內的其他人士在COVID-19疫情當下如何保持健康。他們接受過研究人員的訓練來提供最新的COVID-19資訊。"
+      project2: "被我們揀選的社區保健員都是具備熱心、友善、開通的特質，並表明有意促進社區健康。 他們將會主持關於COVID-19的健康教育小組。將重要的健康訊息以文化和語言上合適的方式傳達給社區成員。 "
+      downloads: "下載健康家庭資訊計劃的資料:"
+      downloads1: "在美國國立衛生研究院 (National Institutes of Health)的資助下(研究資助號 3R01DA036749-05S1)，社區保健員所用的訓練教材及教育資料可通過點擊選項卡免費下載用於研究和教育用途。"
+      stats: "來自選定來源關於COVID-19的統計數據:"
+      stats1: "為了讓我們的社區隨時瞭解情況，我們選了幾個在線資源以提供最新關於COVID-19的地方及全球統計數據。這些資源被列在‘統計數據’選項內。"
+    downloads: "下載"
+    healthwise:
+      healthwise: "Healthwise 健康文章"
+      missing_article: "該信息僅提供英文版本。如有不便之處，請見諒。"
+      disclaimer: "健康信息文章是由 【健康家庭資訊計劃】的非謀利合作夥伴Healthwise 免費提供。 Healthwise (healthwise.org) 為社區、醫院和電子醫療記錄 (EMR) 提供者提供循證健康信息。許多人參考 Healthwise 的信息來學習如何做出更好的健康決策。歡迎您發表評論並與您的社區分享信息。"
+  faqs:
+    faq: "常見問題"
+    filter: "篩選"
+    or: "或"
+    search_for_questions: "尋找信息"
+    search: "搜索"
+    all: "全部"
+  activerecord:
+    models:
+      message:
+        one: "信息"
+        other: "重要信息"
+      comment: "評論"
+      faq: "常見問題"
+    attributes:
+      message:
+        name: "姓名"
+        content: "內容"
+      comment:
+        content: "內容"
+  helpers:
+    submit:
+      # helpers.submit.<action>
+      create: "Create a %{model}"
+      update: "Confirm changes to %{model}"
+
+      # helpers.submit.<model>.<action>
+      comment:
+        create: "輸入評論"
+        update: "Update comment"

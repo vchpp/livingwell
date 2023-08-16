@@ -1,0 +1,67 @@
+<%
+meta title: "COVID-INFORMED - Profile: #{@profile.firstname} #{@profile.lastname}",
+     description: "covid-informed",
+     keywords: %w(free html5, free template, free bootstrap, html5, css3, mobile first, responsive)
+%>
+<% content_for :head do %>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q8T209GGMN');
+    gtag('send','dimension1', getCookie('rct'));
+    gtag('send','event','eventCategory','eventAction');
+  </script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB92CN2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<% end %>
+
+<section id="fh5co-feature">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%=@profile.firstname%> <%= @profile.lastname%></h2>
+
+        <h2 class="fh5co-uppercase-heading-md text-center">
+          <%=@profile.send("#{I18n.locale}_project_title".downcase) %>
+        </h2>
+
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
+      </div>
+      <div class="col-md-12">
+        <% if @profile.headshot.attached? %>
+          <%= image_tag @profile.headshot.variant(resize_to_limit: [250, 250]), class: "fh5co-align-left img-circle"%>
+        <% else %>
+          <i class="fh5co-align-left img-responsive ti-layout-placeholder" style="color:red;"></i>
+        <% end %>
+
+        <p style="font-size:22px">
+          <%= @profile.send("#{I18n.locale}_bio".downcase) %>
+        </p>
+
+        <% @profile.external_links.each do |l| %>
+          <ul><%= link_to l, l, target: "_blank" %></ul>
+        <% end %>
+
+      </div>
+    </div>
+    <div class="fh5co-spacer fh5co-spacer-lg"></div>
+    <div class="fh5co-spacer fh5co-spacer-xs"></div>
+    <div class="col-md-12">
+    <% if current_user.try(:admin?) %>
+      <div class="actions">
+        <%= link_to 'Edit Profile', edit_profile_path(@profile), class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    <% end %>
+    </div>
+
+    <div class="col-md-12">
+      <div class="actions">
+        <%= link_to t('messages.back'), root_path, class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    </div>
+  </div>
+</section>

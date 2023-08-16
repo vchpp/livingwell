@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= metamagic %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+      <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+      function getCookie(name) {
+        match = document.cookie.match(new RegExp(name + '=([^;]+)'));
+        if (match) return match[1];
+      }
+      var rct = getCookie('rct');
+      var locale = getCookie('locale');
+      console.log(locale);
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8T209GGMN"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB92CN2');</script>
+    <!-- End Google Tag Manager -->
+
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
+    <%= javascript_pack_tag 'application' %>
+
+    	<!-- Google Webfont -->
+  	<!-- <link href='https://fonts.googleapis.com/css?family=Lato:300,400|Crimson+Text' rel='stylesheet' type='text/css'> -->
+    <%= favicon_link_tag asset_path('favicon2.png') %>
+    <%= yield :head %>
+  </head>
+
+  <body>
+
+    <!-- START #fh5co-header -->
+    <header id="fh5co-header-section" role="header" class="" >
+      <div class="container">
+
+        <!-- START #fh5co-logo -->
+        <h1 id="fh5co-logo" class="pull-left"><a href="<%= root_path %>"><img src="/assets/favicon2.png">      Covid Informed</a></h1>
+
+        <!-- START #fh5co-menu-wrap -->
+        <nav id="fh5co-menu-wrap" role="navigation">
+          <ul class="sf-menu" id="fh5co-primary-menu">
+            <% if current_user.try(:admin?) %>
+            <li><a href="/<%=params[:locale]%>/admin">Admin</a></li>
+            <% end %>
+            <li>
+              <a href="#" class="fh5co-sub-ddown"><%= t('navbar.about') %></a>
+              <ul class="fh5co-sub-menu">
+               <li>
+                 <a href="/<%=params[:locale]%>/about/mission"><%= t('navbar.mission') %></a>
+                 <a href="/<%=params[:locale]%>/about/research-team"><%= t('about.research_team') %></a>
+                 <a href="/<%=params[:locale]%>/about/lay-health-workers"><%= t('about.lhw') %></a>
+                 <a href="/<%=params[:locale]%>/about/community-advisory-board"><%= t('about.cab_members') %></a>
+               </li>
+             </ul>
+            </li>
+            <li><a href="/<%=params[:locale]%>/messages"><%= t('navbar.messages') %></a></li>
+            <li>
+              <a href="#" class="fh5co-sub-ddown"><%= t('navbar.resources') %></a>
+              <ul class="fh5co-sub-menu">
+               <li>
+                 <a href="/<%=params[:locale]%>/resources/faqs"><%= t('navbar.faqs') %></a>
+                 <a href="/<%=params[:locale]%>/resources/downloads"><%= t('resources.downloads') %></a>
+                 <a href="/<%=params[:locale]%>/resources/statistics"><%= t('resources.statistics')%></a>
+                 <a href="/<%=params[:locale]%>/resources/externals"><%= t('navbar.external') %></a>
+                 <a href="/<%=params[:locale]%>/resources/healthwise-articles"><%= t('navbar.healthwise') %></a>
+               </li>
+             </ul>
+            </li>
+            <li>
+              <a href="#" class="fh5co-sub-ddown"><%= t('language') %></a>
+               <ul class="fh5co-sub-menu">
+                <li><%= link_to 'English', url_for(locale: :en) %></li>
+                <li><%= link_to '繁體中文', url_for(locale: :zh_TW) %></li>
+                <li><%= link_to '简体中文', url_for(locale: :zh_CN) %></li>
+                <li><%= link_to 'lus hmoob', url_for(locale: :hmn) %></li>
+                <li><%= link_to 'Tiếng Việt', url_for(locale: :vi) %></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+
+    <div class="fh5co-spacer fh5co-spacer-lg"></div>
+    <% if current_user.try(:admin?) %>
+      <% if notice %>
+        <p class="alert alert-success text-center"><%= notice %></p>
+      <% end %>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger text-center"><%= alert %></p>
+    <% end %>
+    <%= yield %>
+  </body>
+  <footer>
+    <div class="container">
+      <div class="fh5co-spacer fh5co-spacer-xs"></div>
+
+    </div>
+  </footer>
+</html>

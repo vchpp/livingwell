@@ -1,0 +1,233 @@
+<%
+meta title: "COVID-INFORMED - Messages",
+     description: "covid-informed",
+     keywords: %w(free html5, free template, free bootstrap, html5, css3, mobile first, responsive)
+%>
+<% content_for :head do %>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q8T209GGMN', {'custom_map': {'dimension1': 'rct'}, 'user_id': rct });
+    gtag('event','pageview', {'rct': rct});
+    gtag('send','event','eventCategory','eventAction');
+  </script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB92CN2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<% end %>
+
+<!-- START #fh5co-hero -->
+
+<section id="fh5co-feature">
+  <!-- START FEATURE 2 -->
+<div class="container">
+
+  <div class="row fh5co-feature-2">
+
+    <div class="col-md-12">
+      <h1 class="fh5co-uppercase-heading-lg text-center"><%= Message.model_name.human(count:2) %></h1>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+      <% if current_user.try(:admin?) %>
+      <div class="fh5co-spacer fh5co-spacer-sm"></div>
+        <div class="actions">
+          <%= link_to 'New Message', new_message_path, class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+        <div class="actions">
+          <%= link_to 'Export Messages to CSV', messages_path(format: "csv"), class: "btn btn-primary btn-lg btn-block"  %>
+        </div>
+				<div class="fh5co-spacer fh5co-spacer-md"></div>
+      <% end %>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+      <div class="form-group">
+        <label for="faq" class="sr-only">Filter by Category</label>
+        <form id="category" method="GET" action="/<%=params[:locale]%>/messages" >
+          <select class="form-control input-lg" name="category" id="category-form">
+            <option value="">All</option>
+            <% @message_categories.each do |faq| %>
+              <option value="<%=faq%>"> <%= faq %></option>
+            <% end %>
+          </select>
+        </form>
+      </div>
+    </div>
+
+    <% @messages.in_groups_of(2, false).each do |item1, item2| %>
+      <div class="row">
+        <a href="<%= message_path(item1) %>">
+        <div class="col-md-6 col-sm-6 fh5co-feature-item shadow-lg">
+            <% case %>
+              <%  when params[:locale] == "en" %>
+                <span class="fh5co-feature-icon <%=item1.category%>">
+                  <% if item1.images.attached? %>
+                    <i><%= image_tag item1.images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
+                  <% else %>
+                    <i class="ti-layout-placeholder" style="color:red;"></i>
+                  <% end %>
+                </span>
+                <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item1.en_name %></h2>
+
+              <%  when params[:locale] == "zh_TW" %>
+                <span class="fh5co-feature-icon <%=item1.category%>">
+                  <% if item1.zh_tw_images.attached? %>
+                    <i><%= image_tag item1.zh_tw_images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
+                  <% else %>
+                    <i class="ti-layout-placeholder" style="color:red;"></i>
+                  <% end %>
+                </span>
+                <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item1.zh_tw_name %></h2>
+
+              <%  when params[:locale] == "zh_CN" %>
+                <span class="fh5co-feature-icon <%=item1.category%>">
+                  <% if item1.zh_cn_images.attached? %>
+                    <i><%= image_tag item1.zh_cn_images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
+                  <% else %>
+                    <i class="ti-layout-placeholder" style="color:red;"></i>
+                  <% end %>
+                </span>
+                <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item1.zh_cn_name %></h2>
+
+              <%  when params[:locale] == "vi" %>
+                <span class="fh5co-feature-icon <%=item1.category%>">
+                  <% if item1.vi_images.attached? %>
+                    <i><%= image_tag item1.vi_images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
+                  <% else %>
+                    <i class="ti-layout-placeholder" style="color:red;"></i>
+                  <% end %>
+                </span>
+                <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item1.vi_name %></h2>
+
+              <%  when params[:locale] == "hmn" %>
+                <span class="fh5co-feature-icon <%=item1.category%>">
+                  <% if item1.hmn_images.attached? %>
+                    <i><%= image_tag item1.hmn_images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
+                  <% else %>
+                    <i class="ti-layout-placeholder" style="color:red;"></i>
+                  <% end %>
+                </span>
+                <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item1.hmn_name %></h2>
+              <% end %>
+
+              <p class="text-center"><%= link_to t('messages.read_more'), item1, class: "btn btn-primary btn-sm" %></p>
+            <% if current_user.try(:admin?) %>
+              <p class="text-center"><%= link_to 'Edit this message', edit_message_path(item1), class:"btn btn-primary btn-sm" %></p>
+              <p class="text-center"><%= link_to 'Delete this message', item1, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-primary btn-sm" %></p>
+            <% end %>
+            <div class="fh5co-spacer fh5co-spacer-md"></div>
+          </div>
+        </a>
+				<div class="clearfix visible-sm-block"></div>
+          <!-- item2 -->
+        <% if item2 %>
+        <a href="<%= message_path(item2) %>">
+          <div class="col-md-6 col-sm-6 fh5co-feature-item">
+              <% case %>
+                <%  when params[:locale] == "en" %>
+                  <span class="fh5co-feature-icon <%=item2.category%>">
+                    <% if item2.images.attached? %>
+                      <i><%= image_tag item2.images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
+                    <% else %>
+                      <i class="ti-layout-placeholder" style="color:red;"></i>
+                    <% end %>
+                  </span>
+                  <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item2.en_name %></h2>
+
+                <%  when params[:locale] == "zh_TW" %>
+                  <span class="fh5co-feature-icon <%=item2.category%>">
+                    <% if item2.zh_tw_images.attached? %>
+                      <i><%= image_tag item2.zh_tw_images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
+                    <% else %>
+                      <i class="ti-layout-placeholder" style="color:red;"></i>
+                    <% end %>
+                  </span>
+                  <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item2.zh_tw_name %></h2>
+
+                <%  when params[:locale] == "zh_CN" %>
+                  <span class="fh5co-feature-icon <%=item2.category%>">
+                    <% if item2.zh_cn_images.attached? %>
+                      <i><%= image_tag item2.zh_cn_images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
+                    <% else %>
+                      <i class="ti-layout-placeholder" style="color:red;"></i>
+                    <% end %>
+                  </span>
+                  <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item2.zh_cn_name %></h2>
+
+                <%  when params[:locale] == "vi" %>
+                  <span class="fh5co-feature-icon <%=item2.category%>">
+                    <% if item2.vi_images.attached? %>
+                      <i><%= image_tag item2.vi_images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
+                    <% else %>
+                      <i class="ti-layout-placeholder" style="color:red;"></i>
+                    <% end %>
+                  </span>
+                  <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item2.vi_name %></h2>
+
+                <%  when params[:locale] == "hmn" %>
+                  <span class="fh5co-feature-icon <%=item2.category%>">
+                    <% if item2.hmn_images.attached? %>
+                      <i><%= image_tag item2.hmn_images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
+                    <% else %>
+                      <i class="ti-layout-placeholder" style="color:red;"></i>
+                    <% end %>
+                  </span>
+                  <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item2.hmn_name %></h2>
+                <% end %>
+
+                <p class="text-center"><%= link_to t('messages.read_more'), item2, class: "btn btn-primary btn-sm" %></p>
+              <% if current_user.try(:admin?) %>
+                <p class="text-center"><%= link_to 'Edit this message', edit_message_path(item2), class:"btn btn-primary btn-sm" %></p>
+                <p class="text-center"><%= link_to 'Delete this message', item2, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-primary btn-sm" %></p>
+              <% end %>
+              <div class="fh5co-spacer fh5co-spacer-md"></div>
+            </div>
+          </a>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+      <% if current_user.try(:admin?) %>
+      <div class="row">
+      <div class="col-md-8 col-md-offset-2 Admin-border">
+        <h1>Messages Admin View</h1>
+
+          <table>
+            <thead>
+              <tr>
+                <th>en_name</th>
+                <th>Category</th>
+                <th>Archived?</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @admin_messages.each do |message| %>
+                <tr>
+                  <td><%= message.en_name %></td>
+                  <td><%= message.category %></td>
+                  <td><%= message.archive %></td>
+                  <td><%= link_to 'Show', message %></td>
+                  <td><%= link_to 'Edit', edit_message_path(message) %></td>
+                  <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      <% end %>
+
+</section>
+
+<div class="fh5co-spacer fh5co-spacer-xs"></div>
+<div class="container">
+  <div class="col-md-12 text-center">
+    <p> <%= t('disclaimer') %> </p>
+  </div>
+</div>
