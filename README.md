@@ -152,8 +152,8 @@ After installing the dependencies, run
 * $ `bin/rails action_text:install`
 * $ `bin/rails active_storage:install`
 * $ `rails g audit_log:install`
-* $ `gem install poppler` on local machine to view PDFs
-* $ `gem install imagemagick` on local machine for image variations
+* $ `brew install imagemagick` on local machine for image variations
+* $ `brew install poppler` on local machine to view PDFs if not already installed by above
 
 # Things I've learned
 
