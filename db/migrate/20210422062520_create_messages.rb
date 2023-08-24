@@ -9,8 +9,8 @@ class CreateMessages < ActiveRecord::Migration[6.1]
       t.string :zh_tw_content
       t.string :vi_name
       t.string :vi_content
-      t.string :hmn_name
-      t.string :hmn_content
+      t.string :hm_name
+      t.string :hm_content
 
       t.timestamps
     end

@@ -19,9 +19,9 @@ class ProfilesTest < ApplicationSystemTestCase
     fill_in "En project title", with: @profile.en_project_title
     fill_in "External links", with: @profile.external_links
     fill_in "Firstname", with: @profile.firstname
-    fill_in "Hmn affiliation", with: @profile.hmn_affiliation
-    fill_in "Hmn bio", with: @profile.hmn_bio
-    fill_in "Hmn project title", with: @profile.hmn_project_title
+    fill_in "Hm affiliation", with: @profile.hm_affiliation
+    fill_in "Hm bio", with: @profile.hm_bio
+    fill_in "Hm project title", with: @profile.hm_project_title
     fill_in "Lastname", with: @profile.lastname
     fill_in "Middlename", with: @profile.middlename
     fill_in "Middlename2", with: @profile.middlename2
@@ -50,9 +50,9 @@ class ProfilesTest < ApplicationSystemTestCase
     fill_in "En project title", with: @profile.en_project_title
     fill_in "External links", with: @profile.external_links
     fill_in "Firstname", with: @profile.firstname
-    fill_in "Hmn affiliation", with: @profile.hmn_affiliation
-    fill_in "Hmn bio", with: @profile.hmn_bio
-    fill_in "Hmn project title", with: @profile.hmn_project_title
+    fill_in "Hm affiliation", with: @profile.hm_affiliation
+    fill_in "Hm bio", with: @profile.hm_bio
+    fill_in "Hm project title", with: @profile.hm_project_title
     fill_in "Lastname", with: @profile.lastname
     fill_in "Middlename", with: @profile.middlename
     fill_in "Middlename2", with: @profile.middlename2

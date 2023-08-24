@@ -1,12 +1,13 @@
 class Faq < ApplicationRecord
+  has_many :likes, as: :likeable, dependent: :destroy
   has_rich_text :en_answer
   has_rich_text :zh_tw_answer
   has_rich_text :zh_cn_answer
-  has_rich_text :hmn_answer
+  has_rich_text :hm_answer
   has_rich_text :vi_answer
   has_one_attached :en_audio, dependent: :destroy
   has_one_attached :vi_audio, dependent: :destroy
-  has_one_attached :hmn_audio, dependent: :destroy
+  has_one_attached :hm_audio, dependent: :destroy
   has_one_attached :zh_cn_audio, dependent: :destroy
   has_one_attached :zh_tw_audio, dependent: :destroy
   has_many :rich_texts,
@@ -23,6 +24,6 @@ class Faq < ApplicationRecord
                                          where("zh_tw_question ilike ?", "%#{search}%")).or(
                                          where("zh_cn_question ilike ?", "%#{search}%")).or(
                                          where("vi_question ilike ?", "%#{search}%")).or(
-                                         where("hmn_question ilike ?", "%#{search}%")).uniq
+                                         where("hm_question ilike ?", "%#{search}%")).uniq
                                        }
 end

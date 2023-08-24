@@ -64,11 +64,11 @@ meta title: "COVID-INFORMED - Message - #{@message.id}",
       </section>
     <% end %>
 
-  <% when params[:locale] == "hmn" %>
-    <% if @message.hmn_images.attached? %>
+  <% when params[:locale] == "hm" %>
+    <% if @message.hm_images.attached? %>
       <section id="fh5co-testimonial" >
         <div class="text-center">
-          <% @message.hmn_images.each do |img| %>
+          <% @message.hm_images.each do |img| %>
             <%= image_tag img, class: "img-fluid", :style => "max-width: 100%; height: auto;"%>
           <% end %>
         </div>

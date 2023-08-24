@@ -65,10 +65,10 @@
 <row name="vi_content" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_name" null="1" autoincrement="0">
+<row name="hm_name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_content" null="1" autoincrement="0">
+<row name="hm_content" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="images" null="1" autoincrement="0">
@@ -83,7 +83,7 @@
 <row name="vi_images" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_images" null="1" autoincrement="0">
+<row name="hm_images" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="en_action_item" null="1" autoincrement="0">
@@ -98,7 +98,7 @@
 <row name="vi_action_item" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_action_item" null="1" autoincrement="0">
+<row name="hm_action_item" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="external_links" null="1" autoincrement="0">
@@ -142,7 +142,7 @@
 <row name="vi_project_title" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_project_title" null="1" autoincrement="0">
+<row name="hm_project_title" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="en_affiliation" null="1" autoincrement="0">
@@ -157,7 +157,7 @@
 <row name="vi_affiliation" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_affiliation" null="1" autoincrement="0">
+<row name="hm_affiliation" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="en_bio" null="1" autoincrement="0">
@@ -172,7 +172,7 @@
 <row name="vi_bio" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_bio" null="1" autoincrement="0">
+<row name="hm_bio" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
@@ -195,7 +195,7 @@
 <row name="vi_title" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_title" null="1" autoincrement="0">
+<row name="hm_title" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="en_source" null="1" autoincrement="0">
@@ -210,7 +210,7 @@
 <row name="vi_source" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_source" null="1" autoincrement="0">
+<row name="hm_source" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="en_content" null="1" autoincrement="0">
@@ -225,7 +225,7 @@
 <row name="vi_content" null="1" autoincrement="0">
 <datatype>BINARY</datatype>
 <default>NULL</default></row>
-<row name="hmn_content" null="1" autoincrement="0">
+<row name="hm_content" null="1" autoincrement="0">
 <datatype>BINARY</datatype>
 <default>NULL</default></row>
 <row name="languages" null="1" autoincrement="0">
@@ -244,7 +244,7 @@
 <row name="vi_external_link" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_external_link" null="1" autoincrement="0">
+<row name="hm_external_link" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="en_notes" null="1" autoincrement="0">
@@ -259,7 +259,7 @@
 <row name="vi_notes" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_notes" null="1" autoincrement="0">
+<row name="hm_notes" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
@@ -288,10 +288,10 @@
 <row name="zh_cn_answer" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_question" null="1" autoincrement="0">
+<row name="hm_question" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="hmn_answer" null="1" autoincrement="0">
+<row name="hm_answer" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="vi_question" null="1" autoincrement="0">

@@ -21,9 +21,9 @@ class HealthwiseArticlesTest < ApplicationSystemTestCase
     fill_in "En title", with: @healthwise_article.en_title
     check "En translated" if @healthwise_article.en_translated
     check "Featured" if @healthwise_article.featured
-    fill_in "Hmn json", with: @healthwise_article.hmn_json
-    fill_in "Hmn title", with: @healthwise_article.hmn_title
-    check "Hmn translated" if @healthwise_article.hmn_translated
+    fill_in "Hm json", with: @healthwise_article.hm_json
+    fill_in "Hm title", with: @healthwise_article.hm_title
+    check "Hm translated" if @healthwise_article.hm_translated
     fill_in "Hwid", with: @healthwise_article.hwid
     fill_in "Languages", with: @healthwise_article.languages
     fill_in "Type", with: @healthwise_article.type
@@ -53,9 +53,9 @@ class HealthwiseArticlesTest < ApplicationSystemTestCase
     fill_in "En title", with: @healthwise_article.en_title
     check "En translated" if @healthwise_article.en_translated
     check "Featured" if @healthwise_article.featured
-    fill_in "Hmn json", with: @healthwise_article.hmn_json
-    fill_in "Hmn title", with: @healthwise_article.hmn_title
-    check "Hmn translated" if @healthwise_article.hmn_translated
+    fill_in "Hm json", with: @healthwise_article.hm_json
+    fill_in "Hm title", with: @healthwise_article.hm_title
+    check "Hm translated" if @healthwise_article.hm_translated
     fill_in "Hwid", with: @healthwise_article.hwid
     fill_in "Languages", with: @healthwise_article.languages
     fill_in "Type", with: @healthwise_article.type

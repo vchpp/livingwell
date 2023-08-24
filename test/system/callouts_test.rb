@@ -19,9 +19,9 @@ class CalloutsTest < ApplicationSystemTestCase
     fill_in "En link name", with: @callout.en_link_name
     fill_in "En title", with: @callout.en_title
     check "External link" if @callout.external_link
-    fill_in "Hmn body", with: @callout.hmn_body
-    fill_in "Hmn link name", with: @callout.hmn_link_name
-    fill_in "Hmn title", with: @callout.hmn_title
+    fill_in "Hm body", with: @callout.hm_body
+    fill_in "Hm link name", with: @callout.hm_link_name
+    fill_in "Hm title", with: @callout.hm_title
     fill_in "Link", with: @callout.link
     fill_in "Vi body", with: @callout.vi_body
     fill_in "Vi link name", with: @callout.vi_link_name
@@ -47,9 +47,9 @@ class CalloutsTest < ApplicationSystemTestCase
     fill_in "En link name", with: @callout.en_link_name
     fill_in "En title", with: @callout.en_title
     check "External link" if @callout.external_link
-    fill_in "Hmn body", with: @callout.hmn_body
-    fill_in "Hmn link name", with: @callout.hmn_link_name
-    fill_in "Hmn title", with: @callout.hmn_title
+    fill_in "Hm body", with: @callout.hm_body
+    fill_in "Hm link name", with: @callout.hm_link_name
+    fill_in "Hm title", with: @callout.hm_title
     fill_in "Link", with: @callout.link
     fill_in "Vi body", with: @callout.vi_body
     fill_in "Vi link name", with: @callout.vi_link_name

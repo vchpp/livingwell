@@ -15,9 +15,9 @@ one:
   vi_title: MyString
   vi_json: 
   vi_translated: false
-  hmn_title: MyString
-  hmn_json: 
-  hmn_translated: false
+  hm_title: MyString
+  hm_json: 
+  hm_translated: false
   languages: MyString
   array: 
   category: MyString
@@ -39,9 +39,9 @@ two:
   vi_title: MyString
   vi_json: 
   vi_translated: false
-  hmn_title: MyString
-  hmn_json: 
-  hmn_translated: false
+  hm_title: MyString
+  hm_json: 
+  hm_translated: false
   languages: MyString
   array: 
   category: MyString

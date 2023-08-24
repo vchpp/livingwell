@@ -17,7 +17,7 @@ class DownloadsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create download" do
     assert_difference('Download.count') do
-      post downloads_url, params: { download: { archive: @download.archive, en_file: @download.en_file, hmn_file: @download.hmn_file, vi_file: @download.vi_file, zh_cn_file: @download.zh_cn_file, zh_tw_file: @download.zh_tw_file } }
+      post downloads_url, params: { download: { archive: @download.archive, en_file: @download.en_file, hm_file: @download.hm_file, vi_file: @download.vi_file, zh_cn_file: @download.zh_cn_file, zh_tw_file: @download.zh_tw_file } }
     end
 
     assert_redirected_to download_url(Download.last)
@@ -34,7 +34,7 @@ class DownloadsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update download" do
-    patch download_url(@download), params: { download: { archive: @download.archive, en_file: @download.en_file, hmn_file: @download.hmn_file, vi_file: @download.vi_file, zh_cn_file: @download.zh_cn_file, zh_tw_file: @download.zh_tw_file } }
+    patch download_url(@download), params: { download: { archive: @download.archive, en_file: @download.en_file, hm_file: @download.hm_file, vi_file: @download.vi_file, zh_cn_file: @download.zh_cn_file, zh_tw_file: @download.zh_tw_file } }
     assert_redirected_to download_url(@download)
   end
 

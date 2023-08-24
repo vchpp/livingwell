@@ -16,7 +16,7 @@ class FaqsTest < ApplicationSystemTestCase
 
     fill_in "Category", with: @faq.category
     fill_in "En question", with: @faq.en_question
-    fill_in "Hmn question", with: @faq.hmn_question
+    fill_in "Hm question", with: @faq.hm_question
     fill_in "Vi question", with: @faq.vi_question
     fill_in "Zh cn question", with: @faq.zh_cn_question
     fill_in "Zh tw question", with: @faq.zh_tw_question
@@ -32,7 +32,7 @@ class FaqsTest < ApplicationSystemTestCase
 
     fill_in "Category", with: @faq.category
     fill_in "En question", with: @faq.en_question
-    fill_in "Hmn question", with: @faq.hmn_question
+    fill_in "Hm question", with: @faq.hm_question
     fill_in "Vi question", with: @faq.vi_question
     fill_in "Zh cn question", with: @faq.zh_cn_question
     fill_in "Zh tw question", with: @faq.zh_tw_question

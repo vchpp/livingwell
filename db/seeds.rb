@@ -24,9 +24,9 @@ Profile.create(firstname: "Nancy",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "https://www.ucmerced.edu/content/nancy-burke")
 
 Profile.create(firstname: "Joyce",
@@ -47,9 +47,9 @@ Profile.create(firstname: "Joyce",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "https://www.cchrchealth.org/")
 
 
@@ -71,9 +71,9 @@ Profile.create(firstname: "Rianna",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "")
 
 
@@ -95,9 +95,9 @@ Profile.create(firstname: "Minji",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "https://profiles.ucsf.edu/minji.kim")
 
 
@@ -119,9 +119,9 @@ Profile.create(firstname: "Nikita",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "")
 
 
@@ -143,9 +143,9 @@ Profile.create(firstname: "Tung",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "https://profiles.ucsf.edu/tung.nguyen")
 
 
@@ -167,9 +167,9 @@ Profile.create(firstname: "Susan",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "https://profiles.ucdavis.edu/susan.stewart")
 
 
@@ -191,9 +191,9 @@ Profile.create(firstname: "Janice",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "https://profiles.ucsf.edu/janice.tsoh")
 
 
@@ -215,9 +215,9 @@ Profile.create(firstname: "Ching",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "")
 
 
@@ -239,9 +239,9 @@ Profile.create(firstname: "Alan",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "https://profiles.ucsf.edu/alan.wu")
 
 
@@ -263,9 +263,9 @@ Profile.create(firstname: "Kara",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "https://www.cchrchealth.org/")
 
 
@@ -287,9 +287,9 @@ Profile.create(firstname: "Edgar",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "https://profiles.ucsf.edu/edgar.yu")
 
 
@@ -311,9 +311,9 @@ Profile.create(firstname: "Christy",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "")
 
 
@@ -335,9 +335,9 @@ Profile.create(firstname: "Eunice",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "")
 
 
@@ -359,9 +359,9 @@ Profile.create(firstname: "Mina",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "")
 
 
@@ -383,9 +383,9 @@ Profile.create(firstname: "Haley",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "")
 
 
@@ -407,9 +407,9 @@ Profile.create(firstname: "Fiona",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "")
 
 
@@ -431,9 +431,9 @@ Profile.create(firstname: "Tony",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "")
 
 
@@ -455,9 +455,9 @@ Profile.create(firstname: "Marta",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "")
 
 
@@ -479,7 +479,7 @@ Profile.create(firstname: "Jennifer",
                 vi_project_title: "",
                 vi_affiliation: "",
                 vi_bio: "",
-                hmn_project_title: "",
-                hmn_affiliation: "",
-                hmn_bio: "",
+                hm_project_title: "",
+                hm_affiliation: "",
+                hm_bio: "",
                 external_links: "")

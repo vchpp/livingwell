@@ -19,11 +19,11 @@ class ExternalsTest < ApplicationSystemTestCase
     fill_in "En notes", with: @external.en_notes
     fill_in "En source", with: @external.en_source
     fill_in "En title", with: @external.en_title
-    fill_in "Hmn content", with: @external.hmn_content
-    fill_in "Hmn external link", with: @external.hmn_external_link
-    fill_in "Hmn notes", with: @external.hmn_notes
-    fill_in "Hmn source", with: @external.hmn_source
-    fill_in "Hmn title", with: @external.hmn_title
+    fill_in "Hm content", with: @external.hm_content
+    fill_in "Hm external link", with: @external.hm_external_link
+    fill_in "Hm notes", with: @external.hm_notes
+    fill_in "Hm source", with: @external.hm_source
+    fill_in "Hm title", with: @external.hm_title
     fill_in "Languages", with: @external.languages
     fill_in "Last version date", with: @external.last_version_date
     fill_in "Vi content", with: @external.vi_content
@@ -56,11 +56,11 @@ class ExternalsTest < ApplicationSystemTestCase
     fill_in "En notes", with: @external.en_notes
     fill_in "En source", with: @external.en_source
     fill_in "En title", with: @external.en_title
-    fill_in "Hmn content", with: @external.hmn_content
-    fill_in "Hmn external link", with: @external.hmn_external_link
-    fill_in "Hmn notes", with: @external.hmn_notes
-    fill_in "Hmn source", with: @external.hmn_source
-    fill_in "Hmn title", with: @external.hmn_title
+    fill_in "Hm content", with: @external.hm_content
+    fill_in "Hm external link", with: @external.hm_external_link
+    fill_in "Hm notes", with: @external.hm_notes
+    fill_in "Hm source", with: @external.hm_source
+    fill_in "Hm title", with: @external.hm_title
     fill_in "Languages", with: @external.languages
     fill_in "Last version date", with: @external.last_version_date
     fill_in "Vi content", with: @external.vi_content

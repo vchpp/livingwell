@@ -23,7 +23,7 @@
               <li> English (en)</li>
               <li> Chinese Traditional (zh_tw)</li>
               <li> Chinese Simplified (zh_cn)</li>
-              <li> Hmong (hmn)</li>
+              <li> Hmong (hm)</li>
               <li> Vietnamese (vi)</li>
             </ul>
             <div class="resp-tabs-container hor_1">
@@ -112,24 +112,24 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :hmn_title %> this doesn't show up publicly - use it to keep your records
-                      <%= form.text_area :hmn_title, size:'70x2', class: 'form-control input-lg' %>
+                      <%= form.label :hm_title %> this doesn't show up publicly - use it to keep your records
+                      <%= form.text_area :hm_title, size:'70x2', class: 'form-control input-lg' %>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <% if callout.hmn_image.attached? %>
-                        <%= image_tag callout.hmn_image.variant(resize_to_limit: [100, 100]), class: "img-fluid" %>
+                      <% if callout.hm_image.attached? %>
+                        <%= image_tag callout.hm_image.variant(resize_to_limit: [100, 100]), class: "img-fluid" %>
                       <% end %>
                       <br>
-                      <%= form.label :hmn_image %>
-                      <%= form.file_field :hmn_image, direct_upload: true, class: "form-control input-lg"  %>
+                      <%= form.label :hm_image %>
+                      <%= form.file_field :hm_image, direct_upload: true, class: "form-control input-lg"  %>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :hmn_link_url %>
-                      <%= form.text_field :hmn_link_url, class: 'form-control input-lg' %>
+                      <%= form.label :hm_link_url %>
+                      <%= form.text_field :hm_link_url, class: 'form-control input-lg' %>
                     </div>
                   </div>
 

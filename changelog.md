@@ -4,11 +4,11 @@ https://github.com/vchpp/informed-livingwell
 
 - [] Scope of work document with payment expectations for Janice
 
-- [] `informed-livingwell.com` and `informed-livingwell.org`
+- [x] `informed-livingwell.com` and `informed-livingwell.org`
 
 - [] add KR support (locale, database field migrations)
 
-- [] shift `hmn` locale to `hm`?
+- [x] shift `hm` locale to `hm`
 
 - [] shift `external` resources to `additional`
 
@@ -32,8 +32,9 @@ https://github.com/vchpp/informed-livingwell
 
 - [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
 
+- [x] add likes to FAQs
 
-- [] add likes to FAQs
+- [] add like buttons to FAQs
 
 - [] ability to 'duplicate' a message, sans attachments
 

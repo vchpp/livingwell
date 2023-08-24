@@ -33,14 +33,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <%= @external.zh_cn_title if params[:locale] == 'zh_CN'%>
                 <%= @external.zh_tw_title if params[:locale] == 'zh_TW'%>
                 <%= @external.vi_title if params[:locale] == 'vi'%>
-                <%= @external.hmn_title if params[:locale] == 'hmn'%>
+                <%= @external.hm_title if params[:locale] == 'hm'%>
               </h2>
               <p class="fh5co-feature-blurb-title"><%= t('resources.external.source') %>:
                 <%= @external.en_source if params[:locale] == 'en'%>
                 <%= @external.zh_cn_source if params[:locale] == 'zh_CN'%>
                 <%= @external.zh_tw_source if params[:locale] == 'zh_TW'%>
                 <%= @external.vi_source if params[:locale] == 'vi'%>
-                <%= @external.hmn_source if params[:locale] == 'hmn'%>
+                <%= @external.hm_source if params[:locale] == 'hm'%>
               </p>
             </div>
           </li>
@@ -54,7 +54,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <%= @external.zh_cn_content if params[:locale] == 'zh_CN'%>
                 <%= @external.zh_tw_content if params[:locale] == 'zh_TW'%>
                 <%= @external.vi_content if params[:locale] == 'vi'%>
-                <%= @external.hmn_content if params[:locale] == 'hmn'%>
+                <%= @external.hm_content if params[:locale] == 'hm'%>
               </p>
             </div>
           </li>
@@ -68,7 +68,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <%= @external.zh_cn_notes if params[:locale] == 'zh_CN'%>
                 <%= @external.zh_tw_notes if params[:locale] == 'zh_TW'%>
                 <%= @external.vi_notes if params[:locale] == 'vi'%>
-                <%= @external.hmn_notes if params[:locale] == 'hmn'%>
+                <%= @external.hm_notes if params[:locale] == 'hm'%>
               </p>
             </div>
           </li>
@@ -82,7 +82,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <%= link_to @external.zh_tw_external_link, @external.zh_tw_external_link, target: "_blank" if params[:locale] == 'zh_TW' %>
                 <%= link_to @external.zh_cn_external_link, @external.zh_cn_external_link, target: "_blank" if params[:locale] == 'zh_CN' %>
                 <%= link_to @external.vi_external_link, @external.vi_external_link, target: "_blank" if params[:locale] == 'vi' %>
-                <%= link_to @external.hmn_external_link, @external.hmn_external_link, target: "_blank" if params[:locale] == 'hmn' %>
+                <%= link_to @external.hm_external_link, @external.hm_external_link, target: "_blank" if params[:locale] == 'hm' %>
               </p>
             </div>
           </li>

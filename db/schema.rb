@@ -80,9 +80,9 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "vi_title"
     t.string "vi_body"
     t.string "vi_link_name"
-    t.string "hmn_title"
-    t.string "hmn_body"
-    t.string "hmn_link_name"
+    t.string "hm_title"
+    t.string "hm_body"
+    t.string "hm_link_name"
     t.string "link"
     t.boolean "external_link"
     t.boolean "archive"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "zh_tw_link_url"
     t.string "zh_cn_link_url"
     t.string "vi_link_url"
-    t.string "hmn_link_url"
+    t.string "hm_link_url"
     t.integer "priority"
   end
 
@@ -113,12 +113,12 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "zh_tw_title"
     t.string "zh_cn_title"
     t.string "vi_title"
-    t.string "hmn_title"
+    t.string "hm_title"
     t.string "en_file"
     t.string "zh_tw_file"
     t.string "zh_cn_file"
     t.string "vi_file"
-    t.string "hmn_file"
+    t.string "hm_file"
     t.string "category"
     t.boolean "archive"
     t.datetime "created_at", precision: 6, null: false
@@ -147,11 +147,11 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "vi_content"
     t.string "vi_external_link"
     t.string "vi_notes"
-    t.string "hmn_title"
-    t.string "hmn_source"
-    t.string "hmn_content"
-    t.string "hmn_external_link"
-    t.string "hmn_notes"
+    t.string "hm_title"
+    t.string "hm_source"
+    t.string "hm_content"
+    t.string "hm_external_link"
+    t.string "hm_notes"
     t.string "languages", default: [], array: true
     t.date "last_version_date"
     t.datetime "created_at", precision: 6, null: false
@@ -167,7 +167,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "en_question"
     t.string "zh_tw_question"
     t.string "zh_cn_question"
-    t.string "hmn_question"
+    t.string "hm_question"
     t.string "vi_question"
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
@@ -203,9 +203,9 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "vi_title"
     t.json "vi_json", default: {}
     t.boolean "vi_translated", default: false
-    t.string "hmn_title"
-    t.json "hmn_json", default: {}
-    t.boolean "hmn_translated", default: false
+    t.string "hm_title"
+    t.json "hm_json", default: {}
+    t.boolean "hm_translated", default: false
     t.string "languages", default: [], array: true
     t.string "category"
     t.boolean "featured", default: false
@@ -217,7 +217,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "zh_tw_rich_text"
     t.string "zh_cn_rich_text"
     t.string "vi_rich_text"
-    t.string "hmn_rich_text"
+    t.string "hm_rich_text"
     t.index ["slug"], name: "index_healthwise_articles_on_slug", unique: true
   end
 
@@ -243,15 +243,15 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "zh_tw_content"
     t.string "vi_name"
     t.string "vi_content"
-    t.string "hmn_name"
-    t.string "hmn_content"
+    t.string "hm_name"
+    t.string "hm_content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "en_action_item"
     t.string "zh_tw_action_item"
     t.string "zh_cn_action_item"
     t.string "vi_action_item"
-    t.string "hmn_action_item"
+    t.string "hm_action_item"
     t.string "external_links", default: [], array: true
     t.string "slug"
     t.string "survey_link"
@@ -259,7 +259,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "zh_tw_external_rich_links"
     t.string "zh_cn_external_rich_links"
     t.string "vi_external_rich_links"
-    t.string "hmn_external_rich_links"
+    t.string "hm_external_rich_links"
     t.string "category", default: "general"
     t.boolean "archive", default: false
     t.index ["slug"], name: "index_messages_on_slug", unique: true
@@ -276,17 +276,17 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "zh_tw_project_title"
     t.string "zh_cn_project_title"
     t.string "vi_project_title"
-    t.string "hmn_project_title"
+    t.string "hm_project_title"
     t.string "en_affiliation"
     t.string "zh_tw_affiliation"
     t.string "zh_cn_affiliation"
     t.string "vi_affiliation"
-    t.string "hmn_affiliation"
+    t.string "hm_affiliation"
     t.string "en_bio"
     t.string "zh_tw_bio"
     t.string "zh_cn_bio"
     t.string "vi_bio"
-    t.string "hmn_bio"
+    t.string "hm_bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
@@ -309,9 +309,9 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "vi_title"
     t.string "vi_description"
     t.string "vi_link_name"
-    t.string "hmn_title"
-    t.string "hmn_description"
-    t.string "hmn_link_name"
+    t.string "hm_title"
+    t.string "hm_description"
+    t.string "hm_link_name"
     t.string "link_url"
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
@@ -321,7 +321,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "zh_tw_link_url"
     t.string "zh_cn_link_url"
     t.string "vi_link_url"
-    t.string "hmn_link_url"
+    t.string "hm_link_url"
     t.boolean "featured", default: false
     t.boolean "archive", default: false
     t.index ["slug"], name: "index_statistics_on_slug", unique: true

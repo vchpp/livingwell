@@ -17,10 +17,10 @@ class External < ApplicationRecord
                                          where("vi_source ilike ?", "%#{search}%")).or(
                                          where("vi_content ilike ?", "%#{search}%")).or(
                                          where("vi_notes ilike ?", "%#{search}%")).or(
-                                         where("hmn_title ilike ?", "%#{search}%")).or(
-                                         where("hmn_source ilike ?", "%#{search}%")).or(
-                                         where("hmn_content ilike ?", "%#{search}%")).or(
-                                         where("hmn_notes ilike ?", "%#{search}%")).or(
+                                         where("hm_title ilike ?", "%#{search}%")).or(
+                                         where("hm_source ilike ?", "%#{search}%")).or(
+                                         where("hm_content ilike ?", "%#{search}%")).or(
+                                         where("hm_notes ilike ?", "%#{search}%")).or(
                                          where("category ilike ?", "%#{search}%"))
                                        }
 end

@@ -9,8 +9,8 @@ class Statistic < ApplicationRecord
                                          where("zh_cn_description ilike ?", "%#{search}%")).or(
                                          where("vi_title ilike ?", "%#{search}%")).or(
                                          where("vi_description ilike ?", "%#{search}%")).or(
-                                         where("hmn_title ilike ?", "%#{search}%")).or(
-                                         where("hmn_description ilike ?", "%#{search}%")).or(
+                                         where("hm_title ilike ?", "%#{search}%")).or(
+                                         where("hm_description ilike ?", "%#{search}%")).or(
                                          where("category ilike ?", "%#{search}%"))
                                        }
 end

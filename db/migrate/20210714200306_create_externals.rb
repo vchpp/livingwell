@@ -21,11 +21,11 @@ class CreateExternals < ActiveRecord::Migration[6.1]
       t.string :vi_content
       t.string :vi_external_link
       t.string :vi_notes
-      t.string :hmn_title
-      t.string :hmn_source
-      t.string :hmn_content
-      t.string :hmn_external_link
-      t.string :hmn_notes
+      t.string :hm_title
+      t.string :hm_source
+      t.string :hm_content
+      t.string :hm_external_link
+      t.string :hm_notes
       t.string :languages, array: true, default: []
       t.date :last_version_date
 

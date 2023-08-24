@@ -1,13 +1,13 @@
 CI_LOCALE = {
   "vi-us"  => "vi",
-  "hm-us" => "hmn",
+  "hm-us" => "hm",
   "zh-us" => "zh_TW",
   "en-us" => "en"
 }
 
 HW_LOCALE = {
   "vi"  => "vi-us",
-  "hmn" => "hm-us",
+  "hm" => "hm-us",
   "zh_TW" => "zh-us",
   "zh_CN" => "zh-us",
   "en" => "en-us"
