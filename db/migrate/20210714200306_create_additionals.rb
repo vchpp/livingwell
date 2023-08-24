@@ -1,6 +1,6 @@
-class CreateExternals < ActiveRecord::Migration[6.1]
+class CreateAdditionals < ActiveRecord::Migration[6.1]
   def change
-    create_table :externals do |t|
+    create_table :additionals do |t|
       t.string :en_title
       t.string :en_source
       t.string :en_content
@@ -26,6 +26,11 @@ class CreateExternals < ActiveRecord::Migration[6.1]
       t.string :hm_content
       t.string :hm_external_link
       t.string :hm_notes
+      t.string :kr_title
+      t.string :kr_source
+      t.string :kr_content
+      t.string :kr_external_link
+      t.string :kr_notes
       t.string :languages, array: true, default: []
       t.date :last_version_date
 

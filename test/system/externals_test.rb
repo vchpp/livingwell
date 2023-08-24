@@ -1,95 +1,95 @@
 require "application_system_test_case"
 
-class ExternalsTest < ApplicationSystemTestCase
+class AdditionalsTest < ApplicationSystemTestCase
   setup do
-    @external = externals(:one)
+    @additional = additionals(:one)
   end
 
   test "visiting the index" do
-    visit externals_url
-    assert_selector "h1", text: "Externals"
+    visit additionals_url
+    assert_selector "h1", text: "Additionals"
   end
 
-  test "creating a External" do
-    visit externals_url
-    click_on "New External"
+  test "creating a Additional" do
+    visit additionals_url
+    click_on "New Additional"
 
-    fill_in "En content", with: @external.en_content
-    fill_in "En external link", with: @external.en_external_link
-    fill_in "En notes", with: @external.en_notes
-    fill_in "En source", with: @external.en_source
-    fill_in "En title", with: @external.en_title
-    fill_in "Hm content", with: @external.hm_content
-    fill_in "Hm external link", with: @external.hm_external_link
-    fill_in "Hm notes", with: @external.hm_notes
-    fill_in "Hm source", with: @external.hm_source
-    fill_in "Hm title", with: @external.hm_title
-    fill_in "Languages", with: @external.languages
-    fill_in "Last version date", with: @external.last_version_date
-    fill_in "Vi content", with: @external.vi_content
-    fill_in "Vi external link", with: @external.vi_external_link
-    fill_in "Vi notes", with: @external.vi_notes
-    fill_in "Vi source", with: @external.vi_source
-    fill_in "Vi title", with: @external.vi_title
-    fill_in "Zh cn", with: @external.zh_cn
-    fill_in "Zh cn content", with: @external.zh_cn_content
-    fill_in "Zh cn external link", with: @external.zh_cn_external_link
-    fill_in "Zh cn notes", with: @external.zh_cn_notes
-    fill_in "Zh cn title", with: @external.zh_cn_title
-    fill_in "Zh tw content", with: @external.zh_tw_content
-    fill_in "Zh tw external link", with: @external.zh_tw_external_link
-    fill_in "Zh tw notes", with: @external.zh_tw_notes
-    fill_in "Zh tw source", with: @external.zh_tw_source
-    fill_in "Zh tw title", with: @external.zh_tw_title
-    click_on "Create External"
+    fill_in "En content", with: @additional.en_content
+    fill_in "En additional link", with: @additional.en_external_link
+    fill_in "En notes", with: @additional.en_notes
+    fill_in "En source", with: @additional.en_source
+    fill_in "En title", with: @additional.en_title
+    fill_in "Hm content", with: @additional.hm_content
+    fill_in "Hm additional link", with: @additional.hm_external_link
+    fill_in "Hm notes", with: @additional.hm_notes
+    fill_in "Hm source", with: @additional.hm_source
+    fill_in "Hm title", with: @additional.hm_title
+    fill_in "Languages", with: @additional.languages
+    fill_in "Last version date", with: @additional.last_version_date
+    fill_in "Vi content", with: @additional.vi_content
+    fill_in "Vi additional link", with: @additional.vi_external_link
+    fill_in "Vi notes", with: @additional.vi_notes
+    fill_in "Vi source", with: @additional.vi_source
+    fill_in "Vi title", with: @additional.vi_title
+    fill_in "Zh cn", with: @additional.zh_cn
+    fill_in "Zh cn content", with: @additional.zh_cn_content
+    fill_in "Zh cn additional link", with: @additional.zh_cn_external_link
+    fill_in "Zh cn notes", with: @additional.zh_cn_notes
+    fill_in "Zh cn title", with: @additional.zh_cn_title
+    fill_in "Zh tw content", with: @additional.zh_tw_content
+    fill_in "Zh tw additional link", with: @additional.zh_tw_external_link
+    fill_in "Zh tw notes", with: @additional.zh_tw_notes
+    fill_in "Zh tw source", with: @additional.zh_tw_source
+    fill_in "Zh tw title", with: @additional.zh_tw_title
+    click_on "Create Additional"
 
-    assert_text "External was successfully created"
+    assert_text "Additional was successfully created"
     click_on "Back"
   end
 
-  test "updating a External" do
-    visit externals_url
+  test "updating a Additional" do
+    visit additionals_url
     click_on "Edit", match: :first
 
-    fill_in "En content", with: @external.en_content
-    fill_in "En external link", with: @external.en_external_link
-    fill_in "En notes", with: @external.en_notes
-    fill_in "En source", with: @external.en_source
-    fill_in "En title", with: @external.en_title
-    fill_in "Hm content", with: @external.hm_content
-    fill_in "Hm external link", with: @external.hm_external_link
-    fill_in "Hm notes", with: @external.hm_notes
-    fill_in "Hm source", with: @external.hm_source
-    fill_in "Hm title", with: @external.hm_title
-    fill_in "Languages", with: @external.languages
-    fill_in "Last version date", with: @external.last_version_date
-    fill_in "Vi content", with: @external.vi_content
-    fill_in "Vi external link", with: @external.vi_external_link
-    fill_in "Vi notes", with: @external.vi_notes
-    fill_in "Vi source", with: @external.vi_source
-    fill_in "Vi title", with: @external.vi_title
-    fill_in "Zh cn", with: @external.zh_cn
-    fill_in "Zh cn content", with: @external.zh_cn_content
-    fill_in "Zh cn external link", with: @external.zh_cn_external_link
-    fill_in "Zh cn notes", with: @external.zh_cn_notes
-    fill_in "Zh cn title", with: @external.zh_cn_title
-    fill_in "Zh tw content", with: @external.zh_tw_content
-    fill_in "Zh tw external link", with: @external.zh_tw_external_link
-    fill_in "Zh tw notes", with: @external.zh_tw_notes
-    fill_in "Zh tw source", with: @external.zh_tw_source
-    fill_in "Zh tw title", with: @external.zh_tw_title
-    click_on "Update External"
+    fill_in "En content", with: @additional.en_content
+    fill_in "En additional link", with: @additional.en_external_link
+    fill_in "En notes", with: @additional.en_notes
+    fill_in "En source", with: @additional.en_source
+    fill_in "En title", with: @additional.en_title
+    fill_in "Hm content", with: @additional.hm_content
+    fill_in "Hm additional link", with: @additional.hm_external_link
+    fill_in "Hm notes", with: @additional.hm_notes
+    fill_in "Hm source", with: @additional.hm_source
+    fill_in "Hm title", with: @additional.hm_title
+    fill_in "Languages", with: @additional.languages
+    fill_in "Last version date", with: @additional.last_version_date
+    fill_in "Vi content", with: @additional.vi_content
+    fill_in "Vi additional link", with: @additional.vi_external_link
+    fill_in "Vi notes", with: @additional.vi_notes
+    fill_in "Vi source", with: @additional.vi_source
+    fill_in "Vi title", with: @additional.vi_title
+    fill_in "Zh cn", with: @additional.zh_cn
+    fill_in "Zh cn content", with: @additional.zh_cn_content
+    fill_in "Zh cn additional link", with: @additional.zh_cn_external_link
+    fill_in "Zh cn notes", with: @additional.zh_cn_notes
+    fill_in "Zh cn title", with: @additional.zh_cn_title
+    fill_in "Zh tw content", with: @additional.zh_tw_content
+    fill_in "Zh tw additional link", with: @additional.zh_tw_external_link
+    fill_in "Zh tw notes", with: @additional.zh_tw_notes
+    fill_in "Zh tw source", with: @additional.zh_tw_source
+    fill_in "Zh tw title", with: @additional.zh_tw_title
+    click_on "Update Additional"
 
-    assert_text "External was successfully updated"
+    assert_text "Additional was successfully updated"
     click_on "Back"
   end
 
-  test "destroying a External" do
-    visit externals_url
+  test "destroying a Additional" do
+    visit additionals_url
     page.accept_confirm do
       click_on "Destroy", match: :first
     end
 
-    assert_text "External was successfully destroyed"
+    assert_text "Additional was successfully destroyed"
   end
 end

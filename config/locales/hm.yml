@@ -11,7 +11,7 @@ hm:
     faqs: "Tejlus Homkheev Nug"
     statistics: "Txheeb cais"
     layhealthworkers: "Cov neeg uahaujlwm"
-    external: "Khoom Txhawb Ntxiv"
+    additional: "Khoom Txhawb Ntxiv"
     mission: "Xaiv los ntawm Lub Nroog"
     healthwise: "Healthwise cov ntaub ntawv nyeem"
   about:
@@ -44,16 +44,16 @@ koom haum National Institutes of Health. USCF IRB Approval Number 20-32933"
       survey_link: "Los ua peb daim ntawv ntsuam xyuas, thov tuaj xyuas:"
   resources:
     resources: "cov khoom siv"
-    external:
+    additional:
       source: "Qhov chaw"
-      external_resources: "Khoom Txhawb Ntxiv"
+      additional_resources: "Khoom Txhawb Ntxiv"
       search_for_resources: "Nrhiav Cov Khoom Txhawb"
       view: "saib"
       search: "kev tshawb"
       all: "Tagnrho"
       contents_of_resources: "cov ntsiab lus ntawm cov khoom siv"
       notes: "sau ntawv"
-      external_links: "txuas sab nraud"
+      additional_links: "txuas sab nraud"
       last_updated: "kawg hloov tshiab"
       general: "Tagnrho"
       testing: "Kuajmob"

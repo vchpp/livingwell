@@ -11,7 +11,7 @@ zh_TW:
     faqs: "常見問題"
     statistics: "統計數據"
     layhealthworkers: "社區保健員"
-    external: "更多資源"
+    additional: "更多資源"
     mission: "目的"
     healthwise: "Healthwise 健康文章"
   about:
@@ -44,16 +44,16 @@ zh_TW:
       cantonese_audio: "點此收聽普通話音頻"
   resources:
     resources: "資源"
-    external:
+    additional:
       source: "來源"
-      external_resources: "更多資源"
+      additional_resources: "更多資源"
       search_for_resources: "尋找資源"
       view: "閱讀"
       search: "搜索"
       all: "重啟"
       contents_of_resources: "資源內容"
       notes: "筆記"
-      external_links: "外部鏈接"
+      additional_links: "外部鏈接"
       last_updated: "最近更新時間"
       general: "一般"
       testing: "檢測"

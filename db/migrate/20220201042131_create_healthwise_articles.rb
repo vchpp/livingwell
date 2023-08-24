@@ -18,6 +18,9 @@ class CreateHealthwiseArticles < ActiveRecord::Migration[6.1]
       t.string :hm_title
       t.json :hm_json, default:{}
       t.boolean :hm_translated, default:false
+      t.string :kr_title
+      t.json :kr_json, default:{}
+      t.boolean :kr_translated, default:false
       t.string :languages, array:true, default:[]
       t.string :category
       t.boolean :featured, default:false

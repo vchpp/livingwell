@@ -5,5 +5,6 @@ class AddExternalLinksRichToMessages < ActiveRecord::Migration[6.1]
     add_column :messages, :zh_cn_external_rich_links, :string, default: nil
     add_column :messages, :vi_external_rich_links, :string, default: nil
     add_column :messages, :hm_external_rich_links, :string, default: nil
+    add_column :messages, :kr_external_rich_links, :string, default: nil
   end
 end

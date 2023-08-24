@@ -11,7 +11,7 @@ vi:
     faqs: "Câu Hỏi Thường Gặp"
     statistics: "Số liệu thống kê"
     layhealthworkers: "Nhân Viên Sức Khỏe Cộng Đồng"
-    external: "Tài Nguyên Bổ Sung"
+    additional: "Tài Nguyên Bổ Sung"
     mission: "Mục đích"
     healthwise: "Các bài báo của Healthwise"
   about:
@@ -43,16 +43,16 @@ vi:
       survey_link: "Để tham gia cuộc khảo sát của chúng tôi, vui lòng truy cập:"
   resources:
     resources:  "tài nguyên"
-    external:
+    additional:
       source: "Nguồn"
-      external_resources: "Tài Nguyên Bổ Sung"
+      additional_resources: "Tài Nguyên Bổ Sung"
       search_for_resources: "Tìm Kiếm Tài Nguyên"
       view: "lượt xem"
       search: "Tìm kiếm"
       all: "Tất cả"
       contents_of_resources: "nội dung của tài nguyên"
       notes: "ghi chú"
-      external_links: "liện kết ngoại"
+      additional_links: "liện kết ngoại"
       last_updated: "Cập nhật mới nhất"
       general: "Tổng Quát"
       testing: "Thử Nghiệm"

@@ -1,1 +1,1 @@
-json.partial! "externals/external", external: @external
+json.partial! "additionals/additional", additional: @additional

@@ -6,9 +6,21 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] `informed-livingwell.com` and `informed-livingwell.org`
 
-- [] add KR support (locale, database field migrations)
+- [x] add KR locale 
+
+- [x] add KR database field migrations
 
 - [x] shift `hm` locale to `hm`
+
+- [x] add likes to FAQs
+
+- [] HW jsonb support for databases (redo) and check API key
+
+- [] add KR model attributes
+
+- [] add KR controller logic
+
+- [] add KR view buttons
 
 - [] shift `external` resources to `additional`
 
@@ -32,15 +44,11 @@ https://github.com/vchpp/informed-livingwell
 
 - [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
 
-- [x] add likes to FAQs
-
 - [] add like buttons to FAQs
 
 - [] ability to 'duplicate' a message, sans attachments
 
 - [] more GA4 tracking points like clicks, engagements
-
-- [] HW jsonb support for databases (redo) and check API key
 
 - [] potential styling overhaul to align with `ucsf.edu` domain
 

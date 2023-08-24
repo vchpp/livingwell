@@ -1,5 +1,5 @@
 <%
-meta title: "COVID-INFORMED - Additional Resources - #{@external.id}",
+meta title: "COVID-INFORMED - Additional Resources - #{@additional.id}",
      description: "covid-informed",
      keywords: %w(free html5, free template, free bootstrap, html5, css3, mobile first, responsive)
 %>
@@ -29,18 +29,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>
             <div class="fh5co-feature-blurb-text">
               <h2 >
-                <%= @external.en_title if params[:locale] == 'en'%>
-                <%= @external.zh_cn_title if params[:locale] == 'zh_CN'%>
-                <%= @external.zh_tw_title if params[:locale] == 'zh_TW'%>
-                <%= @external.vi_title if params[:locale] == 'vi'%>
-                <%= @external.hm_title if params[:locale] == 'hm'%>
+                <%= @additional.en_title if params[:locale] == 'en'%>
+                <%= @additional.zh_cn_title if params[:locale] == 'zh_CN'%>
+                <%= @additional.zh_tw_title if params[:locale] == 'zh_TW'%>
+                <%= @additional.vi_title if params[:locale] == 'vi'%>
+                <%= @additional.hm_title if params[:locale] == 'hm'%>
               </h2>
-              <p class="fh5co-feature-blurb-title"><%= t('resources.external.source') %>:
-                <%= @external.en_source if params[:locale] == 'en'%>
-                <%= @external.zh_cn_source if params[:locale] == 'zh_CN'%>
-                <%= @external.zh_tw_source if params[:locale] == 'zh_TW'%>
-                <%= @external.vi_source if params[:locale] == 'vi'%>
-                <%= @external.hm_source if params[:locale] == 'hm'%>
+              <p class="fh5co-feature-blurb-title"><%= t('resources.additional.source') %>:
+                <%= @additional.en_source if params[:locale] == 'en'%>
+                <%= @additional.zh_cn_source if params[:locale] == 'zh_CN'%>
+                <%= @additional.zh_tw_source if params[:locale] == 'zh_TW'%>
+                <%= @additional.vi_source if params[:locale] == 'vi'%>
+                <%= @additional.hm_source if params[:locale] == 'hm'%>
               </p>
             </div>
           </li>
@@ -48,13 +48,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <li>
             <div class="fh5co-feature-blurb-text">
-              <h2 ><%= t('resources.external.contents_of_resources')%>:</h2>
+              <h2 ><%= t('resources.additional.contents_of_resources')%>:</h2>
               <p class="fh5co-feature-blurb-title">
-                <%= @external.en_content if params[:locale] == 'en'%>
-                <%= @external.zh_cn_content if params[:locale] == 'zh_CN'%>
-                <%= @external.zh_tw_content if params[:locale] == 'zh_TW'%>
-                <%= @external.vi_content if params[:locale] == 'vi'%>
-                <%= @external.hm_content if params[:locale] == 'hm'%>
+                <%= @additional.en_content if params[:locale] == 'en'%>
+                <%= @additional.zh_cn_content if params[:locale] == 'zh_CN'%>
+                <%= @additional.zh_tw_content if params[:locale] == 'zh_TW'%>
+                <%= @additional.vi_content if params[:locale] == 'vi'%>
+                <%= @additional.hm_content if params[:locale] == 'hm'%>
               </p>
             </div>
           </li>
@@ -62,13 +62,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <li>
             <div class="fh5co-feature-blurb-text">
-              <h2 ><%= t('resources.external.notes')%>:</h2>
+              <h2 ><%= t('resources.additional.notes')%>:</h2>
               <p class="fh5co-feature-blurb-title">
-                <%= @external.en_notes if params[:locale] == 'en'%>
-                <%= @external.zh_cn_notes if params[:locale] == 'zh_CN'%>
-                <%= @external.zh_tw_notes if params[:locale] == 'zh_TW'%>
-                <%= @external.vi_notes if params[:locale] == 'vi'%>
-                <%= @external.hm_notes if params[:locale] == 'hm'%>
+                <%= @additional.en_notes if params[:locale] == 'en'%>
+                <%= @additional.zh_cn_notes if params[:locale] == 'zh_CN'%>
+                <%= @additional.zh_tw_notes if params[:locale] == 'zh_TW'%>
+                <%= @additional.vi_notes if params[:locale] == 'vi'%>
+                <%= @additional.hm_notes if params[:locale] == 'hm'%>
               </p>
             </div>
           </li>
@@ -76,13 +76,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <li>
             <div class="fh5co-feature-blurb-text">
-              <h2 ><%= t('resources.external.external_links')%>:</h2>
+              <h2 ><%= t('resources.additional.additional_links')%>:</h2>
               <p class="fh5co-feature-blurb-title">
-                <%= link_to @external.en_external_link, @external.en_external_link, target: "_blank" if params[:locale] == 'en' %>
-                <%= link_to @external.zh_tw_external_link, @external.zh_tw_external_link, target: "_blank" if params[:locale] == 'zh_TW' %>
-                <%= link_to @external.zh_cn_external_link, @external.zh_cn_external_link, target: "_blank" if params[:locale] == 'zh_CN' %>
-                <%= link_to @external.vi_external_link, @external.vi_external_link, target: "_blank" if params[:locale] == 'vi' %>
-                <%= link_to @external.hm_external_link, @external.hm_external_link, target: "_blank" if params[:locale] == 'hm' %>
+                <%= link_to @additional.en_external_link, @additional.en_external_link, target: "_blank" if params[:locale] == 'en' %>
+                <%= link_to @additional.zh_tw_external_link, @additional.zh_tw_external_link, target: "_blank" if params[:locale] == 'zh_TW' %>
+                <%= link_to @additional.zh_cn_external_link, @additional.zh_cn_external_link, target: "_blank" if params[:locale] == 'zh_CN' %>
+                <%= link_to @additional.vi_external_link, @additional.vi_external_link, target: "_blank" if params[:locale] == 'vi' %>
+                <%= link_to @additional.hm_external_link, @additional.hm_external_link, target: "_blank" if params[:locale] == 'hm' %>
               </p>
             </div>
           </li>
@@ -90,8 +90,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <li>
             <div class="fh5co-feature-blurb-text">
-              <h2 ><%= t('resources.external.last_updated')%>:</h2>
-              <p class="fh5co-feature-blurb-title"><%= @external.last_version_date %></p>
+              <h2 ><%= t('resources.additional.last_updated')%>:</h2>
+              <p class="fh5co-feature-blurb-title"><%= @additional.last_version_date %></p>
             </div>
           </li>
 
@@ -101,14 +101,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="col-md-12">
         <% if current_user.try(:admin?) %>
         <div class="actions">
-          <%= link_to 'Edit External Resource', edit_external_path(@external), class: "btn btn-primary btn-lg btn-block" %>
+          <%= link_to 'Edit Additional Resource', edit_additional_path(@additional), class: "btn btn-primary btn-lg btn-block" %>
         </div>
         <% end %>
       </div>
 
       <div class="col-md-12">
         <div class="actions">
-          <%= link_to t('messages.back'), externals_path, class: "btn btn-primary btn-lg btn-block" %>
+          <%= link_to t('messages.back'), additionals_path, class: "btn btn-primary btn-lg btn-block" %>
         </div>
       </div>
     </div>

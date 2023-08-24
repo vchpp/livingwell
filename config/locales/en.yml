@@ -11,7 +11,7 @@ en:
     faqs: "FAQs"
     statistics: "Statistics"
     layhealthworkers: "Lay Health Workers"
-    external: "Additional Resources"
+    additional: "Additional Resources"
     mission: "Mission"
     healthwise: "Healthwise Articles"
   about:
@@ -43,16 +43,16 @@ en:
       survey_link: "To take our survey, please visit:"
   resources:
     resources: "Resources"
-    external:
+    additional:
       source: "Source"
-      external_resources: "Additional Resources"
+      additional_resources: "Additional Resources"
       search_for_resources: "Search For Resources"
       view: "View"
       search: "Search"
       all: "All"
       contents_of_resources: "Contents Of Resources"
       notes: "Notes"
-      external_links: "External Links"
+      additional_links: "External Links"
       last_updated: "Last Updated"
       general: "General"
       testing: "Testing"

@@ -1,2 +1,2 @@
-module ExternalsHelper
+module AdditionalsHelper
 end

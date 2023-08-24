@@ -11,6 +11,8 @@ class CreateMessages < ActiveRecord::Migration[6.1]
       t.string :vi_content
       t.string :hm_name
       t.string :hm_content
+      t.string :kr_name
+      t.string :kr_content
 
       t.timestamps
     end

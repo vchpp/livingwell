@@ -22,13 +22,13 @@ meta title: "COVID-INFORMED - Additional Resources",
 <section id="fh5co-feature">
   <div class="container">
 
-      <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.external_resources')%></h2>
+      <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.additional_resources')%></h2>
 
       <div class="col-md-8 col-md-offset-2">
         <% if current_user.try(:admin?) %>
         <div class="fh5co-spacer fh5co-spacer-sm"></div>
           <div class="actions">
-            <%= link_to 'New External Resource', new_external_path, class: "btn btn-primary btn-lg btn-block" %>
+            <%= link_to 'New Additional Resource', new_additional_path, class: "btn btn-primary btn-lg btn-block" %>
           </div>
           <div class="fh5co-spacer fh5co-spacer-md"></div>
         <% end %>
@@ -36,10 +36,10 @@ meta title: "COVID-INFORMED - Additional Resources",
 
       <div class="col-md-10 col-md-offset-1">
         <div class="col-md-12">
-          <label for="faq" class="sr-only"><%= t('resources.external.search')%></label>
-          <form id="search" method="GET" action="/<%=params[:locale]%>/resources/externals" >
+          <label for="faq" class="sr-only"><%= t('resources.additional.search')%></label>
+          <form id="search" method="GET" action="/<%=params[:locale]%>/resources/additionals" >
             <div class="col-md-8 form-group">
-              <input class="form-control input-lg" type="text" id="search" name="search" placeholder="<%= t('resources.external.search_for_resources')%>">
+              <input class="form-control input-lg" type="text" id="search" name="search" placeholder="<%= t('resources.additional.search_for_resources')%>">
             </div>
             <div class="col-md-2 form-group">
               <button class="form-control btn btn-primary" type="submit">
@@ -47,9 +47,9 @@ meta title: "COVID-INFORMED - Additional Resources",
               </button>
             </div>
           </form>
-          <form id="reset" method="GET" action="/<%=params[:locale]%>/resources/externals" >
+          <form id="reset" method="GET" action="/<%=params[:locale]%>/resources/additionals" >
             <div class="col-md-2 form-group">
-              <input class="form-control btn btn-primary" type="submit" value="<%= t('resources.external.all')%>">
+              <input class="form-control btn btn-primary" type="submit" value="<%= t('resources.additional.all')%>">
             </div>
           </form>
         </div>
@@ -57,7 +57,7 @@ meta title: "COVID-INFORMED - Additional Resources",
         <div class="col-md-10 col-md-offset-1">
           <div class="form-group">
             <label for="faq" class="sr-only">Filter by County</label>
-            <form id="category" method="GET" action="/<%=params[:locale]%>/resources/externals" >
+            <form id="category" method="GET" action="/<%=params[:locale]%>/resources/additionals" >
               <select class="form-control input-lg" name="search" id="category-form">
                 <option value="">All</option>
                 <option value="San Francisco">San Francisco</option>
@@ -74,31 +74,31 @@ meta title: "COVID-INFORMED - Additional Resources",
 
       <% if @featured.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.featured')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.featured')%></h2>
         <%= render 'featured', collection: @featured %>
       <% end %>
 
       <% if @general.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.general')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.general')%></h2>
         <%= render 'general', collection: @general %>
       <% end %>
 
       <% if @testing.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.testing')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.testing')%></h2>
         <%= render 'testing', collection: @testing %>
       <% end %>
 
       <% if @vaccination.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.vaccination')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.vaccination')%></h2>
         <%= render 'vaccination', collection: @vaccination %>
       <% end %>
 
       <% if @other.any?  %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.other')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.other')%></h2>
         <%= render 'other', collection: @other %>
       <% end %>
 
@@ -110,7 +110,7 @@ meta title: "COVID-INFORMED - Additional Resources",
         <% end %>
 
     <div class="col-md-12 Admin-border">
-      <h1>Externals Admin List</h1>
+      <h1>Additionals Admin List</h1>
 
       <table>
         <thead>
@@ -129,26 +129,26 @@ meta title: "COVID-INFORMED - Additional Resources",
         </thead>
 
         <tbody>
-          <% @admin_externals.each do |external| %>
+          <% @admin_additionals.each do |additional| %>
             <tr>
-              <td><%= external.en_title %></td>
-              <td><%= external.en_source %></td>
-              <td><%= external.en_content %></td>
-              <td><%= external.en_notes %></td>
-              <td><%= external.category %></td>
-              <td><%= external.languages %></td>
-              <td><%= external.last_version_date %></td>
-              <td><%= external.featured %></td>
-              <td><%= external.archive %></td>
-              <td><%= link_to 'Show', external %></td>
-              <td><%= link_to 'Edit', edit_external_path(external) %></td>
-              <td><%= link_to 'Destroy', external, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= additional.en_title %></td>
+              <td><%= additional.en_source %></td>
+              <td><%= additional.en_content %></td>
+              <td><%= additional.en_notes %></td>
+              <td><%= additional.category %></td>
+              <td><%= additional.languages %></td>
+              <td><%= additional.last_version_date %></td>
+              <td><%= additional.featured %></td>
+              <td><%= additional.archive %></td>
+              <td><%= link_to 'Show', additional %></td>
+              <td><%= link_to 'Edit', edit_additional_path(additional) %></td>
+              <td><%= link_to 'Destroy', additional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
       <br>
-      <%= link_to 'New External', new_external_path %>
+      <%= link_to 'New Additional', new_additional_path %>
     </div>
     <% end %>
 

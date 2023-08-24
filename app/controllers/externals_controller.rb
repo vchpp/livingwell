@@ -1,15 +1,15 @@
-class ExternalsController < ApplicationController
-  before_action :set_external, only: %i[ show edit update destroy ]
+class AdditionalsController < ApplicationController
+  before_action :set_additional, only: %i[ show edit update destroy ]
   before_action :authenticate_admin!, only: %i[ new create edit update destroy ]
 
-  # GET /externals or /externals.json
+  # GET /additionals or /additionals.json
   def index
-    @externals = External.where(nil).order('en_title ASC') # creates an anonymous scope
-    @admin_externals = @externals.sort_by(&:category)
-    @externals = @externals.where(archive: false)
-    @externals = @externals.filter_by_search(params[:search]) if (params[:search].present?)
+    @additionals = Additional.where(nil).order('en_title ASC') # creates an anonymous scope
+    @admin_additionals = @additionals.sort_by(&:category)
+    @additionals = @additionals.where(archive: false)
+    @additionals = @additionals.filter_by_search(params[:search]) if (params[:search].present?)
     @general, @testing, @vaccination, @other, @featured = [], [], [], [], []
-    @externals.each do |e|
+    @additionals.each do |e|
       if e.featured == true
         @featured << e
         # @featured.sort_by(&:category) but for array methods
@@ -20,81 +20,81 @@ class ExternalsController < ApplicationController
         @other << e if e.category == "Other"
       end
     end
-    @leftovers = @externals.reject{|d| d.category == "General" || d.category == "Other" || d.category == "Vaccination" || d.category == "Testing"}
+    @leftovers = @additionals.reject{|d| d.category == "General" || d.category == "Other" || d.category == "Vaccination" || d.category == "Testing"}
   end
 
-  # GET /externals/1 or /externals/1.json
+  # GET /additionals/1 or /additionals/1.json
   def show
-    if @external.archive?
+    if @additional.archive?
       if current_user.try(:admin?)
         flash.now[:alert] = "Additional Resource is currently archived"
       else
-        redirect_to externals_url, alert: "Additional Resource not available."
+        redirect_to additionals_url, alert: "Additional Resource not available."
       end
     end
   end
 
-  # GET /externals/new
+  # GET /additionals/new
   def new
-    @external = External.new
+    @additional = Additional.new
   end
 
-  # GET /externals/1/edit
+  # GET /additionals/1/edit
   def edit
   end
 
-  # POST /externals or /externals.json
+  # POST /additionals or /additionals.json
   def create
-    @external = External.new(external_params)
-    @external[:languages] = params[:external][:languages].first.split("\r\n").map(&:strip)
+    @additional = Additional.new(additional_params)
+    @additional[:languages] = params[:additional][:languages].first.split("\r\n").map(&:strip)
 
     respond_to do |format|
-      if @external.save
-        format.html { redirect_to @external, notice: "External was successfully created." }
-        format.json { render :show, status: :created, location: @external }
-        logger.info "#{current_user.email} created External (additional) Resource #{@external.id} with title #{@external.en_title}"
-        audit! :created_external, @external, payload: external_params
+      if @additional.save
+        format.html { redirect_to @additional, notice: "Additional was successfully created." }
+        format.json { render :show, status: :created, location: @additional }
+        logger.info "#{current_user.email} created Additional (additional) Resource #{@additional.id} with title #{@additional.en_title}"
+        audit! :created_additional, @additional, payload: additional_params
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @external.errors, status: :unprocessable_entity }
+        format.json { render json: @additional.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /externals/1 or /externals/1.json
+  # PATCH/PUT /additionals/1 or /additionals/1.json
   def update
-    @external[:languages] = params[:external][:languages].first.split("\r\n").map(&:strip)
+    @additional[:languages] = params[:additional][:languages].first.split("\r\n").map(&:strip)
     respond_to do |format|
-      if @external.update(external_params)
-        format.html { redirect_to @external, notice: "External was successfully updated." }
-        format.json { render :show, status: :ok, location: @external }
-        logger.info "#{current_user.email} updated External (additional) Resource #{@external.id} with title #{@external.en_title}"
-        audit! :updated_external, @external, payload: external_params
+      if @additional.update(additional_params)
+        format.html { redirect_to @additional, notice: "Additional was successfully updated." }
+        format.json { render :show, status: :ok, location: @additional }
+        logger.info "#{current_user.email} updated Additional (additional) Resource #{@additional.id} with title #{@additional.en_title}"
+        audit! :updated_additional, @additional, payload: additional_params
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @external.errors, status: :unprocessable_entity }
+        format.json { render json: @additional.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /externals/1 or /externals/1.json
+  # DELETE /additionals/1 or /additionals/1.json
   def destroy
-    audit! :destroyed_external, @external, payload: @external.attributes
-    @external.destroy
+    audit! :destroyed_additional, @additional, payload: @additional.attributes
+    @additional.destroy
     respond_to do |format|
-      format.html { redirect_to externals_url, notice: "External was successfully destroyed." }
+      format.html { redirect_to additionals_url, notice: "Additional was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_external
-      @external = External.friendly.find(params[:id])
+    def set_additional
+      @additional = Additional.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def external_params
-      params.require(:external).permit(:en_title, :en_source, :en_content, :en_external_link, :en_notes, :zh_tw_title, :zh_tw_source, :zh_tw_content, :zh_tw_external_link, :zh_tw_notes, :zh_cn_title, :zh_cn_source, :zh_cn_content, :zh_cn_external_link, :zh_cn_notes, :vi_title, :vi_source, :vi_content, :vi_external_link, :vi_notes, :hm_title, :hm_source, :hm_content, :hm_external_link, :hm_notes, :languages, :last_version_date, :search, :category, :featured, :archive)
+    def additional_params
+      params.require(:additional).permit(:en_title, :en_source, :en_content, :en_additional_link, :en_notes, :zh_tw_title, :zh_tw_source, :zh_tw_content, :zh_tw_additional_link, :zh_tw_notes, :zh_cn_title, :zh_cn_source, :zh_cn_content, :zh_cn_additional_link, :zh_cn_notes, :vi_title, :vi_source, :vi_content, :vi_additional_link, :vi_notes, :hm_title, :hm_source, :hm_content, :hm_additional_link, :hm_notes, :languages, :last_version_date, :search, :category, :featured, :archive)
     end
 end

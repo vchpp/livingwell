@@ -1,4 +1,4 @@
-class External < ApplicationRecord
+class Additional < ApplicationRecord
   extend FriendlyId
   friendly_id :en_title, use: %i(slugged history finders)
   scope :filter_by_search, -> (search) { where("en_title ilike ?", "%#{search}%").or(

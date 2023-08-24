@@ -4,13 +4,13 @@
     <div class="fh5co-spacer fh5co-spacer-lg"></div>
     <div class="row">
 			<div class="col-md-12">
-        <%= form_with(model: external) do |form| %>
-          <% if external.errors.any? %>
+        <%= form_with(model: additional) do |form| %>
+          <% if additional.errors.any? %>
             <div id="error_explanation">
-              <h2><%= pluralize(external.errors.count, "error") %> prohibited this external from being saved:</h2>
+              <h2><%= pluralize(additional.errors.count, "error") %> prohibited this additional from being saved:</h2>
 
               <ul>
-                <% external.errors.each do |error| %>
+                <% additional.errors.each do |error| %>
                   <li><%= error.full_message %></li>
                 <% end %>
               </ul>
@@ -219,7 +219,7 @@
                   <div class="col-md-12">
                     <div class="field form-group">
                       <%= form.label :languages %> must be English / 繁體中文 / 简体中文 / lus hmoob / Tiếng Việt
-                      <%= form.text_area :languages, name: 'external[languages][]', size: '70x5', class: 'form-control input-lg', placeholder: "languages - one per line - please use English / 繁體中文 / 简体中文 / kwv tij hmoob / Tiếng Việt", value: form.object.languages.join("\n") %>
+                      <%= form.text_area :languages, name: 'additional[languages][]', size: '70x5', class: 'form-control input-lg', placeholder: "languages - one per line - please use English / 繁體中文 / 简体中文 / kwv tij hmoob / Tiếng Việt", value: form.object.languages.join("\n") %>
                     </div>
                   </div>
 
@@ -256,7 +256,7 @@
                 <div class="col-md-12">
                   <div class="actions">
                     <%= form.submit class: "btn btn-primary btn-lg btn-block"%>
-                    <%= link_to 'Back', externals_path, class: "btn btn-primary btn-lg btn-block" %>
+                    <%= link_to 'Back', additionals_path, class: "btn btn-primary btn-lg btn-block" %>
                   </div>
                 </div>
 

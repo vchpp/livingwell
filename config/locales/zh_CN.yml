@@ -10,7 +10,7 @@ zh_CN:
     resources: "资源"
     faqs: "常见问题"
     statistics: "统计数据"
-    external: "更多资源"
+    additional: "更多资源"
     layhealthworkers: "社区保健员"
     mission: "目的"
     healthwise: "Healthwise 健康文章"
@@ -44,16 +44,16 @@ zh_CN:
       mandarin_audio: "点此收听粤语音频"
   resources:
     resources: "资源"
-    external:
+    additional:
       source: "来源"
-      external_resources: "更多资源"
+      additional_resources: "更多资源"
       search_for_resources: "寻找资源"
       view: "阅读"
       search: "搜索"
       all: "重启"
       contents_of_resources: "资源内容"
       notes: "笔记"
-      external_links: "外部链接"
+      additional_links: "外部链接"
       last_updated: "最近更新时间"
       general: "一般"
       testing: "检测"
