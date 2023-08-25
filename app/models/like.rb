@@ -2,7 +2,7 @@ class Like < ApplicationRecord
   belongs_to :likeable, polymorphic: true
 
   def self.to_csv
-    attributes = %w{Created_at RCT Uplikes Downlikes Type ID}
+    attributes = %w{Created_at DT Uplikes Downlikes Type ID}
     CSV.generate(headers: true) do |csv|
       csv << attributes
       all.each do |likes|

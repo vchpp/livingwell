@@ -21,6 +21,10 @@ class Additional < ApplicationRecord
                                          where("hm_source ilike ?", "%#{search}%")).or(
                                          where("hm_content ilike ?", "%#{search}%")).or(
                                          where("hm_notes ilike ?", "%#{search}%")).or(
+                                         where("kr_title ilike ?", "%#{search}%")).or(
+                                         where("kr_source ilike ?", "%#{search}%")).or(
+                                         where("kr_content ilike ?", "%#{search}%")).or(
+                                         where("kr_notes ilike ?", "%#{search}%")).or(
                                          where("category ilike ?", "%#{search}%"))
                                        }
 end

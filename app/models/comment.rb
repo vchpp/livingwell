@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   validates :dt, presence: true
 
   def self.to_csv
-    attributes = %w{Created_at RCT Content Type ID}
+    attributes = %w{Created_at DT Content Type ID}
     CSV.generate("\uFEFF", headers: true) do |csv|
       csv << attributes
       all.each do |comment|

@@ -24,7 +24,7 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] Add `tags` to every resource for search hits
 
-- [] add KR model attributes
+- [x] add KR model attributes
 
 - [] add KR controller logic
 

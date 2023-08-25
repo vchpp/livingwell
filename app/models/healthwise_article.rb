@@ -6,16 +6,19 @@ class HealthwiseArticle < ApplicationRecord
   has_rich_text :zh_cn_rich_text
   has_rich_text :vi_rich_text
   has_rich_text :hm_rich_text
+  has_rich_text :kr_rich_text
   has_many_attached :en_pdf
   has_many_attached :zh_tw_pdf
   has_many_attached :zh_cn_pdf
   has_many_attached :vi_pdf
   has_many_attached :hm_pdf
+  has_many_attached :kr_pdf
   extend FriendlyId
   friendly_id :en_title, use: %i(slugged history finders)
   scope :filter_by_search, -> (search) { where("en_title ilike ?", "%#{search}%").or(
                                         where("zh_tw_title ilike ?", "%#{search}%")).or(
                                         where("vi_title ilike ?", "%#{search}%")).or(
+                                        where("kr_title ilike ?", "%#{search}%")).or(
                                         where("hm_title ilike ?", "%#{search}%"))
                                         }
   def self.to_csv
