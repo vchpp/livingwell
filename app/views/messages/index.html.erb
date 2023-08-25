@@ -8,8 +8,8 @@ meta title: "COVID-INFORMED - Messages",
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-Q8T209GGMN', {'custom_map': {'dimension1': 'rct'}, 'user_id': rct });
-    gtag('event','pageview', {'rct': rct});
+    gtag('config', 'G-Q8T209GGMN', {'custom_map': {'dimension1': 'dt'}, 'user_id': dt });
+    gtag('event','pageview', {'dt': dt});
     gtag('send','event','eventCategory','eventAction');
   </script>
   <!-- Google Tag Manager (noscript) -->
@@ -64,7 +64,7 @@ meta title: "COVID-INFORMED - Messages",
             <% case %>
               <%  when params[:locale] == "en" %>
                 <span class="fh5co-feature-icon <%=item1.category%>">
-                  <% if item1.images.attached? %>
+                  <% if item1.en_images.attached? %>
                     <i><%= image_tag item1.images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
                   <% else %>
                     <i class="ti-layout-placeholder" style="color:red;"></i>

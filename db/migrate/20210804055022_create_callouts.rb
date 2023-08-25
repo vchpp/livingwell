@@ -22,6 +22,7 @@ class CreateCallouts < ActiveRecord::Migration[6.1]
       t.string :link
       t.boolean :external_link
       t.boolean :archive
+      t.string :tags, array:true, default:[]
 
       t.timestamps
     end

@@ -17,7 +17,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create like" do
     assert_difference('Like.count') do
-      post likes_url, params: { like: { down: @like.down, message_id: @like.message_id, rct: @like.rct, up: @like.up } }
+      post likes_url, params: { like: { down: @like.down, message_id: @like.message_id, dt: @like.dt, up: @like.up } }
     end
 
     assert_redirected_to like_url(Like.last)
@@ -34,7 +34,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update like" do
-    patch like_url(@like), params: { like: { down: @like.down, message_id: @like.message_id, rct: @like.rct, up: @like.up } }
+    patch like_url(@like), params: { like: { down: @like.down, message_id: @like.message_id, dt: @like.dt, up: @like.up } }
     assert_redirected_to like_url(@like)
   end
 

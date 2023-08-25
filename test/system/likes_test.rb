@@ -16,7 +16,7 @@ class LikesTest < ApplicationSystemTestCase
 
     fill_in "Down", with: @like.down
     fill_in "Message", with: @like.message_id
-    fill_in "Rct", with: @like.rct
+    fill_in "Rct", with: @like.dt
     fill_in "Up", with: @like.up
     click_on "Create Like"
 
@@ -30,7 +30,7 @@ class LikesTest < ApplicationSystemTestCase
 
     fill_in "Down", with: @like.down
     fill_in "Message", with: @like.message_id
-    fill_in "Rct", with: @like.rct
+    fill_in "Rct", with: @like.dt
     fill_in "Up", with: @like.up
     click_on "Update Like"
 

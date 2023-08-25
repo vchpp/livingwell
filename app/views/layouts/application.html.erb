@@ -23,7 +23,7 @@
         match = document.cookie.match(new RegExp(name + '=([^;]+)'));
         if (match) return match[1];
       }
-      var rct = getCookie('rct');
+      var dt = getCookie('dt');
       var locale = getCookie('locale');
       console.log(locale);
     </script>
@@ -84,7 +84,7 @@
                <li>
                  <a href="/<%=params[:locale]%>/resources/faqs"><%= t('navbar.faqs') %></a>
                  <a href="/<%=params[:locale]%>/resources/downloads"><%= t('resources.downloads') %></a>
-                 <a href="/<%=params[:locale]%>/resources/additionals"><%= t('navbar.additional') %></a>
+                 <a href="/<%=params[:locale]%>/resources/additional"><%= t('navbar.additional') %></a>
                  <a href="/<%=params[:locale]%>/resources/healthwise-articles"><%= t('navbar.healthwise') %></a>
                </li>
              </ul>

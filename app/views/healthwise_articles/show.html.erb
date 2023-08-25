@@ -8,8 +8,8 @@ meta title: "COVID-INFORMED - Healthwise: #{@healthwise_article.en_title}",
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-Q8T209GGMN', {'custom_map': {'dimension1': 'rct'}, 'user_id': rct });
-    gtag('event','pageview', {'rct': rct});
+    gtag('config', 'G-Q8T209GGMN', {'custom_map': {'dimension1': 'dt'}, 'user_id': dt });
+    gtag('event','pageview', {'dt': dt});
     gtag('send','event','eventCategory','eventAction');
   </script>
     <!-- Google Tag Manager (noscript) -->
@@ -70,7 +70,7 @@ meta title: "COVID-INFORMED - Healthwise: #{@healthwise_article.en_title}",
                 <% @likes.each do |like| %>
                 <tr>
                   <td><%= like.created_at %></td>
-                  <td><%= like.rct %></td>
+                  <td><%= like.dt %></td>
                   <td><%= like.up %></td>
                   <td><%= like.down %></td>
                   <% if current_user.try(:admin?) %>
@@ -115,7 +115,7 @@ meta title: "COVID-INFORMED - Healthwise: #{@healthwise_article.en_title}",
               <% @admin_comments.each do |comment| %>
               <tr>
                 <td><%= comment.created_at %></td>
-                <td><%= comment.rct %></td>
+                <td><%= comment.dt %></td>
                 <td><%= comment.content %></td>
                 <% if current_user.try(:admin?) %>
                   <td><%= link_to 'Destroy', [@healthwise_article, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>

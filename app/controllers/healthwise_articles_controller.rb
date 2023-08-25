@@ -38,10 +38,10 @@ class HealthwiseArticlesController < ApplicationController
         redirect_to healthwise_articles_url, alert: "Healthwise Article not available."
       end
     end
-    @likes = @healthwise_article.likes.all.order('rct::integer ASC')
+    @likes = @healthwise_article.likes.all.order('dt::integer ASC')
     if @healthwise_article.comments
       @all_comments = @healthwise_article.comments
-      @admin_comments = @all_comments.order('rct::integer ASC')
+      @admin_comments = @all_comments.order('dt::integer ASC')
       @comments = @all_comments.order(created_at: :desc).limit(10).offset((@page.to_i - 1) * 10)
       @page_count = (@all_comments.count / 10) + 1
     end

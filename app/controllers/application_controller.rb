@@ -17,26 +17,26 @@ private
 
   def set_admin
     if current_user.try(:admin?)
-      cookies[:rct] = 0
+      cookies[:dt] = 0
     end
   end
 
   def set_healthwise
     if current_user.try(:healthwise?)
-      cookies[:rct] = 10000
+      cookies[:dt] = 10000
     end
   end
 
   def set_visitor
-    if params[:rct].to_i.between?(1,9999)
-      cookies[:rct] = {
-        value: params[:rct],
+    if params[:dt].to_i.between?(1,9999)
+      cookies[:dt] = {
+        value: params[:dt],
         path: '/',
         SameSite: 'none',
         secure: 'true'
       }
     else
-      cookies[:rct] ||= {
+      cookies[:dt] ||= {
         value: rand(10001..99999999),
         path: '/',
         SameSite: 'none',

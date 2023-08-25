@@ -8,6 +8,7 @@ class CreateFaqs < ActiveRecord::Migration[6.1]
       t.string :vi_question
       t.string :kr_question
       t.string :category
+      t.string :tags, array:true, default:[]
 
       t.timestamps
     end

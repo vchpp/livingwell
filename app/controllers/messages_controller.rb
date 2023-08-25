@@ -7,7 +7,6 @@ class MessagesController < ApplicationController
   def index
     @messages = Message.where(nil)
       .send("with_attached_#{I18n.locale}_images".downcase)
-      .with_attached_images
       .order('created_at ASC')
     @admin_messages = @messages.sort_by(&:category)
     @messages = @messages.where(archive: false)
@@ -29,9 +28,9 @@ class MessagesController < ApplicationController
         redirect_to messages_url, alert: "Message not available."
       end
     end
-    @likes = @message.likes.all.order('rct::integer ASC')
+    @likes = @message.likes.all.order('dt::integer ASC')
     @all_comments = @message.comments
-    @admin_comments = @all_comments.order('rct::integer ASC')
+    @admin_comments = @all_comments.order('dt::integer ASC')
     @comments = @all_comments.order(created_at: :desc).limit(10).offset((@page.to_i - 1) * 10)
     @page_count = (@all_comments.count / 10) + 1
     @message_name = @message.send("#{I18n.locale}_name".downcase)
@@ -142,7 +141,7 @@ class MessagesController < ApplicationController
 private
   # Use callbacks to share common setup or constraints between actions.
   def set_message
-    @message = Message.with_attached_images.friendly.find(params[:id])
+    @message = Message.friendly.find(params[:id]) #add 'with_attached_images' somehow?  Model?
   end
 
   def set_page

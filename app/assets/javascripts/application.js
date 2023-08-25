@@ -26,7 +26,7 @@ function eventListeners(){
   // upLike();
   // downLike();
   submit_categories();
-  getCookie('rct');
+  getCookie('dt');
   selectActiveFilter();
 }
 
@@ -39,7 +39,7 @@ function getCookie(name) {
 function upLike(){
  $('#uplike').on('click', function(e){
    e.preventDefault();
-   var rct = getCookie('rct');
+   var dt = getCookie('dt');
    var value, postUrl, data;
    value = 1;
    postUrl = $(this).parent().parent().attr('action');

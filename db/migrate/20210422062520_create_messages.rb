@@ -13,6 +13,7 @@ class CreateMessages < ActiveRecord::Migration[6.1]
       t.string :hm_content
       t.string :kr_name
       t.string :kr_content
+      t.string :tags, array:true, default:[]
 
       t.timestamps
     end

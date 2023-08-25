@@ -96,7 +96,7 @@ Users who are actively participating in the surveys will already have text messa
 Additional users can opt-in to the Mosio study, and therefore also receive updates
 
 
-External participants tracked with cookies[:rct] =7xxx
+External participants tracked with cookies[:dt] =7xxx
 People who sign up need to be assigned a 7xxx cookie
 Needs to check if the number has already been added to remove duplicates
 
@@ -115,8 +115,8 @@ Anticipate 1000 users
 
 
 No problem to openly enroll participants
-Study participants tracked with cookies[:rct]
-External participants tracked with cookies[:rct] = 7xxx
+Study participants tracked with cookies[:dt]
+External participants tracked with cookies[:dt] = 7xxx
 Analytics
 Page views, search engine optimization, traffic flows all done by Google Analytics
 

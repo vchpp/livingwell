@@ -15,6 +15,6 @@
 #   inflect.acronym 'RESTful'
 # end
 
-ActiveSupport::Inflector.inflections do |inflect|
-  inflect.uncountable %w( additional )
-end
+# ActiveSupport::Inflector.inflections(:en) do |inflect|
+#   inflect.uncountable %w( additional )
+# end

@@ -32,6 +32,7 @@ class CreateAdditionals < ActiveRecord::Migration[6.1]
       t.string :kr_external_link
       t.string :kr_notes
       t.string :languages, array: true, default: []
+      t.string :tags, array:true, default:[]
       t.date :last_version_date
 
       t.timestamps

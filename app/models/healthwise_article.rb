@@ -43,7 +43,7 @@ class HealthwiseArticle < ApplicationRecord
       csv << attributes
       if comments
         comments.each do |comment|
-          csv << [comment.created_at, comment.rct, comment.content, comment.commentable_type, comment.commentable_id]
+          csv << [comment.created_at, comment.dt, comment.content, comment.commentable_type, comment.commentable_id]
         end
       end
     end
@@ -55,7 +55,7 @@ class HealthwiseArticle < ApplicationRecord
       csv << attributes
       if likes
         likes.each do |likes|
-          csv << [likes.created_at, likes.rct, likes.up, likes.down, likes.likeable_type, likes.likeable_id]
+          csv << [likes.created_at, likes.dt, likes.up, likes.down, likes.likeable_type, likes.likeable_id]
         end
       end
     end

@@ -15,6 +15,7 @@ class CreateDownloads < ActiveRecord::Migration[6.1]
       t.string :kr_file
       t.string :category
       t.boolean :archive
+      t.string :tags, array:true, default:[]
 
       t.timestamps
     end
