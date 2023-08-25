@@ -26,7 +26,7 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] add KR model attributes
 
-- [] add KR controller logic
+- [] add KR controller allowed params
 
 - [] add KR view buttons
 
