@@ -8,8 +8,8 @@ meta title: "COVID-INFORMED - Messages",
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-Q8T209GGMN', {'custom_map': {'dimension1': 'rct'}, 'user_id': rct });
-    gtag('event','pageview', {'rct': rct});
+    gtag('config', 'G-Q8T209GGMN', {'custom_map': {'dimension1': 'dt'}, 'user_id': dt });
+    gtag('event','pageview', {'dt': dt});
     gtag('send','event','eventCategory','eventAction');
   </script>
   <!-- Google Tag Manager (noscript) -->
@@ -64,7 +64,7 @@ meta title: "COVID-INFORMED - Messages",
             <% case %>
               <%  when params[:locale] == "en" %>
                 <span class="fh5co-feature-icon <%=item1.category%>">
-                  <% if item1.images.attached? %>
+                  <% if item1.en_images.attached? %>
                     <i><%= image_tag item1.images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
                   <% else %>
                     <i class="ti-layout-placeholder" style="color:red;"></i>
@@ -102,15 +102,15 @@ meta title: "COVID-INFORMED - Messages",
                 </span>
                 <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item1.vi_name %></h2>
 
-              <%  when params[:locale] == "hmn" %>
+              <%  when params[:locale] == "hm" %>
                 <span class="fh5co-feature-icon <%=item1.category%>">
-                  <% if item1.hmn_images.attached? %>
-                    <i><%= image_tag item1.hmn_images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
+                  <% if item1.hm_images.attached? %>
+                    <i><%= image_tag item1.hm_images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
                   <% else %>
                     <i class="ti-layout-placeholder" style="color:red;"></i>
                   <% end %>
                 </span>
-                <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item1.hmn_name %></h2>
+                <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item1.hm_name %></h2>
               <% end %>
 
               <p class="text-center"><%= link_to t('messages.read_more'), item1, class: "btn btn-primary btn-sm" %></p>
@@ -167,15 +167,15 @@ meta title: "COVID-INFORMED - Messages",
                   </span>
                   <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item2.vi_name %></h2>
 
-                <%  when params[:locale] == "hmn" %>
+                <%  when params[:locale] == "hm" %>
                   <span class="fh5co-feature-icon <%=item2.category%>">
-                    <% if item2.hmn_images.attached? %>
-                      <i><%= image_tag item2.hmn_images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
+                    <% if item2.hm_images.attached? %>
+                      <i><%= image_tag item2.hm_images.first.variant(resize_to_limit: [700, 400]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
                     <% else %>
                       <i class="ti-layout-placeholder" style="color:red;"></i>
                     <% end %>
                   </span>
-                  <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item2.hmn_name %></h2>
+                  <h2 class="text-center fh5co-feature-title h4 text-uppercase"><%= item2.hm_name %></h2>
                 <% end %>
 
                 <p class="text-center"><%= link_to t('messages.read_more'), item2, class: "btn btn-primary btn-sm" %></p>

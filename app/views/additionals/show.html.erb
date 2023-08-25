@@ -1,0 +1,118 @@
+<%
+meta title: "COVID-INFORMED - Additional Resources - #{@additional.id}",
+     description: "covid-informed",
+     keywords: %w(free html5, free template, free bootstrap, html5, css3, mobile first, responsive)
+%>
+<% content_for :head do %>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q8T209GGMN', {'custom_map': {'dimension1': 'dt'}, 'user_id': dt });
+  gtag('event','pageview', {'dt': dt});
+  gtag('send','event','eventCategory','eventAction');
+</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB92CN2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<% end %>
+
+<section id="fh5co-feature">
+  <div class="container">
+
+    <div class="fh5co-spacer fh5co-spacer-lg"></div>
+    <div class="row fh5co-feature-1">
+
+      <div class="col-md-8 col-md-offset-2 fh5co-feature-blurb">
+        <ul>
+          <li>
+            <div class="fh5co-feature-blurb-text">
+              <h2 >
+                <%= @additional.en_title if params[:locale] == 'en'%>
+                <%= @additional.zh_cn_title if params[:locale] == 'zh_CN'%>
+                <%= @additional.zh_tw_title if params[:locale] == 'zh_TW'%>
+                <%= @additional.vi_title if params[:locale] == 'vi'%>
+                <%= @additional.hm_title if params[:locale] == 'hm'%>
+              </h2>
+              <p class="fh5co-feature-blurb-title"><%= t('resources.additional.source') %>:
+                <%= @additional.en_source if params[:locale] == 'en'%>
+                <%= @additional.zh_cn_source if params[:locale] == 'zh_CN'%>
+                <%= @additional.zh_tw_source if params[:locale] == 'zh_TW'%>
+                <%= @additional.vi_source if params[:locale] == 'vi'%>
+                <%= @additional.hm_source if params[:locale] == 'hm'%>
+              </p>
+            </div>
+          </li>
+
+
+          <li>
+            <div class="fh5co-feature-blurb-text">
+              <h2 ><%= t('resources.additional.contents_of_resources')%>:</h2>
+              <p class="fh5co-feature-blurb-title">
+                <%= @additional.en_content if params[:locale] == 'en'%>
+                <%= @additional.zh_cn_content if params[:locale] == 'zh_CN'%>
+                <%= @additional.zh_tw_content if params[:locale] == 'zh_TW'%>
+                <%= @additional.vi_content if params[:locale] == 'vi'%>
+                <%= @additional.hm_content if params[:locale] == 'hm'%>
+              </p>
+            </div>
+          </li>
+
+
+          <li>
+            <div class="fh5co-feature-blurb-text">
+              <h2 ><%= t('resources.additional.notes')%>:</h2>
+              <p class="fh5co-feature-blurb-title">
+                <%= @additional.en_notes if params[:locale] == 'en'%>
+                <%= @additional.zh_cn_notes if params[:locale] == 'zh_CN'%>
+                <%= @additional.zh_tw_notes if params[:locale] == 'zh_TW'%>
+                <%= @additional.vi_notes if params[:locale] == 'vi'%>
+                <%= @additional.hm_notes if params[:locale] == 'hm'%>
+              </p>
+            </div>
+          </li>
+
+
+          <li>
+            <div class="fh5co-feature-blurb-text">
+              <h2 ><%= t('resources.additional.additional_links')%>:</h2>
+              <p class="fh5co-feature-blurb-title">
+                <%= link_to @additional.en_external_link, @additional.en_external_link, target: "_blank" if params[:locale] == 'en' %>
+                <%= link_to @additional.zh_tw_external_link, @additional.zh_tw_external_link, target: "_blank" if params[:locale] == 'zh_TW' %>
+                <%= link_to @additional.zh_cn_external_link, @additional.zh_cn_external_link, target: "_blank" if params[:locale] == 'zh_CN' %>
+                <%= link_to @additional.vi_external_link, @additional.vi_external_link, target: "_blank" if params[:locale] == 'vi' %>
+                <%= link_to @additional.hm_external_link, @additional.hm_external_link, target: "_blank" if params[:locale] == 'hm' %>
+              </p>
+            </div>
+          </li>
+
+
+          <li>
+            <div class="fh5co-feature-blurb-text">
+              <h2 ><%= t('resources.additional.last_updated')%>:</h2>
+              <p class="fh5co-feature-blurb-title"><%= @additional.last_version_date %></p>
+            </div>
+          </li>
+
+        </ul>
+
+      <div class="fh5co-spacer fh5co-spacer-sm"></div>
+      <div class="col-md-12">
+        <% if current_user.try(:admin?) %>
+        <div class="actions">
+          <%= link_to 'Edit Additional Resource', edit_additional_path(@additional), class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="col-md-12">
+        <div class="actions">
+          <%= link_to t('messages.back'), additionals_path, class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>

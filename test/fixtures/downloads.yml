@@ -5,7 +5,7 @@ one:
   zh_tw_file: MyString
   zh_cn_file: MyString
   vi_file: MyString
-  hmn_file: MyString
+  hm_file: MyString
   archive: false
 
 two:
@@ -13,5 +13,5 @@ two:
   zh_tw_file: MyString
   zh_cn_file: MyString
   vi_file: MyString
-  hmn_file: MyString
+  hm_file: MyString
   archive: false

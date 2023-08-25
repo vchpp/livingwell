@@ -13,9 +13,9 @@ one:
   vi_title: MyString
   vi_body: MyString
   vi_link_name: MyString
-  hmn_title: MyString
-  hmn_body: MyString
-  hmn_link_name: MyString
+  hm_title: MyString
+  hm_body: MyString
+  hm_link_name: MyString
   link: MyString
   external_link: false
   archive: false
@@ -33,9 +33,9 @@ two:
   vi_title: MyString
   vi_body: MyString
   vi_link_name: MyString
-  hmn_title: MyString
-  hmn_body: MyString
-  hmn_link_name: MyString
+  hm_title: MyString
+  hm_body: MyString
+  hm_link_name: MyString
   link: MyString
   external_link: false
   archive: false

@@ -24,7 +24,7 @@
               <li> Chinese Traditional (zh_tw)</li>
               <li> Chinese Simplified (zh_cn)</li>
               <li> Vietnamese (vi)</li>
-              <li> Hmong (hmn)</li>
+              <li> Hmong (hm)</li>
             </ul>
             <div class="resp-tabs-container hor_1">
                 <div class="row">
@@ -105,18 +105,18 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <% if @download.hmn_file.attached? %>
-                        <%= image_tag @download.hmn_file.representation(resize_to_limit: [400, 600]), class: "img-fluid" %>
+                      <% if @download.hm_file.attached? %>
+                        <%= image_tag @download.hm_file.representation(resize_to_limit: [400, 600]), class: "img-fluid" %>
                       <% end %>
-                      <%= form.label :hmn_file %>
-                      <%= form.file_field :hmn_file, direct_upload: true, class: "form-control input-lg"  %>
+                      <%= form.label :hm_file %>
+                      <%= form.file_field :hm_file, direct_upload: true, class: "form-control input-lg"  %>
                     </div>
                   </div>
 
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :hmn_title %>
-                      <%= form.text_field :hmn_title, class: "form-control input-lg"  %>
+                      <%= form.label :hm_title %>
+                      <%= form.text_field :hm_title, class: "form-control input-lg"  %>
                     </div>
                   </div>
                 </div>

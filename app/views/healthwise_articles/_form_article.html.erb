@@ -65,7 +65,7 @@
             <li> Chinese Traditional (zh_tw)</li>
             <li> Chinese Simplified (zh_cn)</li>
             <li> Vietnamese (vi)</li>
-            <li> Hmong (hmn)</li>
+            <li> Hmong (hm)</li>
           </ul>
           <div class="resp-tabs-container hor_1">
 
@@ -235,23 +235,23 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="field form-group">
-                  <%= form.label :hmn_title %>
-                  <%= form.text_field :hmn_title %>
+                  <%= form.label :hm_title %>
+                  <%= form.text_field :hm_title %>
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="field form-group">
-                  <%= form.label :hmn_translated? %>
-                  <%= form.check_box :hmn_translated %>
+                  <%= form.label :hm_translated? %>
+                  <%= form.check_box :hm_translated %>
                 </div>
               </div>
 
               <div class="col-md-12">
                 <div class="field form-group">
                   <div class="col-md-12 text-center">
-                    <% if @healthwise_article.hmn_pdf.attached? %>
-                      <% @healthwise_article.hmn_pdf.each do |pdf| %>
+                    <% if @healthwise_article.hm_pdf.attached? %>
+                      <% @healthwise_article.hm_pdf.each do |pdf| %>
                         <% if pdf.representable? %>
                           <%= image_tag pdf.representation(resize_to_limit: [400, 600]), class: "img-fluid" %>
                         <% else %>
@@ -261,13 +261,13 @@
                     <% end %>
                   </div>
                   <div class="col-md-6 text-center">
-                    <%= form.label :hmn_pdf %>
-                    <%= form.file_field :hmn_pdf, multiple: true, direct_upload: true, class: "form-control input-lg"  %>
+                    <%= form.label :hm_pdf %>
+                    <%= form.file_field :hm_pdf, multiple: true, direct_upload: true, class: "form-control input-lg"  %>
                   </div>
                   <div class="col-md-6 text-center">
-                    <% if @healthwise_article.hmn_pdf.attached? %>
-                      <%= label_tag(:hmn_pdf_purge, "Delete hmn_pdf?") %>
-                      <%= check_box_tag(:hmn_pdf_purge) %>
+                    <% if @healthwise_article.hm_pdf.attached? %>
+                      <%= label_tag(:hm_pdf_purge, "Delete hm_pdf?") %>
+                      <%= check_box_tag(:hm_pdf_purge) %>
                     <% end %>
                   </div>
                 </div>
@@ -275,8 +275,8 @@
 
               <div class="col-md-12">
                 <div class="field form-group">
-                  <%= form.label :hmn_rich_text %>
-                  <%= form.rich_text_area :hmn_rich_text, placeholder: "hmn_rich_text"  %>
+                  <%= form.label :hm_rich_text %>
+                  <%= form.rich_text_area :hm_rich_text, placeholder: "hm_rich_text"  %>
                 </div>
               </div>
             </div>

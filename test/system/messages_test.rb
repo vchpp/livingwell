@@ -16,8 +16,8 @@ class MessagesTest < ApplicationSystemTestCase
 
     fill_in "En content", with: @message.en_content
     fill_in "En name", with: @message.en_name
-    fill_in "Hmn content", with: @message.hmn_content
-    fill_in "Hmn name", with: @message.hmn_name
+    fill_in "Hm content", with: @message.hm_content
+    fill_in "Hm name", with: @message.hm_name
     fill_in "Vi content", with: @message.vi_content
     fill_in "Vi name", with: @message.vi_name
     fill_in "Zh cn content", with: @message.zh_cn_content
@@ -36,8 +36,8 @@ class MessagesTest < ApplicationSystemTestCase
 
     fill_in "En content", with: @message.en_content
     fill_in "En name", with: @message.en_name
-    fill_in "Hmn content", with: @message.hmn_content
-    fill_in "Hmn name", with: @message.hmn_name
+    fill_in "Hm content", with: @message.hm_content
+    fill_in "Hm name", with: @message.hm_name
     fill_in "Vi content", with: @message.vi_content
     fill_in "Vi name", with: @message.vi_name
     fill_in "Zh cn content", with: @message.zh_cn_content

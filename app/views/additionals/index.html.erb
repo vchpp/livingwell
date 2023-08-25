@@ -1,0 +1,163 @@
+<%
+meta title: "COVID-INFORMED - Additional Resources",
+     description: "covid-informed",
+     keywords: %w(free html5, free template, free bootstrap, html5, css3, mobile first, responsive)
+%>
+<% content_for :head do %>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q8T209GGMN', {'custom_map': {'dimension1': 'dt'}, 'user_id': dt });
+    gtag('event','pageview', {'dt': dt});
+    gtag('send','event','eventCategory','eventAction');
+  </script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB92CN2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<% end %>
+
+<!-- RESEARCH TEAM -->
+<section id="fh5co-feature">
+  <div class="container">
+
+      <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.additional_resources')%></h2>
+
+      <div class="col-md-8 col-md-offset-2">
+        <% if current_user.try(:admin?) %>
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
+          <div class="actions">
+            <%= link_to 'New Additional Resource', new_additional_path, class: "btn btn-primary btn-lg btn-block" %>
+          </div>
+          <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <% end %>
+      </div>
+
+      <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
+          <label for="faq" class="sr-only"><%= t('resources.additional.search')%></label>
+          <form id="search" method="GET" action="/<%=params[:locale]%>/resources/additionals" >
+            <div class="col-md-8 form-group">
+              <input class="form-control input-lg" type="text" id="search" name="search" placeholder="<%= t('resources.additional.search_for_resources')%>">
+            </div>
+            <div class="col-md-2 form-group">
+              <button class="form-control btn btn-primary" type="submit">
+                <i class="ti-search"></i>
+              </button>
+            </div>
+          </form>
+          <form id="reset" method="GET" action="/<%=params[:locale]%>/resources/additionals" >
+            <div class="col-md-2 form-group">
+              <input class="form-control btn btn-primary" type="submit" value="<%= t('resources.additional.all')%>">
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-10 col-md-offset-1">
+          <div class="form-group">
+            <label for="faq" class="sr-only">Filter by County</label>
+            <form id="category" method="GET" action="/<%=params[:locale]%>/resources/additionals" >
+              <select class="form-control input-lg" name="search" id="category-form">
+                <option value="">All</option>
+                <option value="San Francisco">San Francisco</option>
+                <option value="Alameda">Alameda</option>
+                <option value="Fresno">Fresno</option>
+                <option value="Santa Clara">Santa Clara</option>
+                <option value="San Mateo">San Mateo</option>
+              </select>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <% if @featured.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.featured')%></h2>
+        <%= render 'featured', collection: @featured %>
+      <% end %>
+
+      <% if @general.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.general')%></h2>
+        <%= render 'general', collection: @general %>
+      <% end %>
+
+      <% if @testing.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.testing')%></h2>
+        <%= render 'testing', collection: @testing %>
+      <% end %>
+
+      <% if @vaccination.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.vaccination')%></h2>
+        <%= render 'vaccination', collection: @vaccination %>
+      <% end %>
+
+      <% if @other.any?  %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.other')%></h2>
+        <%= render 'other', collection: @other %>
+      <% end %>
+
+      <% if current_user.try(:admin?) %>
+        <% if @leftovers.any?  %>
+          <div class="fh5co-spacer fh5co-spacer-md"></div>
+          <h2 class="fh5co-uppercase-heading-lg text-center">Uncategorized Leftovers that need to be saved! (Admin only)</h2>
+          <%= render 'leftovers', collection: @leftovers %>
+        <% end %>
+
+    <div class="col-md-12 Admin-border">
+      <h1>Additionals Admin List</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>En title</th>
+            <th>En source</th>
+            <th>En content</th>
+            <th>En notes</th>
+            <th>Category</th>
+            <th>Languages</th>
+            <th>Last version date</th>
+            <th>Featured?</th>
+            <th>Archived?</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @admin_additionals.each do |additional| %>
+            <tr>
+              <td><%= additional.en_title %></td>
+              <td><%= additional.en_source %></td>
+              <td><%= additional.en_content %></td>
+              <td><%= additional.en_notes %></td>
+              <td><%= additional.category %></td>
+              <td><%= additional.languages %></td>
+              <td><%= additional.last_version_date %></td>
+              <td><%= additional.featured %></td>
+              <td><%= additional.archive %></td>
+              <td><%= link_to 'Show', additional %></td>
+              <td><%= link_to 'Edit', edit_additional_path(additional) %></td>
+              <td><%= link_to 'Destroy', additional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <%= link_to 'New Additional', new_additional_path %>
+    </div>
+    <% end %>
+
+  </div>
+</section>
+
+<div class="fh5co-spacer fh5co-spacer-xs"></div>
+<div class="container">
+  <div class="col-md-12 text-center">
+    <p> <%= t('disclaimer') %> </p>
+  </div>
+</div>

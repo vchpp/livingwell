@@ -22,7 +22,7 @@
             <li> English (en)</li>
             <li> Chinese Traditional (zh_tw)</li>
             <li> Chinese Simplified (zh_cn)</li>
-            <li> Hmong (hmn)</li>
+            <li> Hmong (hm)</li>
             <li> Vietnamese (vi)</li>
           </ul>
           <div class="resp-tabs-container hor_1">
@@ -246,61 +246,61 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="field form-group">
-                    <%= form.label :hmn_name %>
-                    <%= form.text_area :hmn_name, size: '70x5', class: 'form-control input-lg', placeholder: "hmn_name" %>
+                    <%= form.label :hm_name %>
+                    <%= form.text_area :hm_name, size: '70x5', class: 'form-control input-lg', placeholder: "hm_name" %>
                   </div>
                 </div>
 
                 <div class="col-md-12">
                   <div class="field form-group">
-                    <%= form.label :hmn_content %>
-                    <%= form.rich_text_area :hmn_content, placeholder: "hmn_content" %>
+                    <%= form.label :hm_content %>
+                    <%= form.rich_text_area :hm_content, placeholder: "hm_content" %>
                   </div>
                 </div>
 
                 <div class="col-md-12">
                   <div class="field form-group">
-                    <%= form.label :hmn_external_rich_links %>
-                    <%= form.rich_text_area :hmn_external_rich_links, placeholder: "hmn_external_rich_links" %>
+                    <%= form.label :hm_external_rich_links %>
+                    <%= form.rich_text_area :hm_external_rich_links, placeholder: "hm_external_rich_links" %>
                   </div>
                 </div>
 
                 <div class="col-md-12">
                   <div class="field form-group">
-                    <%= form.label :hmn_action_item %>
-                    <%= form.rich_text_area :hmn_action_item, placeholder: "hmn_action_item" %>
+                    <%= form.label :hm_action_item %>
+                    <%= form.rich_text_area :hm_action_item, placeholder: "hm_action_item" %>
                   </div>
                 </div>
 
                 <div class="col-md-12">
                   <div class="field form-group">
-                    <% if @message.hmn_images.attached? %>
-                      <% @message.hmn_images.each do |img| %>
+                    <% if @message.hm_images.attached? %>
+                      <% @message.hm_images.each do |img| %>
                         <%= image_tag img.variant(resize_to_limit: [100, 100]), class: "img-fluid" %>
                       <% end %>
                     <% end %>
                     <br>
-                    <%= form.label :hmn_images %>
-                    <%= form.file_field :hmn_images, multiple: true, direct_upload: true, class: "form-control input-lg" %>
+                    <%= form.label :hm_images %>
+                    <%= form.file_field :hm_images, multiple: true, direct_upload: true, class: "form-control input-lg" %>
                   </div>
                 </div>
 
                 <div class="col-md-12">
                   <div class="field form-group">
-                    <% if @message.hmn_audio.attached? %>
+                    <% if @message.hm_audio.attached? %>
                       <div class="col-md-12 text-center">
-                        <%= audio_tag url_for(@message.hmn_audio), controls: true %>
+                        <%= audio_tag url_for(@message.hm_audio), controls: true %>
                       </div>
                     <% end %>
                     <br>
                     <div class="col-md-6 text-center">
-                      <%= form.label :hmn_audio %> <b> | All audio must be in .wav or .mp3 format. </b>
-                      <%= form.file_field :hmn_audio, direct_upload: true, class: "form-control input-lg" %>
+                      <%= form.label :hm_audio %> <b> | All audio must be in .wav or .mp3 format. </b>
+                      <%= form.file_field :hm_audio, direct_upload: true, class: "form-control input-lg" %>
                     </div>
                     <div class="col-md-6 text-center">
-                      <% if @message.hmn_audio.attached? %>
-                        <%= label_tag(:hmn_audio_purge, "Delete hmn_audio?") %>
-                        <%= check_box_tag(:hmn_audio_purge) %>
+                      <% if @message.hm_audio.attached? %>
+                        <%= label_tag(:hm_audio_purge, "Delete hm_audio?") %>
+                        <%= check_box_tag(:hm_audio_purge) %>
                       <% end %>
                     </div>
                   </div>

@@ -12,7 +12,7 @@ module Informed
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-    config.i18n.available_locales = [:en, :zh_CN, :zh_TW, :hmn, :vi]
+    config.i18n.available_locales = [:en, :zh_CN, :zh_TW, :hm, :vi, :kr]
     config.i18n.default_locale = :en
     config.i18n.fallbacks = [:en]
 

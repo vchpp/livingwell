@@ -4,13 +4,33 @@ https://github.com/vchpp/informed-livingwell
 
 - [] Scope of work document with payment expectations for Janice
 
-- [] `informed-livingwell.com` and `informed-livingwell.org`
+- [x] `informed-livingwell.com` and `informed-livingwell.org`
 
-- [] add KR support (locale, database field migrations)
+- [x] add KR locale 
 
-- [] shift `hmn` locale to `hm`?
+- [x] add KR database field migrations
 
-- [] shift `external` resources to `additional`
+- [x] shift `hm` locale to `hm`
+
+- [x] shift `external` resources to `additional`
+
+- [x] add likes to FAQs
+
+- [x] HW jsonb support for databases (redo) and check API key
+
+- [x] Remove `statistics` and `votes` resource entirely
+
+- [x] Add DT numbers to controller logic - 600 participants 
+
+- [x] Add `tags` to every resource for search hits
+
+- [] add KR model attributes
+
+- [] add KR controller logic
+
+- [] add KR view buttons
+
+- [] more GA4 tracking points like clicks, engagements
 
 - [] Profiles - try to migrate from covid-informed site
 
@@ -20,26 +40,15 @@ https://github.com/vchpp/informed-livingwell
 
 - [] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
 
-- [] Remove `statistics` and `votes` resource entirely
-
-- [] Add `tags` to every resource for search hits
-
-- [] new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
-
-- [] DT numbers and range?  600 participants 
+- [] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
 
 - [] be able to order Messages by rank(int), and pin by priority (bool)
 
 - [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
 
-
-- [] add likes to FAQs
+- [] VIEWS add like buttons to FAQs
 
 - [] ability to 'duplicate' a message, sans attachments
-
-- [] more GA4 tracking points like clicks, engagements
-
-- [] HW jsonb support for databases (redo) and check API key
 
 - [] potential styling overhaul to align with `ucsf.edu` domain
 

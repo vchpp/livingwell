@@ -13,12 +13,16 @@ class CreateCallouts < ActiveRecord::Migration[6.1]
       t.string :vi_title
       t.string :vi_body
       t.string :vi_link_name
-      t.string :hmn_title
-      t.string :hmn_body
-      t.string :hmn_link_name
+      t.string :hm_title
+      t.string :hm_body
+      t.string :hm_link_name
+      t.string :kr_title
+      t.string :kr_body
+      t.string :kr_link_name
       t.string :link
       t.boolean :external_link
       t.boolean :archive
+      t.string :tags, array:true, default:[]
 
       t.timestamps
     end

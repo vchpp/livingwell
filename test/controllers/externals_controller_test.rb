@@ -1,48 +1,48 @@
 require "test_helper"
 
-class ExternalsControllerTest < ActionDispatch::IntegrationTest
+class AdditionalsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @external = externals(:one)
+    @additional = additionals(:one)
   end
 
   test "should get index" do
-    get externals_url
+    get additionals_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_external_url
+    get new_additional_url
     assert_response :success
   end
 
-  test "should create external" do
-    assert_difference('External.count') do
-      post externals_url, params: { external: { en_content: @external.en_content, en_external_link: @external.en_external_link, en_notes: @external.en_notes, en_source: @external.en_source, en_title: @external.en_title, hmn_content: @external.hmn_content, hmn_external_link: @external.hmn_external_link, hmn_notes: @external.hmn_notes, hmn_source: @external.hmn_source, hmn_title: @external.hmn_title, languages: @external.languages, last_version_date: @external.last_version_date, vi_content: @external.vi_content, vi_external_link: @external.vi_external_link, vi_notes: @external.vi_notes, vi_source: @external.vi_source, vi_title: @external.vi_title, zh_cn: @external.zh_cn, zh_cn_content: @external.zh_cn_content, zh_cn_external_link: @external.zh_cn_external_link, zh_cn_notes: @external.zh_cn_notes, zh_cn_title: @external.zh_cn_title, zh_tw_content: @external.zh_tw_content, zh_tw_external_link: @external.zh_tw_external_link, zh_tw_notes: @external.zh_tw_notes, zh_tw_source: @external.zh_tw_source, zh_tw_title: @external.zh_tw_title } }
+  test "should create additional" do
+    assert_difference('Additional.count') do
+      post additionals_url, params: { additional: { en_content: @additional.en_content, en_additional_link: @additional.en_additional_link, en_notes: @additional.en_notes, en_source: @additional.en_source, en_title: @additional.en_title, hm_content: @additional.hm_content, hm_additional_link: @additional.hm_additional_link, hm_notes: @additional.hm_notes, hm_source: @additional.hm_source, hm_title: @additional.hm_title, languages: @additional.languages, last_version_date: @additional.last_version_date, vi_content: @additional.vi_content, vi_additional_link: @additional.vi_additional_link, vi_notes: @additional.vi_notes, vi_source: @additional.vi_source, vi_title: @additional.vi_title, zh_cn: @additional.zh_cn, zh_cn_content: @additional.zh_cn_content, zh_cn_additional_link: @additional.zh_cn_additional_link, zh_cn_notes: @additional.zh_cn_notes, zh_cn_title: @additional.zh_cn_title, zh_tw_content: @additional.zh_tw_content, zh_tw_additional_link: @additional.zh_tw_additional_link, zh_tw_notes: @additional.zh_tw_notes, zh_tw_source: @additional.zh_tw_source, zh_tw_title: @additional.zh_tw_title } }
     end
 
-    assert_redirected_to external_url(External.last)
+    assert_redirected_to additional_url(Additional.last)
   end
 
-  test "should show external" do
-    get external_url(@external)
+  test "should show additional" do
+    get additional_url(@additional)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_external_url(@external)
+    get edit_additional_url(@additional)
     assert_response :success
   end
 
-  test "should update external" do
-    patch external_url(@external), params: { external: { en_content: @external.en_content, en_external_link: @external.en_external_link, en_notes: @external.en_notes, en_source: @external.en_source, en_title: @external.en_title, hmn_content: @external.hmn_content, hmn_external_link: @external.hmn_external_link, hmn_notes: @external.hmn_notes, hmn_source: @external.hmn_source, hmn_title: @external.hmn_title, languages: @external.languages, last_version_date: @external.last_version_date, vi_content: @external.vi_content, vi_external_link: @external.vi_external_link, vi_notes: @external.vi_notes, vi_source: @external.vi_source, vi_title: @external.vi_title, zh_cn: @external.zh_cn, zh_cn_content: @external.zh_cn_content, zh_cn_external_link: @external.zh_cn_external_link, zh_cn_notes: @external.zh_cn_notes, zh_cn_title: @external.zh_cn_title, zh_tw_content: @external.zh_tw_content, zh_tw_external_link: @external.zh_tw_external_link, zh_tw_notes: @external.zh_tw_notes, zh_tw_source: @external.zh_tw_source, zh_tw_title: @external.zh_tw_title } }
-    assert_redirected_to external_url(@external)
+  test "should update additional" do
+    patch additional_url(@additional), params: { additional: { en_content: @additional.en_content, en_additional_link: @additional.en_additional_link, en_notes: @additional.en_notes, en_source: @additional.en_source, en_title: @additional.en_title, hm_content: @additional.hm_content, hm_additional_link: @additional.hm_additional_link, hm_notes: @additional.hm_notes, hm_source: @additional.hm_source, hm_title: @additional.hm_title, languages: @additional.languages, last_version_date: @additional.last_version_date, vi_content: @additional.vi_content, vi_additional_link: @additional.vi_additional_link, vi_notes: @additional.vi_notes, vi_source: @additional.vi_source, vi_title: @additional.vi_title, zh_cn: @additional.zh_cn, zh_cn_content: @additional.zh_cn_content, zh_cn_additional_link: @additional.zh_cn_additional_link, zh_cn_notes: @additional.zh_cn_notes, zh_cn_title: @additional.zh_cn_title, zh_tw_content: @additional.zh_tw_content, zh_tw_additional_link: @additional.zh_tw_additional_link, zh_tw_notes: @additional.zh_tw_notes, zh_tw_source: @additional.zh_tw_source, zh_tw_title: @additional.zh_tw_title } }
+    assert_redirected_to additional_url(@additional)
   end
 
-  test "should destroy external" do
-    assert_difference('External.count', -1) do
-      delete external_url(@external)
+  test "should destroy additional" do
+    assert_difference('Additional.count', -1) do
+      delete additional_url(@additional)
     end
 
-    assert_redirected_to externals_url
+    assert_redirected_to additionals_url
   end
 end

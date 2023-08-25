@@ -16,7 +16,7 @@ class DownloadsTest < ApplicationSystemTestCase
 
     check "Archive" if @download.archive
     fill_in "En file", with: @download.en_file
-    fill_in "Hmn file", with: @download.hmn_file
+    fill_in "Hm file", with: @download.hm_file
     fill_in "Vi file", with: @download.vi_file
     fill_in "Zh cn file", with: @download.zh_cn_file
     fill_in "Zh tw file", with: @download.zh_tw_file
@@ -32,7 +32,7 @@ class DownloadsTest < ApplicationSystemTestCase
 
     check "Archive" if @download.archive
     fill_in "En file", with: @download.en_file
-    fill_in "Hmn file", with: @download.hmn_file
+    fill_in "Hm file", with: @download.hm_file
     fill_in "Vi file", with: @download.vi_file
     fill_in "Zh cn file", with: @download.zh_cn_file
     fill_in "Zh tw file", with: @download.zh_tw_file

@@ -17,7 +17,7 @@ class FaqsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create faq" do
     assert_difference('Faq.count') do
-      post faqs_url, params: { faq: { category: @faq.category, en_question: @faq.en_question, hmn_question: @faq.hmn_question, vi_question: @faq.vi_question, zh_cn_question: @faq.zh_cn_question, zh_tw_question: @faq.zh_tw_question } }
+      post faqs_url, params: { faq: { category: @faq.category, en_question: @faq.en_question, hm_question: @faq.hm_question, vi_question: @faq.vi_question, zh_cn_question: @faq.zh_cn_question, zh_tw_question: @faq.zh_tw_question } }
     end
 
     assert_redirected_to faq_url(Faq.last)
@@ -34,7 +34,7 @@ class FaqsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update faq" do
-    patch faq_url(@faq), params: { faq: { category: @faq.category, en_question: @faq.en_question, hmn_question: @faq.hmn_question, vi_question: @faq.vi_question, zh_cn_question: @faq.zh_cn_question, zh_tw_question: @faq.zh_tw_question } }
+    patch faq_url(@faq), params: { faq: { category: @faq.category, en_question: @faq.en_question, hm_question: @faq.hm_question, vi_question: @faq.vi_question, zh_cn_question: @faq.zh_cn_question, zh_tw_question: @faq.zh_tw_question } }
     assert_redirected_to faq_url(@faq)
   end
 

@@ -8,8 +8,8 @@ meta title: "COVID-INFORMED - Healthwise",
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-Q8T209GGMN', {'custom_map': {'dimension1': 'rct'}, 'user_id': rct });
-    gtag('event','pageview', {'rct': rct});
+    gtag('config', 'G-Q8T209GGMN', {'custom_map': {'dimension1': 'dt'}, 'user_id': dt });
+    gtag('event','pageview', {'dt': dt});
     gtag('send','event','eventCategory','eventAction');
   </script>
     <!-- Google Tag Manager (noscript) -->
@@ -57,7 +57,7 @@ meta title: "COVID-INFORMED - Healthwise",
           </form>
           <form id="reset" method="GET" action="/<%=params[:locale]%>/resources/healthwise-articles" >
             <div class="col-md-2 form-group">
-              <input class="form-control btn btn-primary" type="submit" value="<%= t('resources.external.all')%>">
+              <input class="form-control btn btn-primary" type="submit" value="<%= t('resources.additional.all')%>">
             </div>
           </form>
         </div>
@@ -65,31 +65,31 @@ meta title: "COVID-INFORMED - Healthwise",
 
       <% if @featured.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.featured')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.featured')%></h2>
         <%= render 'featured', collection: @featured %>
       <% end %>
 
       <% if @general.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.general')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.general')%></h2>
         <%= render 'general', collection: @general %>
       <% end %>
 
       <% if @testing.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.testing')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.testing')%></h2>
         <%= render 'testing', collection: @testing %>
       <% end %>
 
       <% if @vaccination.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.vaccination')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.vaccination')%></h2>
         <%= render 'vaccination', collection: @vaccination %>
       <% end %>
 
       <% if @wellness.any?  %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.external.wellness')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.wellness')%></h2>
         <%= render 'wellness', collection: @wellness %>
       <% end %>
 

@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "filename", null: false
     t.string "content_type"
     t.text "metadata"
+    t.string "service_name", null: false
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
     t.datetime "created_at", null: false
-    t.string "service_name", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
@@ -51,6 +51,49 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "additionals", force: :cascade do |t|
+    t.string "en_title"
+    t.string "en_source"
+    t.string "en_content"
+    t.string "en_external_link"
+    t.string "en_notes"
+    t.string "zh_tw_title"
+    t.string "zh_tw_source"
+    t.string "zh_tw_content"
+    t.string "zh_tw_external_link"
+    t.string "zh_tw_notes"
+    t.string "zh_cn_title"
+    t.string "zh_cn_source"
+    t.string "zh_cn_content"
+    t.string "zh_cn_external_link"
+    t.string "zh_cn_notes"
+    t.string "vi_title"
+    t.string "vi_source"
+    t.string "vi_content"
+    t.string "vi_external_link"
+    t.string "vi_notes"
+    t.string "hm_title"
+    t.string "hm_source"
+    t.string "hm_content"
+    t.string "hm_external_link"
+    t.string "hm_notes"
+    t.string "kr_title"
+    t.string "kr_source"
+    t.string "kr_content"
+    t.string "kr_external_link"
+    t.string "kr_notes"
+    t.string "languages", default: [], array: true
+    t.string "tags", default: [], array: true
+    t.date "last_version_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.string "category", default: "general"
+    t.boolean "featured", default: false
+    t.boolean "archive", default: false
+    t.index ["slug"], name: "index_additionals_on_slug", unique: true
   end
 
   create_table "audit_logs", force: :cascade do |t|
@@ -80,25 +123,30 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "vi_title"
     t.string "vi_body"
     t.string "vi_link_name"
-    t.string "hmn_title"
-    t.string "hmn_body"
-    t.string "hmn_link_name"
+    t.string "hm_title"
+    t.string "hm_body"
+    t.string "hm_link_name"
+    t.string "kr_title"
+    t.string "kr_body"
+    t.string "kr_link_name"
     t.string "link"
     t.boolean "external_link"
     t.boolean "archive"
+    t.string "tags", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "en_link_url"
     t.string "zh_tw_link_url"
     t.string "zh_cn_link_url"
     t.string "vi_link_url"
-    t.string "hmn_link_url"
+    t.string "hm_link_url"
+    t.string "kr_link_url"
     t.integer "priority"
   end
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
-    t.string "rct"
+    t.string "dt"
     t.bigint "message_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -113,63 +161,31 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "zh_tw_title"
     t.string "zh_cn_title"
     t.string "vi_title"
-    t.string "hmn_title"
+    t.string "hm_title"
+    t.string "kr_title"
     t.string "en_file"
     t.string "zh_tw_file"
     t.string "zh_cn_file"
     t.string "vi_file"
-    t.string "hmn_file"
+    t.string "hm_file"
+    t.string "kr_file"
     t.string "category"
     t.boolean "archive"
+    t.string "tags", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "languages", default: [], array: true
-  end
-
-  create_table "externals", force: :cascade do |t|
-    t.string "en_title"
-    t.string "en_source"
-    t.string "en_content"
-    t.string "en_external_link"
-    t.string "en_notes"
-    t.string "zh_tw_title"
-    t.string "zh_tw_source"
-    t.string "zh_tw_content"
-    t.string "zh_tw_external_link"
-    t.string "zh_tw_notes"
-    t.string "zh_cn_title"
-    t.string "zh_cn_source"
-    t.string "zh_cn_content"
-    t.string "zh_cn_external_link"
-    t.string "zh_cn_notes"
-    t.string "vi_title"
-    t.string "vi_source"
-    t.string "vi_content"
-    t.string "vi_external_link"
-    t.string "vi_notes"
-    t.string "hmn_title"
-    t.string "hmn_source"
-    t.string "hmn_content"
-    t.string "hmn_external_link"
-    t.string "hmn_notes"
-    t.string "languages", default: [], array: true
-    t.date "last_version_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "slug"
-    t.string "category", default: "general"
-    t.boolean "featured", default: false
-    t.boolean "archive", default: false
-    t.index ["slug"], name: "index_externals_on_slug", unique: true
   end
 
   create_table "faqs", force: :cascade do |t|
     t.string "en_question"
     t.string "zh_tw_question"
     t.string "zh_cn_question"
-    t.string "hmn_question"
+    t.string "hm_question"
     t.string "vi_question"
+    t.string "kr_question"
     t.string "category"
+    t.string "tags", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
@@ -192,21 +208,25 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "hwid"
     t.string "article_or_topic"
     t.string "en_title"
-    t.json "en_json", default: {}
+    t.jsonb "en_json", default: {}
     t.boolean "en_translated", default: false
     t.string "zh_tw_title"
-    t.json "zh_tw_json", default: {}
+    t.jsonb "zh_tw_json", default: {}
     t.boolean "zh_tw_translated", default: false
     t.string "zh_cn_title"
-    t.json "zh_cn_json", default: {}
+    t.jsonb "zh_cn_json", default: {}
     t.boolean "zh_cn_translated", default: false
     t.string "vi_title"
-    t.json "vi_json", default: {}
+    t.jsonb "vi_json", default: {}
     t.boolean "vi_translated", default: false
-    t.string "hmn_title"
-    t.json "hmn_json", default: {}
-    t.boolean "hmn_translated", default: false
+    t.string "hm_title"
+    t.jsonb "hm_json", default: {}
+    t.boolean "hm_translated", default: false
+    t.string "kr_title"
+    t.jsonb "kr_json", default: {}
+    t.boolean "kr_translated", default: false
     t.string "languages", default: [], array: true
+    t.string "tags", default: [], array: true
     t.string "category"
     t.boolean "featured", default: false
     t.boolean "archive", default: false
@@ -217,14 +237,15 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "zh_tw_rich_text"
     t.string "zh_cn_rich_text"
     t.string "vi_rich_text"
-    t.string "hmn_rich_text"
+    t.string "hm_rich_text"
+    t.string "kr_rich_text"
     t.index ["slug"], name: "index_healthwise_articles_on_slug", unique: true
   end
 
   create_table "likes", force: :cascade do |t|
     t.string "up", default: "0"
     t.string "down", default: "0"
-    t.string "rct"
+    t.string "dt"
     t.bigint "message_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -243,15 +264,19 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "zh_tw_content"
     t.string "vi_name"
     t.string "vi_content"
-    t.string "hmn_name"
-    t.string "hmn_content"
+    t.string "hm_name"
+    t.string "hm_content"
+    t.string "kr_name"
+    t.string "kr_content"
+    t.string "tags", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "en_action_item"
     t.string "zh_tw_action_item"
     t.string "zh_cn_action_item"
     t.string "vi_action_item"
-    t.string "hmn_action_item"
+    t.string "hm_action_item"
+    t.string "kr_action_item"
     t.string "external_links", default: [], array: true
     t.string "slug"
     t.string "survey_link"
@@ -259,7 +284,8 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "zh_tw_external_rich_links"
     t.string "zh_cn_external_rich_links"
     t.string "vi_external_rich_links"
-    t.string "hmn_external_rich_links"
+    t.string "hm_external_rich_links"
+    t.string "kr_external_rich_links"
     t.string "category", default: "general"
     t.boolean "archive", default: false
     t.index ["slug"], name: "index_messages_on_slug", unique: true
@@ -276,17 +302,20 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "zh_tw_project_title"
     t.string "zh_cn_project_title"
     t.string "vi_project_title"
-    t.string "hmn_project_title"
+    t.string "hm_project_title"
+    t.string "kr_project_title"
     t.string "en_affiliation"
     t.string "zh_tw_affiliation"
     t.string "zh_cn_affiliation"
     t.string "vi_affiliation"
-    t.string "hmn_affiliation"
+    t.string "hm_affiliation"
+    t.string "kr_affiliation"
     t.string "en_bio"
     t.string "zh_tw_bio"
     t.string "zh_cn_bio"
     t.string "vi_bio"
-    t.string "hmn_bio"
+    t.string "hm_bio"
+    t.string "kr_bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
@@ -294,37 +323,6 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "external_links", default: [], array: true
     t.boolean "archive", default: false
     t.index ["slug"], name: "index_profiles_on_slug", unique: true
-  end
-
-  create_table "statistics", force: :cascade do |t|
-    t.string "en_title"
-    t.string "en_description"
-    t.string "en_link_name"
-    t.string "zh_tw_title"
-    t.string "zh_tw_description"
-    t.string "zh_tw_link_name"
-    t.string "zh_cn_title"
-    t.string "zh_cn_description"
-    t.string "zh_cn_link_name"
-    t.string "vi_title"
-    t.string "vi_description"
-    t.string "vi_link_name"
-    t.string "hmn_title"
-    t.string "hmn_description"
-    t.string "hmn_link_name"
-    t.string "link_url"
-    t.string "category"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "slug"
-    t.string "en_link_url"
-    t.string "zh_tw_link_url"
-    t.string "zh_cn_link_url"
-    t.string "vi_link_url"
-    t.string "hmn_link_url"
-    t.boolean "featured", default: false
-    t.boolean "archive", default: false
-    t.index ["slug"], name: "index_statistics_on_slug", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -341,19 +339,8 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "votes", force: :cascade do |t|
-    t.string "up", default: "0"
-    t.string "down", default: "0"
-    t.string "rct"
-    t.bigint "comment_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["comment_id"], name: "index_votes_on_comment_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "messages"
   add_foreign_key "likes", "messages"
-  add_foreign_key "votes", "comments"
 end

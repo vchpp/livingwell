@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   root to: redirect("/#{I18n.locale}/about/mission"), as: :redirected_root
   get '/admin', to: redirect(path: "/#{I18n.locale}/admin")
-  scope "(:locale)", locale: /en|zh_CN|zh_TW|hmn|vi/ do
+  scope "(:locale)", locale: /en|zh_CN|zh_TW|hm|vi|kr/ do
     resources :callouts
     resources :profiles
     resources :messages do
       resources :likes
-      resources :comments do
-        resources :votes
-      end
+      resources :comments
     end
     resources :likes
     resources :comments
@@ -36,10 +34,11 @@ Rails.application.routes.draw do
           get :upgrade
         end
       end
-      resources :faqs
+      resources :faqs do
+        resources :likes
+      end
       resources :downloads
-      resources :statistics
-      resources :externals
+      resources :additionals, :path => "additional"
     end
     root 'about#index'
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

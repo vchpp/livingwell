@@ -23,7 +23,7 @@
               <li> English (en)</li>
               <li> Chinese Traditional (zh_tw)</li>
               <li> Chinese Simplified (zh_cn)</li>
-              <li> Hmong (hmn)</li>
+              <li> Hmong (hm)</li>
               <li> Vietnamese (vi)</li>
             </ul>
             <div class="resp-tabs-container hor_1">
@@ -133,31 +133,31 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :hmn_question %>
-                      <%= form.text_area :hmn_question, size:'70x2', class: 'form-control input-lg' %>
+                      <%= form.label :hm_question %>
+                      <%= form.text_area :hm_question, size:'70x2', class: 'form-control input-lg' %>
                     </div>
                   </div>
 
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :hmn_answer %>
-                      <%= form.rich_text_area :hmn_answer %>
+                      <%= form.label :hm_answer %>
+                      <%= form.rich_text_area :hm_answer %>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="field form-group">
-                    <% if @faq.hmn_audio.attached? %>
+                    <% if @faq.hm_audio.attached? %>
                       <div class="col-md-12 text-center">
-                        <%= audio_tag url_for(@faq.hmn_audio), controls: true %>
+                        <%= audio_tag url_for(@faq.hm_audio), controls: true %>
                       </div>
                     <% end %>
                     <br>
-                    <%= form.label :hmn_audio %> <b>| All audio must be in .wav or .mp3 format.</b>
-                    <%= form.file_field :hmn_audio, direct_upload: true, class: "form-control input-lg" %>
-                    <% if @faq.hmn_audio.attached? %>
-                      <%= label_tag(:hmn_audio_purge, "Delete hmn_audio?") %>
-                      <%= check_box_tag(:hmn_audio_purge) %>
+                    <%= form.label :hm_audio %> <b>| All audio must be in .wav or .mp3 format.</b>
+                    <%= form.file_field :hm_audio, direct_upload: true, class: "form-control input-lg" %>
+                    <% if @faq.hm_audio.attached? %>
+                      <%= label_tag(:hm_audio_purge, "Delete hm_audio?") %>
+                      <%= check_box_tag(:hm_audio_purge) %>
                     <% end %>
                   </div>
                 </div>

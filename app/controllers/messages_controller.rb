@@ -7,7 +7,6 @@ class MessagesController < ApplicationController
   def index
     @messages = Message.where(nil)
       .send("with_attached_#{I18n.locale}_images".downcase)
-      .with_attached_images
       .order('created_at ASC')
     @admin_messages = @messages.sort_by(&:category)
     @messages = @messages.where(archive: false)
@@ -29,9 +28,9 @@ class MessagesController < ApplicationController
         redirect_to messages_url, alert: "Message not available."
       end
     end
-    @likes = @message.likes.all.order('rct::integer ASC')
+    @likes = @message.likes.all.order('dt::integer ASC')
     @all_comments = @message.comments
-    @admin_comments = @all_comments.order('rct::integer ASC')
+    @admin_comments = @all_comments.order('dt::integer ASC')
     @comments = @all_comments.order(created_at: :desc).limit(10).offset((@page.to_i - 1) * 10)
     @page_count = (@all_comments.count / 10) + 1
     @message_name = @message.send("#{I18n.locale}_name".downcase)
@@ -71,8 +70,8 @@ class MessagesController < ApplicationController
     @message.vi_images.attach(params[:message][:vi_images]) if params[:vi_images].present?
     @message.zh_cn_images.attach(params[:message][:zh_cn_images]) if params[:zh_cn_images].present?
     @message.zh_tw_images.attach(params[:message][:zh_tw_images]) if params[:zh_tw_images].present?
-    @message.hmn_images.attach(params[:message][:hmn_images]) if params[:hmn_images].present?
-    @message.hmn_audio.attach(params[:message][:hmn_audio]) if params[:hmn_audio].present?
+    @message.hm_images.attach(params[:message][:hm_images]) if params[:hm_images].present?
+    @message.hm_audio.attach(params[:message][:hm_audio]) if params[:hm_audio].present?
     @message.en_audio.attach(params[:message][:en_audio]) if params[:en_audio].present?
     @message.vi_audio.attach(params[:message][:vi_audio]) if params[:vi_audio].present?
     @message.zh_tw_audio.attach(params[:message][:zh_tw_audio]) if params[:zh_tw_audio].present?
@@ -99,8 +98,8 @@ class MessagesController < ApplicationController
     @message.zh_tw_images.purge if params[:zh_tw_images].present?
     @message.zh_cn_images.purge if params[:zh_cn_images].present?
     @message.vi_images.purge if params[:vi_images].present?
-    @message.hmn_images.purge if params[:hmn_images].present?
-    @message.hmn_audio.purge if params[:hmn_audio].present? || params[:hmn_audio_purge].present?
+    @message.hm_images.purge if params[:hm_images].present?
+    @message.hm_audio.purge if params[:hm_audio].present? || params[:hm_audio_purge].present?
     @message.vi_audio.purge if params[:vi_audio].present? || params[:vi_audio_purge].present?
     @message.en_audio.purge if params[:en_audio].present? || params[:en_audio_purge].present?
     @message.zh_tw_audio.purge if params[:zh_tw_audio].present? || params[:zh_tw_audio_purge].present?
@@ -125,8 +124,8 @@ class MessagesController < ApplicationController
     @message.zh_tw_images.purge
     @message.zh_cn_images.purge
     @message.vi_images.purge
-    @message.hmn_images.purge
-    @message.hmn_audio.purge
+    @message.hm_images.purge
+    @message.hm_audio.purge
     @message.vi_audio.purge
     @message.en_audio.purge
     @message.zh_tw_audio.purge
@@ -142,7 +141,7 @@ class MessagesController < ApplicationController
 private
   # Use callbacks to share common setup or constraints between actions.
   def set_message
-    @message = Message.with_attached_images.friendly.find(params[:id])
+    @message = Message.friendly.find(params[:id]) #add 'with_attached_images' somehow?  Model?
   end
 
   def set_page
@@ -171,26 +170,26 @@ private
                                     :vi_name,
                                     :vi_content,
                                     :vi_action_item,
-                                    :hmn_name,
-                                    :hmn_content,
-                                    :hmn_action_item,
+                                    :hm_name,
+                                    :hm_content,
+                                    :hm_action_item,
                                     :external_links,
                                     :en_external_rich_links,
                                     :zh_tw_external_rich_links,
                                     :zh_cn_external_rich_links,
                                     :vi_external_rich_links,
-                                    :hmn_external_rich_links,
+                                    :hm_external_rich_links,
                                     :survey_link,
                                     :category,
                                     :archive,
                                     :en_audio,
-                                    :hmn_audio,
+                                    :hm_audio,
                                     :vi_audio,
                                     :zh_tw_audio,
                                     :zh_cn_audio,
                                     :en_audio_purge,
                                     :vi_audio_purge,
-                                    :hmn_audio_purge,
+                                    :hm_audio_purge,
                                     :zh_tw_audio_purge,
                                     :zh_cn_audio_purge,
                                     images: [],
@@ -198,7 +197,7 @@ private
                                     vi_images: [],
                                     zh_tw_images: [],
                                     zh_cn_images: [],
-                                    hmn_images: [],
+                                    hm_images: [],
                                   )
   end
 

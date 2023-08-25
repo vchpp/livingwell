@@ -23,7 +23,7 @@
         match = document.cookie.match(new RegExp(name + '=([^;]+)'));
         if (match) return match[1];
       }
-      var rct = getCookie('rct');
+      var dt = getCookie('dt');
       var locale = getCookie('locale');
       console.log(locale);
     </script>
@@ -84,8 +84,7 @@
                <li>
                  <a href="/<%=params[:locale]%>/resources/faqs"><%= t('navbar.faqs') %></a>
                  <a href="/<%=params[:locale]%>/resources/downloads"><%= t('resources.downloads') %></a>
-                 <a href="/<%=params[:locale]%>/resources/statistics"><%= t('resources.statistics')%></a>
-                 <a href="/<%=params[:locale]%>/resources/externals"><%= t('navbar.external') %></a>
+                 <a href="/<%=params[:locale]%>/resources/additional"><%= t('navbar.additional') %></a>
                  <a href="/<%=params[:locale]%>/resources/healthwise-articles"><%= t('navbar.healthwise') %></a>
                </li>
              </ul>
@@ -96,8 +95,9 @@
                 <li><%= link_to 'English', url_for(locale: :en) %></li>
                 <li><%= link_to '繁體中文', url_for(locale: :zh_TW) %></li>
                 <li><%= link_to '简体中文', url_for(locale: :zh_CN) %></li>
-                <li><%= link_to 'lus hmoob', url_for(locale: :hmn) %></li>
+                <li><%= link_to 'lus hmoob', url_for(locale: :hm) %></li>
                 <li><%= link_to 'Tiếng Việt', url_for(locale: :vi) %></li>
+                <li><%= link_to '한국인', url_for(locale: :kr) %></li>
               </ul>
             </li>
           </ul>
