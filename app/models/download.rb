@@ -10,6 +10,7 @@ class Download < ApplicationRecord
                                          where("zh_cn_title ilike ?", "%#{search}%")).or(
                                          where("vi_title ilike ?", "%#{search}%")).or(
                                          where("kr_title ilike ?", "%#{search}%")).or(
+                                         where("tags ilike ?", "%#{search}%")).or(
                                          where("hm_title ilike ?", "%#{search}%"))
                                        }
 end

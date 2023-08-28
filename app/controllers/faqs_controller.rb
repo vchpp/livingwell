@@ -79,6 +79,6 @@ private
 
   # Only allow a list of trusted parameters through.
   def faq_params
-    params.require(:faq).permit(:en_question, :en_answer, :zh_tw_question, :zh_tw_answer, :zh_cn_question, :zh_cn_answer, :hm_question, :hm_answer, :vi_question, :vi_answer, :kr_question, :kr_answer, :category, :archive, :search, :en_audio, :vi_audio, :zh_tw_audio, :zh_cn_audio, :hm_audio, :kr_audio)
+    params.require(:faq).permit(:en_question, :en_answer, :zh_tw_question, :zh_tw_answer, :zh_cn_question, :zh_cn_answer, :hm_question, :hm_answer, :vi_question, :vi_answer, :kr_question, :kr_answer, :category, :archive, :search, :en_audio, :vi_audio, :zh_tw_audio, :zh_cn_audio, :hm_audio, :kr_audio, :tags)
   end
 end

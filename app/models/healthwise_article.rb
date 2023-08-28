@@ -19,6 +19,7 @@ class HealthwiseArticle < ApplicationRecord
                                         where("zh_tw_title ilike ?", "%#{search}%")).or(
                                         where("vi_title ilike ?", "%#{search}%")).or(
                                         where("kr_title ilike ?", "%#{search}%")).or(
+                                        where("tags ilike ?", "%#{search}%")).or(
                                         where("hm_title ilike ?", "%#{search}%"))
                                         }
   def self.to_csv

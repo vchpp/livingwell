@@ -28,19 +28,25 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] more GA4 tracking points like clicks, engagements
 
-- [] Update Livingwell logo
-
 - [x] add KR controller allowed params
+
+- [x] add tags controller allowed params
+
+- [x] add tags model search methods
+
+- [] be able to order Messages by rank(int), and pin by priority (bool)
+
+- [] Update Livingwell logo in all languages
+
+- [] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
 
 - [] add KR view buttons
 
-- [] add tags controller allowed params
-
 - [] add tags view fields
 
-- [] add tags model search methods
-
 - [] VIEWS add like buttons to FAQs
+
+- [] Heroku console download all profile photos or download from AWS
 
 - [] Profiles - try to migrate from covid-informed site
 
@@ -50,13 +56,7 @@ https://github.com/vchpp/informed-livingwell
 
 - [] Update partner logos (CPR3 and UCSF)
 
-- [] Heroku console download all profile photos or download from AWS
-
 - [] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
-
-- [] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
-
-- [] be able to order Messages by rank(int), and pin by priority (bool)
 
 - [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
 

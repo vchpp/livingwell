@@ -107,6 +107,6 @@ class DownloadsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def download_params
-      params.require(:download).permit(:en_file, :zh_tw_file, :zh_cn_file, :vi_file, :hm_file, :kr_file, :en_title, :zh_tw_title, :zh_cn_title, :vi_title, :hm_title, :kr_title, :category, :archive, :search, :languages)
+      params.require(:download).permit(:en_file, :zh_tw_file, :zh_cn_file, :vi_file, :hm_file, :kr_file, :en_title, :zh_tw_title, :zh_cn_title, :vi_title, :hm_title, :kr_title, :category, :archive, :search, :languages, :tags)
     end
 end

@@ -268,7 +268,7 @@ class HealthwiseArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def healthwise_article_params
-      params.require(:healthwise_article).permit(:hwid, :article_or_topic, :en_title, :en_json, :en_translated, :en_pdf_purge, :zh_tw_title, :zh_tw_json, :zh_tw_translated, :zh_tw_pdf_purge, :zh_cn_title, :zh_cn_json, :zh_cn_translated, :zh_cn_pdf_purge, :vi_title, :vi_json, :vi_translated, :vi_pdf_purge, :hm_title, :hm_json, :hm_translated, :hm_pdf_purge, :kr_title, :kr_json, :kr_translated, :kr_pdf_purge, :en_rich_text, :zh_tw_rich_text, :zh_cn_rich_text, :vi_rich_text, :hm_rich_text, :kr_rich_text, :category, :featured, :archive, :languages, en_pdf: [], zh_tw_pdf: [],  zh_cn_pdf: [], vi_pdf: [], hm_pdf: [], kr_pdf: [])
+      params.require(:healthwise_article).permit(:hwid, :article_or_topic, :en_title, :en_json, :en_translated, :en_pdf_purge, :zh_tw_title, :zh_tw_json, :zh_tw_translated, :zh_tw_pdf_purge, :zh_cn_title, :zh_cn_json, :zh_cn_translated, :zh_cn_pdf_purge, :vi_title, :vi_json, :vi_translated, :vi_pdf_purge, :hm_title, :hm_json, :hm_translated, :hm_pdf_purge, :kr_title, :kr_json, :kr_translated, :kr_pdf_purge, :en_rich_text, :zh_tw_rich_text, :zh_cn_rich_text, :vi_rich_text, :hm_rich_text, :kr_rich_text, :category, :featured, :archive, :languages, en_pdf: [], zh_tw_pdf: [],  zh_cn_pdf: [], vi_pdf: [], hm_pdf: [], kr_pdf: [], :tags)
     end
 
     def set_page

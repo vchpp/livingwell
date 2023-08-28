@@ -188,6 +188,7 @@ private
                                     :kr_external_rich_links,
                                     :survey_link,
                                     :category,
+                                    :tags,
                                     :archive,
                                     :en_audio,
                                     :hm_audio,
@@ -201,13 +202,12 @@ private
                                     :kr_audio_purge,
                                     :zh_tw_audio_purge,
                                     :zh_cn_audio_purge,
-                                    images: [],
                                     en_images: [],
                                     vi_images: [],
                                     zh_tw_images: [],
                                     zh_cn_images: [],
                                     hm_images: [],
-                                    kr_images: [],
+                                    kr_images: []
                                   )
   end
 
