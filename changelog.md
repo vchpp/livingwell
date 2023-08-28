@@ -40,11 +40,11 @@ https://github.com/vchpp/informed-livingwell
 
 - [] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
 
-- [] add KR view buttons
+- [] add KR view buttons (messages done)
 
 - [] add tags view fields
 
-- [] VIEWS add like buttons to FAQs
+- [] VIEWS add like buttons to FAQs - does logic work?
 
 - [] Heroku console download all profile photos or download from AWS
 
@@ -138,7 +138,7 @@ Track user by ID to see total pages they have visited per date
 
 - [ ] `IN PROGRESS` - Refactor Message.images to Message.en_images to reduce code on Messages#Index and Messages#Show
 
-- [ ] Refactor 'External' model to 'Additional'
+- [x] Refactor 'External' model to 'Additional'
 
 - [ ] Searching, Liking, Commenting, and Filtering all AJAX requests
 
@@ -170,7 +170,7 @@ Track user by ID to see total pages they have visited per date
 
 - [x] Filter Messages by category like FAQs or Additional Resources
 
-- [ ] Add search to Messages by adding a hidden field of tags
+- [x] Add search to Messages by adding a hidden field of tags
 
 - [ ] Or Global Search?
 

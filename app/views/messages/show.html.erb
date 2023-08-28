@@ -14,62 +14,14 @@ meta title: "COVID-INFORMED - Message - #{@message.id}",
   </script>
 <% end %>
 
-
-<% case %>
-  <% when params[:locale] == "en" %>
-    <% if @message.en_images.attached? %>
-      <section id="fh5co-testimonial" >
-        <div class="text-center">
-          <% @message.en_images.each do |img| %>
-            <%= image_tag img, class: "img-fluid", :style => "max-width: 100%; height: auto;"%>
-          <% end %>
-        </div>
-      </section>
-    <% end %>
-
-  <% when params[:locale] == "vi" %>
-    <% if @message.vi_images.attached? %>
-      <section id="fh5co-testimonial" >
-        <div class="text-center">
-          <% @message.vi_images.each do |img| %>
-            <%= image_tag img, class: "img-fluid", :style => "max-width: 100%; height: auto;"%>
-          <% end %>
-        </div>
-      </section>
-    <% end %>
-
-  <% when params[:locale] == "zh_CN" %>
-    <% if @message.zh_cn_images.attached? %>
-      <section id="fh5co-testimonial" >
-        <div class="text-center">
-          <% @message.zh_cn_images.each do |img| %>
-            <%= image_tag img, class: "img-fluid", :style => "max-width: 100%; height: auto;"%>
-          <% end %>
-        </div>
-      </section>
-    <% end %>
-
-  <% when params[:locale] == "zh_TW" %>
-    <% if @message.zh_tw_images.attached? %>
-      <section id="fh5co-testimonial" >
-        <div class="text-center">
-          <% @message.zh_tw_images.each do |img| %>
-            <%= image_tag img, class: "img-fluid", :style => "max-width: 100%; height: auto;"%>
-          <% end %>
-        </div>
-      </section>
-    <% end %>
-
-  <% when params[:locale] == "hm" %>
-    <% if @message.hm_images.attached? %>
-      <section id="fh5co-testimonial" >
-        <div class="text-center">
-          <% @message.hm_images.each do |img| %>
-            <%= image_tag img, class: "img-fluid", :style => "max-width: 100%; height: auto;"%>
-          <% end %>
-        </div>
-      </section>
-    <% end %>
+<% if @message.send("#{params[:locale]}_images".downcase).attached? %>
+  <section id="fh5co-testimonial" >
+    <div class="text-center">
+      <% @message.send("#{params[:locale]}_images".downcase).each do |img| %>
+        <%= image_tag img, class: "img-fluid", :style => "max-width: 100%; height: auto;"%>
+      <% end %>
+    </div>
+  </section>
 <% end %>
 
 <section id="fh5co-feature">
