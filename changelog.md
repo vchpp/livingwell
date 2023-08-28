@@ -26,17 +26,31 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] add KR model attributes
 
-- [] add KR controller allowed params
+- [x] more GA4 tracking points like clicks, engagements
+
+- [] Update Livingwell logo
+
+- [x] add KR controller allowed params
 
 - [] add KR view buttons
 
-- [] more GA4 tracking points like clicks, engagements
+- [] add tags controller allowed params
+
+- [] add tags view fields
+
+- [] add tags model search methods
+
+- [] VIEWS add like buttons to FAQs
 
 - [] Profiles - try to migrate from covid-informed site
 
 - [] Profiles - Janice first, Joyce, JiWon
 
 - [] Gate `downloads` and `callouts` behind an admin check
+
+- [] Update partner logos (CPR3 and UCSF)
+
+- [] Heroku console download all profile photos or download from AWS
 
 - [] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
 
@@ -45,8 +59,6 @@ https://github.com/vchpp/informed-livingwell
 - [] be able to order Messages by rank(int), and pin by priority (bool)
 
 - [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
-
-- [] VIEWS add like buttons to FAQs
 
 - [] ability to 'duplicate' a message, sans attachments
 
@@ -68,9 +80,9 @@ What is the path they take after the message?  Internal or External links follow
 
 How do they interact with the website (clicks, comments)
 
-Trial participants (RCT 1- 9999) Data organized by ID, with timestamp of pages visited
+Trial participants (DT 1- 9999) Data organized by ID, with timestamp of pages visited
 
-Track visitors based on whether RCT users actually click the link with audio/downloads/like/message comments
+Track visitors based on whether DT users actually click the link with audio/downloads/like/message comments
 
 Regular visitors total traffic from cities
 
@@ -389,13 +401,13 @@ Google Analytics DataStudio to show direct traffic vs targeted traffic
 
 ### 1-week sprint 11/12 - 11/18
 
-- [x] Make sure RCT cookie visible in GA reports
+- [x] Make sure DT cookie visible in GA reports
 
 - [x] Add archive bool for external resources/messages/profiles/anything else
 
 - [x] Turn pink color into brown from logo
 
-- [x] Surface RCT cookie ID as console log
+- [x] Surface DT cookie ID as console log
 
 - [x] Overwrite cookie priority to always use query string
 
@@ -643,7 +655,7 @@ Link toggle to prevent open in new window
 
 - [x] Fix row bug for Messages, Profiles, etc
 
-- [x] Clickable Message#show links to include RCT ID on dynamically generated link to Redcap survey
+- [x] Clickable Message#show links to include DT ID on dynamically generated link to Redcap survey
 
 - [x] FAQs as model (question, answer(s), links[], category[])
 

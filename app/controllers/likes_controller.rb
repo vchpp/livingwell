@@ -27,8 +27,11 @@ class LikesController < ApplicationController
   # POST /likes or /likes.json
   def create
     @message = Message.friendly.find(params[:message_id]) if params[:message_id].present?
+    @faq = Faq.friendly.find(params[:faq_id]) if params[:faq_id].present?
     @healthwise_article = HealthwiseArticle.friendly.find(params[:healthwise_article_id]) if params[:healthwise_article_id].present?
-    @model = @message || @healthwise_article
+    likes = [@message, @faq, @healthwise_article]
+    @model = likes.reject {|k, v| v.blank?}
+    # @model = @message || @healthwise_article #.reject { |k, v| v.blank? }
     existing_likes = []
     @model.likes.each { |like| existing_likes.push(like.dt)}
     @like = @model.likes.new(like_params)
@@ -83,6 +86,6 @@ class LikesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def like_params
-      params.require(:like).permit(:up, :down, :dt, :message_id, :healthwise_article_id)
+      params.require(:like).permit(:up, :down, :dt, :message_id, :healthwise_article_id, :faq_id)
     end
 end
