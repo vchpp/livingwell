@@ -26,28 +26,28 @@ class LikesController < ApplicationController
 
   # POST /likes or /likes.json
   def create
-    @message = Message.friendly.find(params[:message_id]) if params[:message_id].present?
-    @faq = Faq.friendly.find(params[:faq_id]) if params[:faq_id].present?
-    @healthwise_article = HealthwiseArticle.friendly.find(params[:healthwise_article_id]) if params[:healthwise_article_id].present?
-    likes = [@message, @faq, @healthwise_article]
-    @model = likes.reject {|k, v| v.blank?}
-    # @model = @message || @healthwise_article #.reject { |k, v| v.blank? }
+    @model = Message.friendly.find(params[:message_id]) if params[:message_id].present?
+    @model = Faq.friendly.find(params[:faq_id]) if params[:faq_id].present?
+    @model = HealthwiseArticle.friendly.find(params[:healthwise_article_id]) if params[:healthwise_article_id].present?
     existing_likes = []
     @model.likes.each { |like| existing_likes.push(like.dt)}
     @like = @model.likes.new(like_params)
     @like.dt = cookies[:dt] || '0'
     if existing_likes.include?(@like.dt)
       logger.info "#{params[:dt]} tried to like a message a second time, but was redirected"
-      redirect_to @message if params[:message_id].present?
-      redirect_to @healthwise_article if params[:healthwise_article_id].present?
+      redirect_to @model if params[:message_id].present?
+      redirect_to @model if params[:healthwise_article_id].present?
+      redirect_to @model if params[:faq_id].present?
     else
       respond_to do |format|
         if @like.save
-          format.html { redirect_to @message, notice: "Like was successfully created." } if params[:message_id].present?
-          format.html { redirect_to @healthwise_article, notice: "Like was successfully created." } if params[:healthwise_article_id].present?
-          format.json { render :show, status: :created, location: @message }
-          logger.info "Visitor #{params[:dt]} liked message #{@message.id} with title #{@message.en_name}" if params[:message_id].present?
-          logger.info "Visitor #{params[:dt]} liked healthwise article #{@healthwise_article.id} with title #{@healthwise_article.en_title}" if params[:healthwise_article_id].present?
+          format.html { redirect_to @model, notice: "Like was successfully created." } if params[:message_id].present?
+          format.html { redirect_to @model, notice: "Like was successfully created." } if params[:healthwise_article_id].present?
+          format.html { redirect_to @model, notice: "Like was successfully created." } if params[:faq_id].present?
+          format.json { render :show, status: :created, location: @model }
+          logger.info "Visitor #{params[:dt]} liked message #{@model.id} with title #{@model.en_name}" if params[:message_id].present?
+          logger.info "Visitor #{params[:dt]} liked healthwise article #{@model.id} with title #{@model.en_title}" if params[:healthwise_article_id].present?
+          logger.info "Visitor #{params[:dt]} liked FAQ #{@model.id} with title #{@model.en_question}" if params[:faq_id].present?
         else
           format.html { render :new, status: :unprocessable_entity }
           format.json { render json: @like.errors, status: :unprocessable_entity }
