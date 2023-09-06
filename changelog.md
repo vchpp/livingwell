@@ -10,7 +10,7 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] add KR database field migrations
 
-- [x] shift `hm` locale to `hm`
+- [x] shift `hmn` locale to `hm`
 
 - [x] shift `external` resources to `additional`
 
@@ -32,17 +32,21 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] add tags controller allowed params
 
-- [x] add tags model search methods
+- [x] add tags view fields 
 
-- [] be able to order Messages by rank(int), and pin by priority (bool)
+- [x] be able to order Messages by rank(int), and pin by featured (bool)
+
+- [] add tags model search methods
+
+- [] add view forms to be able to order Messages by rank(int), and pin by featured (bool)
 
 - [] Update Livingwell logo in all languages
 
 - [] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
 
-- [] add KR view buttons (messages done)
+- [] CONTROLLER filter logic for new categories
 
-- [] add tags view fields
+- [] VIEWS add KR edit buttons (messages done)
 
 - [] VIEWS add like buttons to FAQs - does logic work?
 
@@ -136,7 +140,7 @@ Track user by ID to see total pages they have visited per date
 
 - [ ] STRETCH - Move Callout arrows to `ti-angle-right` `ti-angle-left`
 
-- [ ] `IN PROGRESS` - Refactor Message.images to Message.en_images to reduce code on Messages#Index and Messages#Show
+- [x] Refactor Message.images to Message.en_images to reduce code on Messages#Index and Messages#Show
 
 - [x] Refactor 'External' model to 'Additional'
 

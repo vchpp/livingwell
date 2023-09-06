@@ -33,7 +33,7 @@ meta title: "COVID-INFORMED - Additional Resources",
       <div class="col-md-10 col-md-offset-1">
         <div class="col-md-12">
           <label for="faq" class="sr-only"><%= t('resources.additional.search')%></label>
-          <form id="search" method="GET" action="/<%=params[:locale]%>/resources/additionals" >
+          <form id="search" method="GET" action="/<%=params[:locale]%>/resources/additional" >
             <div class="col-md-8 form-group">
               <input class="form-control input-lg" type="text" id="search" name="search" placeholder="<%= t('resources.additional.search_for_resources')%>">
             </div>
@@ -43,7 +43,7 @@ meta title: "COVID-INFORMED - Additional Resources",
               </button>
             </div>
           </form>
-          <form id="reset" method="GET" action="/<%=params[:locale]%>/resources/additionals" >
+          <form id="reset" method="GET" action="/<%=params[:locale]%>/resources/additional" >
             <div class="col-md-2 form-group">
               <input class="form-control btn btn-primary" type="submit" value="<%= t('resources.additional.all')%>">
             </div>
@@ -53,7 +53,7 @@ meta title: "COVID-INFORMED - Additional Resources",
         <div class="col-md-10 col-md-offset-1">
           <div class="form-group">
             <label for="faq" class="sr-only">Filter by County</label>
-            <form id="category" method="GET" action="/<%=params[:locale]%>/resources/additionals" >
+            <form id="category" method="GET" action="/<%=params[:locale]%>/resources/additional" >
               <select class="form-control input-lg" name="search" id="category-form">
                 <option value="">All</option>
                 <option value="San Francisco">San Francisco</option>
@@ -117,6 +117,7 @@ meta title: "COVID-INFORMED - Additional Resources",
             <th>En notes</th>
             <th>Category</th>
             <th>Languages</th>
+            <th>Tags</th>
             <th>Last version date</th>
             <th>Featured?</th>
             <th>Archived?</th>
@@ -133,6 +134,7 @@ meta title: "COVID-INFORMED - Additional Resources",
               <td><%= additional.en_notes %></td>
               <td><%= additional.category %></td>
               <td><%= additional.languages %></td>
+              <td><%= additional.tags %></td>
               <td><%= additional.last_version_date %></td>
               <td><%= additional.featured %></td>
               <td><%= additional.archive %></td>

@@ -32,7 +32,7 @@ class FaqsController < ApplicationController
   # POST /faqs or /faqs.json
   def create
     @faq = Faq.new(faq_params)
-
+    @faq[:tags] = params[:faq][:tags].first.split("\r\n").map(&:strip)
     respond_to do |format|
       if @faq.save
         format.html { redirect_to @faq, notice: "Faq was successfully created." }
@@ -48,6 +48,7 @@ class FaqsController < ApplicationController
 
   # PATCH/PUT /faqs/1 or /faqs/1.json
   def update
+    @faq[:tags] = params[:faq][:tags].first.split("\r\n").map(&:strip)
     respond_to do |format|
       if @faq.update(faq_params)
         format.html { redirect_to @faq, notice: "Faq was successfully updated." }

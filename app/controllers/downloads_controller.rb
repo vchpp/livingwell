@@ -48,6 +48,7 @@ class DownloadsController < ApplicationController
     @download.hm_file.attach(params[:download][:hm_file]) if params[:hm_file].present?
     @download.kr_file.attach(params[:download][:kr_file]) if params[:kr_file].present?
     @download[:languages] = params[:download][:languages].first.split("\r\n").map(&:strip)
+    @download[:tags] = params[:download][:tags].first.split("\r\n").map(&:strip)
     respond_to do |format|
       if @download.save
         format.html { redirect_to @download, notice: "Download was successfully created." }
@@ -70,6 +71,7 @@ class DownloadsController < ApplicationController
     @download.hm_file.purge if params[:hm_file].present?
     @download.kr_file.purge if params[:kr_file].present?
     @download[:languages] = params[:download][:languages].first.split("\r\n").map(&:strip)
+    @download[:tags] = params[:download][:tags].first.split("\r\n").map(&:strip)
     respond_to do |format|
       if @download.update(download_params)
         format.html { redirect_to @download, notice: "Download was successfully updated." }

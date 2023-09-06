@@ -27,7 +27,6 @@ class Faq < ApplicationRecord
                                          where("zh_cn_question ilike ?", "%#{search}%")).or(
                                          where("vi_question ilike ?", "%#{search}%")).or(
                                          where("kr_question ilike ?", "%#{search}%")).or(
-                                         where("tags ilike ?", "%#{search}%")).or(
                                          where("hm_question ilike ?", "%#{search}%")).uniq
                                        }
 end

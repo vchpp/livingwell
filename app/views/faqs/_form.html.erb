@@ -43,21 +43,19 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-12">
-                  <div class="field form-group">
-                    <% if @faq.en_audio.attached? %>
-                      <div class="col-md-12 text-center">
-                        <%= audio_tag url_for(@faq.en_audio), controls: true %>
-                      </div>
-                    <% end %>
-                    <br>
-                    <%= form.label :en_audio %> <b> | All audio must be in .wav or .mp3 format.</b>
-                    <%= form.file_field :en_audio, direct_upload: true, class: "form-control input-lg" %>
-                    <% if @faq.en_audio.attached? %>
-                      <%= label_tag(:en_audio_purge, "Delete en_audio?") %>
-                      <%= check_box_tag(:en_audio_purge) %>
-                    <% end %>
-                  </div>
+                <div class="field form-group">
+                  <% if @faq.en_audio.attached? %>
+                    <div class="col-md-12 text-center">
+                      <%= audio_tag url_for(@faq.en_audio), controls: true %>
+                    </div>
+                  <% end %>
+                  <br>
+                  <%= form.label :en_audio %> <b> | All audio must be in .wav or .mp3 format.</b>
+                  <%= form.file_field :en_audio, direct_upload: true, class: "form-control input-lg" %>
+                  <% if @faq.en_audio.attached? %>
+                    <%= label_tag(:en_audio_purge, "Delete en_audio?") %>
+                    <%= check_box_tag(:en_audio_purge) %>
+                  <% end %>
                 </div>
               </div>
 
@@ -77,21 +75,19 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-12">
-                  <div class="field form-group">
-                    <% if @faq.zh_tw_audio.attached? %>
-                      <div class="col-md-12 text-center">
-                        <%= audio_tag url_for(@faq.zh_tw_audio), controls: true %>
-                      </div>
-                    <% end %>
-                    <br>
-                    <%= form.label :zh_tw_audio %> <b>| Cantonese audio only.  All audio must be in .wav or .mp3 format.</b>
-                    <%= form.file_field :zh_tw_audio, direct_upload: true, class: "form-control input-lg" %>
-                    <% if @faq.zh_tw_audio.attached? %>
-                      <%= label_tag(:zh_tw_audio_purge, "Delete zh_tw_audio?") %>
-                      <%= check_box_tag(:zh_tw_audio_purge) %>
-                    <% end %>
-                  </div>
+                <div class="field form-group">
+                  <% if @faq.zh_tw_audio.attached? %>
+                    <div class="col-md-12 text-center">
+                      <%= audio_tag url_for(@faq.zh_tw_audio), controls: true %>
+                    </div>
+                  <% end %>
+                  <br>
+                  <%= form.label :zh_tw_audio %> <b>| Cantonese audio only.  All audio must be in .wav or .mp3 format.</b>
+                  <%= form.file_field :zh_tw_audio, direct_upload: true, class: "form-control input-lg" %>
+                  <% if @faq.zh_tw_audio.attached? %>
+                    <%= label_tag(:zh_tw_audio_purge, "Delete zh_tw_audio?") %>
+                    <%= check_box_tag(:zh_tw_audio_purge) %>
+                  <% end %>
                 </div>
               </div>
 
@@ -111,21 +107,19 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-12">
-                  <div class="field form-group">
-                    <% if @faq.zh_cn_audio.attached? %>
-                      <div class="col-md-12 text-center">
-                        <%= audio_tag url_for(@faq.zh_cn_audio), controls: true %>
-                      </div>
-                    <% end %>
-                    <br>
-                    <%= form.label :zh_cn_audio %> <b>| Mandarin audio only.  All audio must be in .wav or .mp3 format.</b>
-                    <%= form.file_field :zh_cn_audio, direct_upload: true, class: "form-control input-lg" %>
-                    <% if @faq.zh_cn_audio.attached? %>
-                      <%= label_tag(:zh_cn_audio_purge, "Delete zh_cn_audio?") %>
-                      <%= check_box_tag(:zh_cn_audio_purge) %>
-                    <% end %>
-                  </div>
+                <div class="field form-group">
+                  <% if @faq.zh_cn_audio.attached? %>
+                    <div class="col-md-12 text-center">
+                      <%= audio_tag url_for(@faq.zh_cn_audio), controls: true %>
+                    </div>
+                  <% end %>
+                  <br>
+                  <%= form.label :zh_cn_audio %> <b>| Mandarin audio only.  All audio must be in .wav or .mp3 format.</b>
+                  <%= form.file_field :zh_cn_audio, direct_upload: true, class: "form-control input-lg" %>
+                  <% if @faq.zh_cn_audio.attached? %>
+                    <%= label_tag(:zh_cn_audio_purge, "Delete zh_cn_audio?") %>
+                    <%= check_box_tag(:zh_cn_audio_purge) %>
+                  <% end %>
                 </div>
               </div>
 
@@ -145,21 +139,19 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-12">
-                  <div class="field form-group">
-                    <% if @faq.hm_audio.attached? %>
-                      <div class="col-md-12 text-center">
-                        <%= audio_tag url_for(@faq.hm_audio), controls: true %>
-                      </div>
-                    <% end %>
-                    <br>
-                    <%= form.label :hm_audio %> <b>| All audio must be in .wav or .mp3 format.</b>
-                    <%= form.file_field :hm_audio, direct_upload: true, class: "form-control input-lg" %>
-                    <% if @faq.hm_audio.attached? %>
-                      <%= label_tag(:hm_audio_purge, "Delete hm_audio?") %>
-                      <%= check_box_tag(:hm_audio_purge) %>
-                    <% end %>
-                  </div>
+                <div class="field form-group">
+                  <% if @faq.hm_audio.attached? %>
+                    <div class="col-md-12 text-center">
+                      <%= audio_tag url_for(@faq.hm_audio), controls: true %>
+                    </div>
+                  <% end %>
+                  <br>
+                  <%= form.label :hm_audio %> <b>| All audio must be in .wav or .mp3 format.</b>
+                  <%= form.file_field :hm_audio, direct_upload: true, class: "form-control input-lg" %>
+                  <% if @faq.hm_audio.attached? %>
+                    <%= label_tag(:hm_audio_purge, "Delete hm_audio?") %>
+                    <%= check_box_tag(:hm_audio_purge) %>
+                  <% end %>
                 </div>
               </div>
 
@@ -179,7 +171,6 @@
                     </div>
                   </div>
                 </div>
-              <div class="col-md-12">
                 <div class="field form-group">
                   <% if @faq.vi_audio.attached? %>
                     <div class="col-md-12 text-center">
@@ -194,29 +185,35 @@
                     <%= check_box_tag(:vi_audio_purge) %>
                   <% end %>
                 </div>
-              </div>
             </div>
           </div>
 
-            <div class="col-md-12">
-              <div class="field form-group">
-                <%= form.label :category %>
-                <%= form.select :category, ["General", "Testing", "Vaccination", "Other"], class: 'form-control input-lg' %>
-              </div>
+          <div class="col-md-8 col-md-offset-2">
+            <div class="field form-group">
+              <%= form.label :tags %> Separate each tag with a new line
+              <%= form.text_area :tags, name: 'healthwise_article[tags][]', size: '70x5', class: 'form-control input-lg', placeholder: "cope with loss\nself-care\ntrigger warning\ndepression", value: form.object.tags.join("\n") %>
             </div>
-            <div class="col-md-12">
-              <div class="field form-group">
-                <%= form.label :archive? %>
-                <%= form.check_box :archive %>
-              </div>
+          </div>
+          
+          <div class="col-md-12">
+            <div class="field form-group">
+              <%= form.label :category %>
+              <%= form.select :category, ["General", "Testing", "Vaccination", "Other"], class: 'form-control input-lg' %>
             </div>
+          </div>
+          <div class="col-md-12">
+            <div class="field form-group">
+              <%= form.label :archive? %>
+              <%= form.check_box :archive %>
+            </div>
+          </div>
 
-            <div class="col-md-8 col-md-offset-2">
-              <div class="actions">
-                <%= form.submit class: "btn btn-primary btn-lg btn-block"%>
-                <%= link_to 'Back', faqs_path, class: "btn btn-primary btn-lg btn-block" %>
-              </div>
+          <div class="col-md-8 col-md-offset-2">
+            <div class="actions">
+              <%= form.submit class: "btn btn-primary btn-lg btn-block"%>
+              <%= link_to 'Back', faqs_path, class: "btn btn-primary btn-lg btn-block" %>
             </div>
+          </div>
 
           </div>
 

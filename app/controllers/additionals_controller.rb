@@ -47,6 +47,7 @@ class AdditionalsController < ApplicationController
   def create
     @additional = Additional.new(additional_params)
     @additional[:languages] = params[:additional][:languages].first.split("\r\n").map(&:strip)
+    @additional[:tags] = params[:additional][:tags].first.split("\r\n").map(&:strip)
 
     respond_to do |format|
       if @additional.save
@@ -64,6 +65,7 @@ class AdditionalsController < ApplicationController
   # PATCH/PUT /additionals/1 or /additionals/1.json
   def update
     @additional[:languages] = params[:additional][:languages].first.split("\r\n").map(&:strip)
+    @additional[:tags] = params[:additional][:tags].first.split("\r\n").map(&:strip)
     respond_to do |format|
       if @additional.update(additional_params)
         format.html { redirect_to @additional, notice: "Additional was successfully updated." }

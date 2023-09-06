@@ -94,6 +94,7 @@ class HealthwiseArticlesController < ApplicationController
 
     backfill_english_json
     set_simplified_chinese
+    @healthwise_article[:tags] = params[:healthwise_article][:tags].first.split("\r\n").map(&:strip)
 
     # save
     respond_to do |format|
@@ -118,6 +119,7 @@ class HealthwiseArticlesController < ApplicationController
     @healthwise_article.en_pdf.purge if params[:en_pdf].present? || params[:en_pdf_purge].present?
     @healthwise_article.zh_tw_pdf.purge if params[:zh_tw_pdf].present? || params[:zh_tw_pdf_purge].present?
     @healthwise_article.zh_cn_pdf.purge if params[:zh_cn_pdf].present? || params[:zh_cn_pdf_purge].present?
+    @healthwise_article[:tags] = params[:healthwise_article][:tags].first.split("\r\n").map(&:strip)
     respond_to do |format|
       if @healthwise_article.update(healthwise_article_params)
         logger.warn healthwise_article_params
@@ -203,87 +205,87 @@ class HealthwiseArticlesController < ApplicationController
 
   require "rest-client"
 
-    def fetch_hw_token
-      Rails.cache.fetch("/healthwise_api_token", expires_in: 1.day) do
-        url = ENV['HEALTHWISE_AUTH_URL'] + "/oauth2/token"
-        response = RestClient::Request.execute(
-          method: :post,
-          url: url,
-          user: ENV['HEALTHWISE_CLIENT_ID'],
-          password: ENV['HEALTHWISE_CLIENT_SECRET'],
-          payload: "grant_type=client_credentials&scope=*"
-        )
-        JSON.parse(response.body)["access_token"]
-      end
+  def fetch_hw_token
+    Rails.cache.fetch("/healthwise_api_token", expires_in: 1.day) do
+      url = ENV['HEALTHWISE_AUTH_URL'] + "/oauth2/token"
+      response = RestClient::Request.execute(
+        method: :post,
+        url: url,
+        user: ENV['HEALTHWISE_CLIENT_ID'],
+        password: ENV['HEALTHWISE_CLIENT_SECRET'],
+        payload: "grant_type=client_credentials&scope=*"
+      )
+      JSON.parse(response.body)["access_token"]
     end
-    
-    def fetch_languages(type, hwid)
-      token = fetch_hw_token
-      logger.warn("#{token}")
-      url = ENV['HEALTHWISE_CONTENT_URL'] + "/#{type}s/#{hwid}"
+  end
+  
+  def fetch_languages(type, hwid)
+    token = fetch_hw_token
+    logger.warn("#{token}")
+    url = ENV['HEALTHWISE_CONTENT_URL'] + "/#{type}s/#{hwid}"
+    response = RestClient.get url, { "Authorization": "Bearer #{token}", "X-HW-Version": "1", "Accept": "application/json"}
+    # iterate over json hash to match for available locales #
+    languages = []
+    JSON.parse(response)['links']['localizations'].map {|l| languages << l[0] if l[0].match(LOCALES)}
+    # return an array
+    return languages.uniq
+  end
+
+  def fetch_article(type, hwid, language)
+    token = fetch_hw_token
+    url = ENV['HEALTHWISE_CONTENT_URL'] + "/#{type}s/#{hwid}/#{language}"
+    begin
       response = RestClient.get url, { "Authorization": "Bearer #{token}", "X-HW-Version": "1", "Accept": "application/json"}
-      # iterate over json hash to match for available locales #
-      languages = []
-      JSON.parse(response)['links']['localizations'].map {|l| languages << l[0] if l[0].match(LOCALES)}
-      # return an array
-      return languages.uniq
+    rescue => e
+      e.response
+      response = nil
     end
+  end
 
-    def fetch_article(type, hwid, language)
-      token = fetch_hw_token
-      url = ENV['HEALTHWISE_CONTENT_URL'] + "/#{type}s/#{hwid}/#{language}"
-      begin
-        response = RestClient.get url, { "Authorization": "Bearer #{token}", "X-HW-Version": "1", "Accept": "application/json"}
-      rescue => e
-        e.response
-        response = nil
-      end
-    end
+  def set_simplified_chinese
+    @healthwise_article.zh_cn_json = @healthwise_article.zh_tw_json if @healthwise_article.zh_tw_json.present?
+    @healthwise_article.zh_cn_title = @healthwise_article.zh_tw_title if @healthwise_article.zh_tw_title.present?
+  end
 
-    def set_simplified_chinese
-      @healthwise_article.zh_cn_json = @healthwise_article.zh_tw_json if @healthwise_article.zh_tw_json.present?
-      @healthwise_article.zh_cn_title = @healthwise_article.zh_tw_title if @healthwise_article.zh_tw_title.present?
-    end
-
-    def backfill_english_json # used in create/upgrade
-      # compare @healthwise_article.languages against CI_LOCALE to find missing languages
-      CI_LOCALE.each do |key, value|
-        if not @healthwise_article.languages.include?(key)
-          # overwrite english title and json onto missing languages
-          @healthwise_article.send("#{value}_json=".downcase, @healthwise_article.en_json)
-          # set titles
-          if @healthwise_article.article_or_topic == "Article"
-            @healthwise_article.send("#{value}_title=".downcase, @healthwise_article.en_json["data"]["title"]["consumer"])
-          else
-            @healthwise_article.send("#{value}_title=".downcase, @healthwise_article.en_json["data"]["topics"][0]["title"]["consumer"])
-          end
+  def backfill_english_json # used in create/upgrade
+    # compare @healthwise_article.languages against CI_LOCALE to find missing languages
+    CI_LOCALE.each do |key, value|
+      if not @healthwise_article.languages.include?(key)
+        # overwrite english title and json onto missing languages
+        @healthwise_article.send("#{value}_json=".downcase, @healthwise_article.en_json)
+        # set titles
+        if @healthwise_article.article_or_topic == "Article"
+          @healthwise_article.send("#{value}_title=".downcase, @healthwise_article.en_json["data"]["title"]["consumer"])
+        else
+          @healthwise_article.send("#{value}_title=".downcase, @healthwise_article.en_json["data"]["topics"][0]["title"]["consumer"])
         end
       end
     end
+  end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_healthwise_article
-      @healthwise_article = HealthwiseArticle.friendly.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_healthwise_article
+    @healthwise_article = HealthwiseArticle.friendly.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def healthwise_article_params
-      params.require(:healthwise_article).permit(:hwid, :article_or_topic, :en_title, :en_json, :en_translated, :en_pdf_purge, :zh_tw_title, :zh_tw_json, :zh_tw_translated, :zh_tw_pdf_purge, :zh_cn_title, :zh_cn_json, :zh_cn_translated, :zh_cn_pdf_purge, :vi_title, :vi_json, :vi_translated, :vi_pdf_purge, :hm_title, :hm_json, :hm_translated, :hm_pdf_purge, :kr_title, :kr_json, :kr_translated, :kr_pdf_purge, :en_rich_text, :zh_tw_rich_text, :zh_cn_rich_text, :vi_rich_text, :hm_rich_text, :kr_rich_text, :category, :featured, :archive, :languages, :tags, en_pdf: [], zh_tw_pdf: [],  zh_cn_pdf: [], vi_pdf: [], hm_pdf: [], kr_pdf: [])
-    end
+  # Only allow a list of trusted parameters through.
+  def healthwise_article_params
+    params.require(:healthwise_article).permit(:hwid, :article_or_topic, :en_title, :en_json, :en_translated, :en_pdf_purge, :zh_tw_title, :zh_tw_json, :zh_tw_translated, :zh_tw_pdf_purge, :zh_cn_title, :zh_cn_json, :zh_cn_translated, :zh_cn_pdf_purge, :vi_title, :vi_json, :vi_translated, :vi_pdf_purge, :hm_title, :hm_json, :hm_translated, :hm_pdf_purge, :kr_title, :kr_json, :kr_translated, :kr_pdf_purge, :en_rich_text, :zh_tw_rich_text, :zh_cn_rich_text, :vi_rich_text, :hm_rich_text, :kr_rich_text, :category, :featured, :archive, :languages, :tags, en_pdf: [], zh_tw_pdf: [],  zh_cn_pdf: [], vi_pdf: [], hm_pdf: [], kr_pdf: [])
+  end
 
-    def set_page
-      @page = params[:page] || 1
-    end
+  def set_page
+    @page = params[:page] || 1
+  end
 
-    def up_likes
-      likes = @healthwise_article.likes.all
-      up = likes.map do |like| like.up end
-      @up_likes = up.map(&:to_i).reduce(0, :+)
-    end
+  def up_likes
+    likes = @healthwise_article.likes.all
+    up = likes.map do |like| like.up end
+    @up_likes = up.map(&:to_i).reduce(0, :+)
+  end
 
-    def down_likes
-      likes = @healthwise_article.likes.all
-      down = likes.map do |like| like.down end
-      @down_likes = down.map(&:to_i).reduce(0, :+)
-    end
+  def down_likes
+    likes = @healthwise_article.likes.all
+    down = likes.map do |like| like.down end
+    @down_likes = down.map(&:to_i).reduce(0, :+)
+  end
 end
