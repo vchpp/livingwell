@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_19_055713) do
+ActiveRecord::Schema.define(version: 2023_09_06_041826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -288,6 +288,8 @@ ActiveRecord::Schema.define(version: 2022_07_19_055713) do
     t.string "kr_external_rich_links"
     t.string "category", default: "general"
     t.boolean "archive", default: false
+    t.boolean "featured", default: false
+    t.integer "priority"
     t.index ["slug"], name: "index_messages_on_slug", unique: true
   end
 
