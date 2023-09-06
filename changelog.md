@@ -10,7 +10,7 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] add KR database field migrations
 
-- [x] shift `hm` locale to `hm`
+- [x] shift `hmn` locale to `hm`
 
 - [x] shift `external` resources to `additional`
 
@@ -24,13 +24,33 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] Add `tags` to every resource for search hits
 
-- [] add KR model attributes
+- [x] add KR model attributes
 
-- [] add KR controller logic
+- [x] more GA4 tracking points like clicks, engagements
 
-- [] add KR view buttons
+- [x] add KR controller allowed params
 
-- [] more GA4 tracking points like clicks, engagements
+- [x] add tags controller allowed params
+
+- [x] add tags view fields 
+
+- [x] be able to order Messages by rank(int), and pin by featured (bool)
+
+- [] add tags model search methods
+
+- [] add view forms to be able to order Messages by rank(int), and pin by featured (bool)
+
+- [] Update Livingwell logo in all languages
+
+- [] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
+
+- [] CONTROLLER filter logic for new categories
+
+- [] VIEWS add KR edit buttons (messages done)
+
+- [] VIEWS add like buttons to FAQs - does logic work?
+
+- [] Heroku console download all profile photos or download from AWS
 
 - [] Profiles - try to migrate from covid-informed site
 
@@ -38,15 +58,11 @@ https://github.com/vchpp/informed-livingwell
 
 - [] Gate `downloads` and `callouts` behind an admin check
 
+- [] Update partner logos (CPR3 and UCSF)
+
 - [] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
 
-- [] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
-
-- [] be able to order Messages by rank(int), and pin by priority (bool)
-
 - [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
-
-- [] VIEWS add like buttons to FAQs
 
 - [] ability to 'duplicate' a message, sans attachments
 
@@ -68,9 +84,9 @@ What is the path they take after the message?  Internal or External links follow
 
 How do they interact with the website (clicks, comments)
 
-Trial participants (RCT 1- 9999) Data organized by ID, with timestamp of pages visited
+Trial participants (DT 1- 9999) Data organized by ID, with timestamp of pages visited
 
-Track visitors based on whether RCT users actually click the link with audio/downloads/like/message comments
+Track visitors based on whether DT users actually click the link with audio/downloads/like/message comments
 
 Regular visitors total traffic from cities
 
@@ -124,9 +140,9 @@ Track user by ID to see total pages they have visited per date
 
 - [ ] STRETCH - Move Callout arrows to `ti-angle-right` `ti-angle-left`
 
-- [ ] `IN PROGRESS` - Refactor Message.images to Message.en_images to reduce code on Messages#Index and Messages#Show
+- [x] Refactor Message.images to Message.en_images to reduce code on Messages#Index and Messages#Show
 
-- [ ] Refactor 'External' model to 'Additional'
+- [x] Refactor 'External' model to 'Additional'
 
 - [ ] Searching, Liking, Commenting, and Filtering all AJAX requests
 
@@ -158,7 +174,7 @@ Track user by ID to see total pages they have visited per date
 
 - [x] Filter Messages by category like FAQs or Additional Resources
 
-- [ ] Add search to Messages by adding a hidden field of tags
+- [x] Add search to Messages by adding a hidden field of tags
 
 - [ ] Or Global Search?
 
@@ -389,13 +405,13 @@ Google Analytics DataStudio to show direct traffic vs targeted traffic
 
 ### 1-week sprint 11/12 - 11/18
 
-- [x] Make sure RCT cookie visible in GA reports
+- [x] Make sure DT cookie visible in GA reports
 
 - [x] Add archive bool for external resources/messages/profiles/anything else
 
 - [x] Turn pink color into brown from logo
 
-- [x] Surface RCT cookie ID as console log
+- [x] Surface DT cookie ID as console log
 
 - [x] Overwrite cookie priority to always use query string
 
@@ -643,7 +659,7 @@ Link toggle to prevent open in new window
 
 - [x] Fix row bug for Messages, Profiles, etc
 
-- [x] Clickable Message#show links to include RCT ID on dynamically generated link to Redcap survey
+- [x] Clickable Message#show links to include DT ID on dynamically generated link to Redcap survey
 
 - [x] FAQs as model (question, answer(s), links[], category[])
 

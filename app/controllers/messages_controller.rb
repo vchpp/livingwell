@@ -65,15 +65,17 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message[:external_links] = params[:message][:external_links].first.split("\r\n").map(&:strip) if params[:message][:external_links].present?
-    @message.images.attach(params[:message][:images]) if params[:images].present?
+    @message[:tags] = params[:message][:tags].first.split("\r\n").map(&:strip)
     @message.en_images.attach(params[:message][:en_images]) if params[:en_images].present?
     @message.vi_images.attach(params[:message][:vi_images]) if params[:vi_images].present?
     @message.zh_cn_images.attach(params[:message][:zh_cn_images]) if params[:zh_cn_images].present?
     @message.zh_tw_images.attach(params[:message][:zh_tw_images]) if params[:zh_tw_images].present?
     @message.hm_images.attach(params[:message][:hm_images]) if params[:hm_images].present?
+    @message.kr_images.attach(params[:message][:kr_images]) if params[:kr_images].present?
     @message.hm_audio.attach(params[:message][:hm_audio]) if params[:hm_audio].present?
     @message.en_audio.attach(params[:message][:en_audio]) if params[:en_audio].present?
     @message.vi_audio.attach(params[:message][:vi_audio]) if params[:vi_audio].present?
+    @message.kr_audio.attach(params[:message][:kr_audio]) if params[:kr_audio].present?
     @message.zh_tw_audio.attach(params[:message][:zh_tw_audio]) if params[:zh_tw_audio].present?
     @message.zh_cn_audio.attach(params[:message][:zh_cn_audio]) if params[:zh_cn_audio].present?
 
@@ -93,13 +95,15 @@ class MessagesController < ApplicationController
   # PATCH/PUT /messages/1 or /messages/1.json
   def update
     @message[:external_links] = params[:message][:external_links].first.split("\r\n").map(&:strip) if params[:message][:external_links].present?
-    @message.images.purge if params[:images].present?
+    @message[:tags] = params[:message][:tags].first.split("\r\n").map(&:strip)
     @message.en_images.purge if params[:en_images].present?
     @message.zh_tw_images.purge if params[:zh_tw_images].present?
     @message.zh_cn_images.purge if params[:zh_cn_images].present?
     @message.vi_images.purge if params[:vi_images].present?
     @message.hm_images.purge if params[:hm_images].present?
+    @message.kr_images.purge if params[:kr_images].present?
     @message.hm_audio.purge if params[:hm_audio].present? || params[:hm_audio_purge].present?
+    @message.kr_audio.purge if params[:kr_audio].present? || params[:kr_audio_purge].present?
     @message.vi_audio.purge if params[:vi_audio].present? || params[:vi_audio_purge].present?
     @message.en_audio.purge if params[:en_audio].present? || params[:en_audio_purge].present?
     @message.zh_tw_audio.purge if params[:zh_tw_audio].present? || params[:zh_tw_audio_purge].present?
@@ -119,13 +123,14 @@ class MessagesController < ApplicationController
 
   # DELETE /messages/1 or /messages/1.json
   def destroy
-    @message.images.purge
     @message.en_images.purge
     @message.zh_tw_images.purge
     @message.zh_cn_images.purge
     @message.vi_images.purge
     @message.hm_images.purge
+    @message.kr_images.purge
     @message.hm_audio.purge
+    @message.kr_audio.purge
     @message.vi_audio.purge
     @message.en_audio.purge
     @message.zh_tw_audio.purge
@@ -173,31 +178,38 @@ private
                                     :hm_name,
                                     :hm_content,
                                     :hm_action_item,
+                                    :kr_name,
+                                    :kr_content,
+                                    :kr_action_item,
                                     :external_links,
                                     :en_external_rich_links,
                                     :zh_tw_external_rich_links,
                                     :zh_cn_external_rich_links,
                                     :vi_external_rich_links,
                                     :hm_external_rich_links,
+                                    :kr_external_rich_links,
                                     :survey_link,
                                     :category,
+                                    :tags,
                                     :archive,
                                     :en_audio,
                                     :hm_audio,
                                     :vi_audio,
+                                    :kr_audio,
                                     :zh_tw_audio,
                                     :zh_cn_audio,
                                     :en_audio_purge,
                                     :vi_audio_purge,
                                     :hm_audio_purge,
+                                    :kr_audio_purge,
                                     :zh_tw_audio_purge,
                                     :zh_cn_audio_purge,
-                                    images: [],
                                     en_images: [],
                                     vi_images: [],
                                     zh_tw_images: [],
                                     zh_cn_images: [],
                                     hm_images: [],
+                                    kr_images: []
                                   )
   end
 

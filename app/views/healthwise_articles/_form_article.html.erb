@@ -54,12 +54,20 @@
             </div>
           </div>
 
-          <div class="col-md-4 col-md-offset-4">
+          <div class="col-md-8 col-md-offset-2">
             <div class="field form-group">
               <%= form.label :languages %> must be en-us / zh-us / hm-us / vi-us
               <%= form.text_area :languages, name: 'healthwise_article[languages][]', size: '70x5', class: 'form-control input-lg', value: form.object.languages.join("\n") %>
             </div>
           </div>
+
+          <div class="col-md-8 col-md-offset-2">
+            <div class="field form-group">
+              <%= form.label :tags %> Separate each tag with a new line
+              <%= form.text_area :tags, name: 'healthwise_article[tags][]', size: '70x5', class: 'form-control input-lg', placeholder: "cope with loss\nself-care\ntrigger warning\ndepression", value: form.object.tags.join("\n") %>
+            </div>
+          </div>
+
           <ul class="resp-tabs-list hor_1">
             <li> English (en)</li>
             <li> Chinese Traditional (zh_tw)</li>

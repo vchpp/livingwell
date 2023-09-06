@@ -24,6 +24,7 @@
             <li> Chinese Simplified (zh_cn)</li>
             <li> Hmong (hm)</li>
             <li> Vietnamese (vi)</li>
+            <li> Korean (kr)</li>
           </ul>
           <div class="resp-tabs-container hor_1">
             <div>
@@ -58,31 +59,16 @@
 
                 <div class="col-md-12">
                   <div class="field form-group">
-                    <% if @message.images.attached? %>
-                      <% @message.images.each do |img| %>
-                        <%= image_tag img.variant(resize_to_limit: [100, 100]), class: "img-fluid" %>
-                      <% end %>
-                    <% end %>
-                    <br>
-                    <%= form.label :en_images %>
-                    <%= form.file_field :images, multiple: true, direct_upload: true, class: "form-control input-lg" %>
-                  </div>
-                </div>
-
-                <% if current_user.email == "justincadburywong@gmail.com" %>
-                <div class="col-md-12">
-                  <div class="field form-group">
                     <% if @message.en_images.attached? %>
                       <% @message.en_images.each do |img| %>
                         <%= image_tag img.variant(resize_to_limit: [100, 100]), class: "img-fluid" %>
                       <% end %>
                     <% end %>
                     <br>
-                    <%= form.label :en_images_for_refactoring %>
+                    <%= form.label :en_images %>
                     <%= form.file_field :en_images, multiple: true, direct_upload: true, class: "form-control input-lg" %>
                   </div>
                 </div>
-                <% end %>
 
                 <div class="col-md-12">
                   <div class="field form-group">
@@ -104,7 +90,6 @@
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
 
@@ -171,7 +156,6 @@
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
 
@@ -238,7 +222,6 @@
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
 
@@ -305,7 +288,6 @@
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
 
@@ -372,10 +354,77 @@
                     </div>
                   </div>
                 </div>
-
-
               </div>
             </div>
+
+
+            <div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="field form-group">
+                    <%= form.label :kr_name %>
+                    <%= form.text_area :kr_name, size: '70x5', class: 'form-control input-lg', placeholder: "kr_name" %>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="field form-group">
+                    <%= form.label :kr_content %>
+                    <%= form.rich_text_area :kr_content, placeholder: "kr_content" %>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="field form-group">
+                    <%= form.label :kr_external_rich_links %>
+                    <%= form.rich_text_area :kr_external_rich_links, placeholder: "kr_external_rich_links" %>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="field form-group">
+                    <%= form.label :kr_action_item %>
+                    <%= form.rich_text_area :kr_action_item, placeholder: "kr_action_item" %>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="field form-group">
+                    <% if @message.kr_images.attached? %>
+                      <% @message.kr_images.each do |img| %>
+                      <%= image_tag img.variant(resize_to_limit: [100, 100]), class: "img-fluid" %>
+                      <% end %>
+                    <% end %>
+                    <br>
+                    <%= form.label :kr_image %>
+                    <%= form.file_field :kr_images, multiple: true, direct_upload: true, class: "form-control input-lg" %>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="field form-group">
+                    <% if @message.kr_audio.attached? %>
+                      <div class="col-md-12 text-center">
+                        <%= audio_tag url_for(@message.kr_audio), controls: true %>
+                      </div>
+                    <% end %>
+                    <br>
+                    <div class="col-md-6 text-center">
+                      <%= form.label :kr_audio %> <b> | All audio must be in .wav or .mp3 format. </b>
+                      <%= form.file_field :kr_audio, direct_upload: true, class: "form-control input-lg" %>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <% if @message.kr_audio.attached? %>
+                        <%= label_tag(:kr_audio_purge, "Delete kr_audio?") %>
+                        <%= check_box_tag(:kr_audio_purge) %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </div>
         </div>
 
@@ -394,6 +443,13 @@
           <div class="field form-group">
             <%= form.label :archive? %>
             <%= form.check_box :archive %>
+          </div>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2">
+          <div class="field form-group">
+            <%= form.label :tags %> Separate each tag with a new line
+            <%= form.text_area :tags, name: 'message[tags][]', size: '70x5', class: 'form-control input-lg', placeholder: "cope with loss\nself-care\ntrigger warning\ndepression", value: form.object.tags.join("\n") %>
           </div>
         </div>
 

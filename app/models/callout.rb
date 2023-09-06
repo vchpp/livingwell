@@ -4,4 +4,5 @@ class Callout < ApplicationRecord
   has_one_attached :zh_cn_image, dependent: :destroy
   has_one_attached :vi_image, dependent: :destroy
   has_one_attached :hm_image, dependent: :destroy
+  has_one_attached :kr_image, dependent: :destroy
 end

@@ -5,11 +5,13 @@ class Faq < ApplicationRecord
   has_rich_text :zh_cn_answer
   has_rich_text :hm_answer
   has_rich_text :vi_answer
+  has_rich_text :kr_answer
   has_one_attached :en_audio, dependent: :destroy
   has_one_attached :vi_audio, dependent: :destroy
   has_one_attached :hm_audio, dependent: :destroy
   has_one_attached :zh_cn_audio, dependent: :destroy
   has_one_attached :zh_tw_audio, dependent: :destroy
+  has_one_attached :kr_tw_audio, dependent: :destroy
   has_many :rich_texts,
     class_name: "ActionText::RichText",
     as: :record,
@@ -24,6 +26,7 @@ class Faq < ApplicationRecord
                                          where("zh_tw_question ilike ?", "%#{search}%")).or(
                                          where("zh_cn_question ilike ?", "%#{search}%")).or(
                                          where("vi_question ilike ?", "%#{search}%")).or(
+                                         where("kr_question ilike ?", "%#{search}%")).or(
                                          where("hm_question ilike ?", "%#{search}%")).uniq
                                        }
 end

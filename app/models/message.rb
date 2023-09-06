@@ -6,9 +6,11 @@ class Message < ApplicationRecord
   has_many_attached :zh_cn_images, dependent: :destroy
   has_many_attached :zh_tw_images, dependent: :destroy
   has_many_attached :hm_images, dependent: :destroy
+  has_many_attached :kr_images, dependent: :destroy
   has_one_attached :en_audio, dependent: :destroy
   has_one_attached :vi_audio, dependent: :destroy
   has_one_attached :hm_audio, dependent: :destroy
+  has_one_attached :kr_audio, dependent: :destroy
   has_one_attached :zh_cn_audio, dependent: :destroy
   has_one_attached :zh_tw_audio, dependent: :destroy
   has_rich_text :en_content
@@ -16,16 +18,19 @@ class Message < ApplicationRecord
   has_rich_text :zh_cn_content
   has_rich_text :vi_content
   has_rich_text :hm_content
+  has_rich_text :kr_content
   has_rich_text :en_action_item
   has_rich_text :zh_tw_action_item
   has_rich_text :zh_cn_action_item
   has_rich_text :vi_action_item
   has_rich_text :hm_action_item
+  has_rich_text :kr_action_item
   has_rich_text :en_external_rich_links
   has_rich_text :zh_tw_external_rich_links
   has_rich_text :zh_cn_external_rich_links
   has_rich_text :vi_external_rich_links
   has_rich_text :hm_external_rich_links
+  has_rich_text :kr_external_rich_links
   extend FriendlyId
   friendly_id :en_name, use: %i(slugged history finders)
   scope :filter_by_category, -> (category) { where category: category }
@@ -46,7 +51,7 @@ class Message < ApplicationRecord
   end
 
   def comments_to_csv
-    attributes = %w{Created_at RCT Content Type ID}
+    attributes = %w{Created_at DT Content Type ID}
     CSV.generate("\uFEFF", headers: true) do |csv|
       csv << attributes
       if comments
@@ -58,7 +63,7 @@ class Message < ApplicationRecord
   end
 
   def likes_to_csv
-    attributes = %w{Created_at RCT Uplikes Downlikes Type ID}
+    attributes = %w{Created_at DT Uplikes Downlikes Type ID}
     CSV.generate(headers: true) do |csv|
       csv << attributes
       if likes

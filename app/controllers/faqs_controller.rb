@@ -32,7 +32,7 @@ class FaqsController < ApplicationController
   # POST /faqs or /faqs.json
   def create
     @faq = Faq.new(faq_params)
-
+    @faq[:tags] = params[:faq][:tags].first.split("\r\n").map(&:strip)
     respond_to do |format|
       if @faq.save
         format.html { redirect_to @faq, notice: "Faq was successfully created." }
@@ -48,6 +48,7 @@ class FaqsController < ApplicationController
 
   # PATCH/PUT /faqs/1 or /faqs/1.json
   def update
+    @faq[:tags] = params[:faq][:tags].first.split("\r\n").map(&:strip)
     respond_to do |format|
       if @faq.update(faq_params)
         format.html { redirect_to @faq, notice: "Faq was successfully updated." }
@@ -79,6 +80,6 @@ private
 
   # Only allow a list of trusted parameters through.
   def faq_params
-    params.require(:faq).permit(:en_question, :en_answer, :zh_tw_question, :zh_tw_answer, :zh_cn_question, :zh_cn_answer, :hm_question, :hm_answer, :vi_question, :vi_answer, :category, :archive, :search, :en_audio, :vi_audio, :zh_tw_audio, :zh_cn_audio, :hm_audio)
+    params.require(:faq).permit(:en_question, :en_answer, :zh_tw_question, :zh_tw_answer, :zh_cn_question, :zh_cn_answer, :hm_question, :hm_answer, :vi_question, :vi_answer, :kr_question, :kr_answer, :category, :archive, :search, :en_audio, :vi_audio, :zh_tw_audio, :zh_cn_audio, :hm_audio, :kr_audio, :tags)
   end
 end

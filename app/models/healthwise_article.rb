@@ -6,16 +6,20 @@ class HealthwiseArticle < ApplicationRecord
   has_rich_text :zh_cn_rich_text
   has_rich_text :vi_rich_text
   has_rich_text :hm_rich_text
+  has_rich_text :kr_rich_text
   has_many_attached :en_pdf
   has_many_attached :zh_tw_pdf
   has_many_attached :zh_cn_pdf
   has_many_attached :vi_pdf
   has_many_attached :hm_pdf
+  has_many_attached :kr_pdf
   extend FriendlyId
   friendly_id :en_title, use: %i(slugged history finders)
   scope :filter_by_search, -> (search) { where("en_title ilike ?", "%#{search}%").or(
                                         where("zh_tw_title ilike ?", "%#{search}%")).or(
                                         where("vi_title ilike ?", "%#{search}%")).or(
+                                        where("kr_title ilike ?", "%#{search}%")).or(
+                                        # where("tags ilike ?", "%#{search}%")).or(
                                         where("hm_title ilike ?", "%#{search}%"))
                                         }
   def self.to_csv
@@ -38,7 +42,7 @@ class HealthwiseArticle < ApplicationRecord
   end
 
   def comments_to_csv
-    attributes = %w{Created_at RCT Content Type ID}
+    attributes = %w{Created_at DT Content Type ID}
     CSV.generate("\uFEFF", headers: true) do |csv|
       csv << attributes
       if comments
@@ -50,7 +54,7 @@ class HealthwiseArticle < ApplicationRecord
   end
 
   def likes_to_csv
-    attributes = %w{Created_at RCT Uplikes Downlikes Type ID}
+    attributes = %w{Created_at DT Uplikes Downlikes Type ID}
     CSV.generate(headers: true) do |csv|
       csv << attributes
       if likes

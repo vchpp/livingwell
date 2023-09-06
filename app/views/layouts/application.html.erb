@@ -17,7 +17,6 @@
     <meta name="twitter:url" content="" />
     <meta name="twitter:card" content="" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script>
       function getCookie(name) {
         match = document.cookie.match(new RegExp(name + '=([^;]+)'));
@@ -25,17 +24,17 @@
       }
       var dt = getCookie('dt');
       var locale = getCookie('locale');
-      console.log(locale);
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8T209GGMN"></script>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB92CN2');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MW2ZN7T85S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MW2ZN7T85S');
+    </script>
 
 
     <%= csrf_meta_tags %>
@@ -58,7 +57,7 @@
       <div class="container">
 
         <!-- START #fh5co-logo -->
-        <h1 id="fh5co-logo" class="pull-left"><a href="<%= root_path %>"><img src="/assets/favicon2.png">      Covid Informed</a></h1>
+        <h1 id="fh5co-logo" class="pull-left"><a href="<%= root_path %>"><img src="/assets/favicon2.png">     Informed:  Living Well</a></h1>
 
         <!-- START #fh5co-menu-wrap -->
         <nav id="fh5co-menu-wrap" role="navigation">

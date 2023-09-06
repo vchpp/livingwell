@@ -164,7 +164,12 @@
               </div>
             </div>
 
-            <div class="col-md-12">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="field form-group">
+                <%= form.label :tags %> Separate each tag with a new line
+                <%= form.text_area :tags, name: 'callout[tags][]', size: '70x5', class: 'form-control input-lg', placeholder: "cope with loss\nself-care\ntrigger warning\ndepression", value: form.object.tags.join("\n") %>
+              </div>
+
               <div class="field form-group">
                 <%= form.label :external_link? %> check this if clicking on the callout takes you away from this website
                 <%= form.check_box :external_link %>
@@ -178,11 +183,9 @@
                 <%= form.text_field :priority %>
               </div>
 
-              <div class="col-md-8 col-md-offset-2">
-                <div class="actions">
-                  <%= form.submit class: "btn btn-primary btn-lg btn-block"%>
-                  <%= link_to 'Back', callouts_path, class: "btn btn-primary btn-lg btn-block" %>
-                </div>
+              <div class="actions">
+                <%= form.submit class: "btn btn-primary btn-lg btn-block"%>
+                <%= link_to 'Back', callouts_path, class: "btn btn-primary btn-lg btn-block" %>
               </div>
             </div>
 
