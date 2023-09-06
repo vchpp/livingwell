@@ -27,7 +27,8 @@ class Additional < ApplicationRecord
                                          where("kr_notes ilike ?", "%#{search}%")).or(
                                         #  where("tags @> ?", *values, "%#{search}%")).or(
                                         #  where("tags[?] ilike ?", *values, "%#{search}%")).or(
-                                        #  where("tags ilike ?", "%#{search}%")).or(
+                                        #  where("tags ilike any (array[?])", "%#{search}%")).or(
+                                        #  where(tags.map {|tag| "tag ilike ?"}, "%#{search}%")).or(
                                          where("category ilike ?", "%#{search}%"))
                                        }
 end
