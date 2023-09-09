@@ -36,7 +36,7 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] be able to order Messages by rank(int), and pin by featured (bool)
 
-- [] add tags model search methods
+- [] gate behind cf access rule
 
 - [] add view forms to be able to order Messages by rank(int), and pin by featured (bool)
 
@@ -48,21 +48,29 @@ https://github.com/vchpp/informed-livingwell
 
 - [] VIEWS add KR edit buttons (messages done)
 
-- [] VIEWS add like buttons to FAQs - does logic work?
-
-- [] Heroku console download all profile photos or download from AWS
-
-- [] Profiles - try to migrate from covid-informed site
-
 - [] Profiles - Janice first, Joyce, JiWon
 
 - [] Gate `downloads` and `callouts` behind an admin check
 
 - [] Update partner logos (CPR3 and UCSF)
 
+- [] HealthwiseArticles kr-us languange support
+
+- [] HealthwiseArticles custom translations using `jsonb`
+
+- [] HealthwiseArticles investigate why articles do not map
+
 - [] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
 
 - [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
+
+- [] `stretch` add tags model search methods
+
+- [] `stretch` VIEWS add like buttons to FAQs - does logic work?
+
+- [] Heroku console download all profile photos or download from AWS
+
+- [] Profiles - try to migrate from covid-informed site
 
 - [] ability to 'duplicate' a message, sans attachments
 
