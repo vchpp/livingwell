@@ -1,101 +1,101 @@
-en:
+kr:
   hello: "Hello world"
-  welcome: "Welcome!"
-  language: "English"
-  locale: "en"
-  disclaimer: "Disclaimer: The information contained in this website is for educational purpose only.  Given the fast-evolving situation of COVID-19, while the research team attempts to provide timely information on this website, please refer to the COVID-19 information website of the Centers for Disease Control and Prevention (CDC) https://www.cdc.gov/coronavirus/2019-ncov/index.html for the most updated guidelines. Always seek advice from your health care provider for specific recommendation pertaining to your health condition."
+  welcome: "환영합니다!"
+  language: "한국어"
+  locale: "kr"
+  disclaimer: "참고사항: 이 웹사이트의 정보는 교육용 목적으로만 사용됩니다. 본인의 건강 상태에 관한 특정한 정보는 의사의 권고를 구하십시요."
   navbar:
-    about: "About"
-    messages: "Messages"
-    resources: "Resources"
-    faqs: "FAQs"
-    statistics: "Statistics"
-    layhealthworkers: "Lay Health Workers"
-    additional: "Additional Resources"
-    mission: "Mission"
-    healthwise: "Healthwise Articles"
+    about: "개요"
+    messages: "도움말"
+    resources: "자료 및 정보"
+    faqs: "자주 묻는 질문"
+    statistics: "통계"
+    layhealthworkers: "건강 도우미"
+    additional: "그외 정보"
+    mission: "사명"
+    healthwise: "헬쓰와이즈 자료"
   about:
-    research_team: "Research Team"
+    research_team: "연구진"
     research_team_titles:
-      co_investigator: "Co-investigator"
-      executive_director: "Executive Director"
-      student_intern: "Student Intern"
-      principal_investigator: "Principal Investigator"
-      research_staff: "Research Staff"
-      community_coordinator: "Community Coordinator"
-      study_coordinator: "Study Coordinator"
-    cab_members: "Community Advisory Board"
-    lhw: "Lay Health Workers"
-    title1: "Healthy Family Project – "
-    title2: "Getting INFORMED to Stay Healthy"
-    mission1: "“INFORMED” is a research study targeting Asian Americans with the goal of providing up-to-date information about COVID-19. “INFORMED” stands for “Individual and Family Oriented Responsive Messaging Education.”"
-    mission2: "The purpose of INFORMED is to understand and address barriers related to COVID-19 testing and vaccination. We hope to provide updated information that is responsive to the fast-evolving situation of COVID-19. In addition, we will update and modify our messages in response to feedback from our community members. We want to help Chinese, Vietnamese, and Hmong Americans increase knowledge about COVID-19 testing and vaccination, and make well-informed decision about practicing safety measures, testing, and vaccination for COVID-19."
-    disclaimer: "INFORMED is supported by the National Institutes of Health under Award Number 3R01DA036749-05S1.  The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.  UCSF IRB Approval Number 20-32933."
+      co_investigator: "공동 연구팀장"
+      executive_director: "총괄"
+      student_intern: "학생 인턴"
+      principal_investigator: "연구팀장"
+      research_staff: "연구팀"
+      community_coordinator: "지역 사회 코디네이터"
+      study_coordinator: "연구 코디네이터"
+    cab_members: "지역 자문 위원회"
+    lhw: "건강 도우미"
+    title1: "건강한 가족 프로젝트 - "
+    title2: "건강한 삶을 위한 INFORMED"
+    mission1: "“INFORMED” 는 동양계 미국인들을 대상으로 균형있는 정신 건강을 위한 정보와 지식을 전달하는 연구입니다."
+    mission2: "“INFORMED” 는 개인과 가족 중심의 응답형 문자 교육의 약자로써 코비드와 격리를 경험한 동양계 미국인들의 정신 건강 회복을 위한 연구 프로젝트로 캘리포니아에 거주하는 한국계, 중국계, 베트남계, 몽족계 미국인들을 대상으로 합니다."
+    disclaimer: "INFORMED 연구 지원은 가주 UCSF IRB 승인 번호는 "
   messages:
-    messages: "Messages"
-    read_more: "Read More"
-    comments: "Comments"
-    leave_comment: "Leave a Comment"
-    submit: "Submit"
-    back: "back"
+    messages: "도움말"
+    read_more: "그 외 정보"
+    comments: "댓글"
+    leave_comment: "댓글을 남겨주세요"
+    submit: "작성완료"
+    back: "뒤로"
     show:
-      action_item_more_info: "For more info you can visit:"
-      survey_link: "To take our survey, please visit:"
+      action_item_more_info: "그외 다른 정보를 원하시면 이곳으로 :"
+      survey_link: "이 연구 설문에 응답하시려면 이곳으로:"
   resources:
-    resources: "Resources"
+    resources: "자료 및 정보"
     additional:
-      source: "Source"
-      additional_resources: "Additional Resources"
-      search_for_resources: "Search For Resources"
-      view: "View"
-      search: "Search"
-      all: "All"
-      contents_of_resources: "Contents Of Resources"
-      notes: "Notes"
-      additional_links: "External Links"
-      last_updated: "Last Updated"
-      general: "General"
+      source: "정보 출처 "
+      additional_resources: "그외 자료"
+      search_for_resources: "자료 검색"
+      view: "보기"
+      search: "찾기"
+      all: "전부"
+      contents_of_resources: "자료 목차"
+      notes: "주"
+      additional_links: "외부 링크"
+      last_updated: "마지막 업데이트"
+      general: "일반"
       testing: "Testing"
       vaccination: "Vaccination"
-      wellness: "Wellness"
-      other: "Other"
-      featured: "Featured"
-      filter: "Filter by County"
-    statistics: "Statistics"
+      wellness: "건강"
+      other: "그외"
+      featured: "추천"
+      filter: "나라별 검색"
+    statistics: "통계"
     layhealthworkers:
-      layhealthworkers: "Lay Health Workers"
-      project: "About Lay Health Workers of the INFORMED Project:"
+      layhealthworkers: "건강 도우미"
+      project: "INFORMED 프로젝트의 건강 도우미에 대하여:"
       project1: "A lay health worker in the INFORMED Project is someone who has been selected to teach others in their own communities about how to stay healthy during the COVID-19 pandemic. They have been trained by the research staff to provide up-to-date information about COVID-19."
       project2: "Our lay health workers are selected because they are warm, friendly, open-minded, and have expressed an interest in improving the health of their communities. They will lead health educational sessions about COVID-19, so that the important health messages will reach members of the communities in a culturally and linguistically appropriate way."
       downloads: "Downloads of INFORMED Materials:"
       downloads1: "With support from the National Institutes of Health (Research Grant Number 3R01DA036749-05S1), the training and educational materials used by our lay health workers are made available for research and educational use for free."
       stats: "Statistics About COVID-19 from Selected Sources:"
       stats1: "To keep our communities informed about COVID-19, we have selected several online resources that provide the latest statistics related to the COVID-19 pandemic, both globally and locally. These resources are listed under the “Statistics” tab."
-    downloads: "Downloads"
+    downloads: "다운로드"
     healthwise:
-      healthwise: "Healthwise Articles"
+      healthwise: "Healthwise 기사"
       missing_article: "The information is available in English only. Sorry for the inconvenience."
       disclaimer: "The health information articles provided are at no cost by Healthwise, a nonprofit partner of the INFORMED Project. Healthwise (healthwise.org) provides evidence-based health information for the community, hospitals, and electronic medical record (EMR) providers. Many people have turned to Healthwise information to learn how to make better health decisions. Please feel free to comment and share the information with your community."
   faqs:
-    faq: "Frequently Asked Questions"
-    filter: "Filter By Category"
+    faq: "자주 묻는 질문"
+    filter: "분류별 검색"
     or: "or"
-    search_for_questions: "Search For Questions"
-    search: "Search"
-    all: "All"
+    search_for_questions: "질문 검색"
+    search: "검색"
+    all: "전체보기"
   activerecord:
     models:
       message:
-        one: 'Message'
-        other: 'Messages'
-      comment: 'Comment'
-      faq: "Frequently Asked Questions"
+        one: '도움말'
+        other: '도움말'
+      comment: '댓글'
+      faq: "자주 묻는 질문"
     attributes:
       message:
-        name: 'Name'
-        content: 'Content'
+        name: '이름'
+        content: '내용'
       comment:
-        content: 'Content'
+        content: '내용'
   helpers:
     submit:
       # helpers.submit.<action>
@@ -104,5 +104,5 @@ en:
 
       # helpers.submit.<model>.<action>
       comment:
-        create: "Leave a comment"
-        update: "Update comment"
+        create: "댓글을 남겨주세요"
+        update: "댓글 업데이트t"

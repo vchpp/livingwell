@@ -25,6 +25,7 @@
               <li> Chinese Simplified (zh_cn)</li>
               <li> Hmong (hm)</li>
               <li> Vietnamese (vi)</li>
+              <li> Korean (kr)</li>
             </ul>
             <div class="resp-tabs-container hor_1">
               <div>
@@ -185,7 +186,38 @@
                     <%= check_box_tag(:vi_audio_purge) %>
                   <% end %>
                 </div>
-            </div>
+              </div>
+              <div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="field form-group">
+                      <%= form.label :kr_question %>
+                      <%= form.text_area :kr_question, size:'70x2', class: 'form-control input-lg' %>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="field form-group">
+                      <%= form.label :kr_answer %>
+                      <%= form.rich_text_area :kr_answer %>
+                    </div>
+                  </div>
+                </div>
+                <div class="field form-group">
+                  <% if @faq.kr_audio.attached? %>
+                    <div class="col-md-12 text-center">
+                      <%= audio_tag url_for(@faq.kr_audio), controls: true %>
+                    </div>
+                  <% end %>
+                  <br>
+                  <%= form.label :kr_audio %> <b>| All audio must be in .wav or .mp3 format.</b>
+                  <%= form.file_field :kr_audio, direct_upload: true, class: "form-control input-lg" %>
+                  <% if @faq.kr_audio.attached? %>
+                    <%= label_tag(:kr_audio_purge, "Delete kr_audio?") %>
+                    <%= check_box_tag(:kr_audio_purge) %>
+                  <% end %>
+                </div>
+              </div>
           </div>
 
           <div class="col-md-8 col-md-offset-2">

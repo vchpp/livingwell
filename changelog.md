@@ -46,7 +46,9 @@ https://github.com/vchpp/informed-livingwell
 
 - [] CONTROLLER filter logic for new categories
 
-- [] VIEWS add KR edit buttons (messages done)
+- [] VIEWS add KR edit buttons for `HWA`
+
+- [] VIEWS add KR `languages` support on `additionals`, `HWA`
 
 - [] Profiles - Janice first, Joyce, JiWon
 
