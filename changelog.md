@@ -36,27 +36,29 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] be able to order Messages by rank(int), and pin by featured (bool)
 
-- [] gate behind cf access rule
+- [x] add KR form fields
 
-- [] add view forms to be able to order Messages by rank(int), and pin by featured (bool)
+- [x] add view forms to be able to order Messages by priority(int), and pin by featured (bool)
+
+- [] gate behind cf access rule
 
 - [] Update Livingwell logo in all languages
 
 - [] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
 
+- [] VIEWS add KR `languages` support on `additionals`, `HWA`
+
+- [] HealthwiseArticles kr-us languange support
+
 - [] CONTROLLER filter logic for new categories
 
 - [] VIEWS add KR edit buttons for `HWA`
-
-- [] VIEWS add KR `languages` support on `additionals`, `HWA`
 
 - [] Profiles - Janice first, Joyce, JiWon
 
 - [] Gate `downloads` and `callouts` behind an admin check
 
 - [] Update partner logos (CPR3 and UCSF)
-
-- [] HealthwiseArticles kr-us languange support
 
 - [] HealthwiseArticles custom translations using `jsonb`
 
