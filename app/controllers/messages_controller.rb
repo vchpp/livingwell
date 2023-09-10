@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
   def index
     @messages = Message.where(nil)
       .send("with_attached_#{I18n.locale}_images".downcase)
-      .order('created_at ASC')
+      .order('priority ASC')
     @admin_messages = @messages.sort_by(&:category)
     @messages = @messages.where(archive: false)
     set_message_categories
@@ -192,6 +192,8 @@ private
                                     :category,
                                     :tags,
                                     :archive,
+                                    :featured,
+                                    :priority,
                                     :en_audio,
                                     :hm_audio,
                                     :vi_audio,
