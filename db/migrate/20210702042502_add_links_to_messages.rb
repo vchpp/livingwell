@@ -5,7 +5,7 @@ class AddLinksToMessages < ActiveRecord::Migration[6.1]
     add_column :messages, :zh_cn_action_item, :string
     add_column :messages, :vi_action_item, :string
     add_column :messages, :hm_action_item, :string
-    add_column :messages, :kr_action_item, :string
+    add_column :messages, :ko_action_item, :string
     add_column :messages, :external_links, :string, array: true, default: []
   end
 end

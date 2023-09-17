@@ -26,9 +26,8 @@ class HealthwiseArticlesController < ApplicationController
       format.html
       format.csv { send_data @csv_healthwise_articles.to_csv, filename: "HealthwiseArticles-#{Date.today}.csv"} if current_user.try(:admin?)
     end
-    # logger.warn fetch_hw_token
   end
-
+  
   # GET /healthwise_articles/1 or /healthwise_articles/1.json
   def show
     if @healthwise_article.archive?
@@ -58,9 +57,10 @@ class HealthwiseArticlesController < ApplicationController
       end
     end
   end
-
+  
   # GET /healthwise_articles/new
   def new
+    logger.warn fetch_hw_token
     @healthwise_article = HealthwiseArticle.new
   end
 
@@ -114,7 +114,7 @@ class HealthwiseArticlesController < ApplicationController
   def update
     @healthwise_article[:languages] = params[:healthwise_article][:languages].first.split("\r\n").map(&:strip)
     @healthwise_article.hm_pdf.purge if params[:hm_pdf].present? || params[:hm_pdf_purge].present?
-    @healthwise_article.kr_pdf.purge if params[:kr_pdf].present? || params[:kr_pdf_purge].present?
+    @healthwise_article.ko_pdf.purge if params[:ko_pdf].present? || params[:ko_pdf_purge].present?
     @healthwise_article.vi_pdf.purge if params[:vi_pdf].present? || params[:vi_pdf_purge].present?
     @healthwise_article.en_pdf.purge if params[:en_pdf].present? || params[:en_pdf_purge].present?
     @healthwise_article.zh_tw_pdf.purge if params[:zh_tw_pdf].present? || params[:zh_tw_pdf_purge].present?
@@ -137,7 +137,7 @@ class HealthwiseArticlesController < ApplicationController
   def refresh
     # check if it's custom JSON, if yes, skip fetching
     @healthwise_article.languages = fetch_languages(@healthwise_article.article_or_topic, @healthwise_article.hwid)
-
+    logger.warn "#{@healthwise_article.languages}"
     @healthwise_article.languages.each do |l|   # ["en-us", "vi-us"]
       if @healthwise_article.send("#{CI_LOCALE[l]}_translated".downcase) ==  false
         response = fetch_article(@healthwise_article.article_or_topic, @healthwise_article.hwid, l)
@@ -189,7 +189,7 @@ class HealthwiseArticlesController < ApplicationController
     @healthwise_article.hm_pdf.purge
     @healthwise_article.vi_pdf.purge
     @healthwise_article.en_pdf.purge
-    @healthwise_article.kr_pdf.purge
+    @healthwise_article.ko_pdf.purge
     @healthwise_article.zh_tw_pdf.purge
     @healthwise_article.zh_cn_pdf.purge
     logger.info "#{current_user.email} destroyed Healthwise #{@healthwise_article.id} with title #{@healthwise_article.en_title}"
@@ -270,7 +270,7 @@ class HealthwiseArticlesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def healthwise_article_params
-    params.require(:healthwise_article).permit(:hwid, :article_or_topic, :en_title, :en_json, :en_translated, :en_pdf_purge, :zh_tw_title, :zh_tw_json, :zh_tw_translated, :zh_tw_pdf_purge, :zh_cn_title, :zh_cn_json, :zh_cn_translated, :zh_cn_pdf_purge, :vi_title, :vi_json, :vi_translated, :vi_pdf_purge, :hm_title, :hm_json, :hm_translated, :hm_pdf_purge, :kr_title, :kr_json, :kr_translated, :kr_pdf_purge, :en_rich_text, :zh_tw_rich_text, :zh_cn_rich_text, :vi_rich_text, :hm_rich_text, :kr_rich_text, :category, :featured, :archive, :languages, :tags, en_pdf: [], zh_tw_pdf: [],  zh_cn_pdf: [], vi_pdf: [], hm_pdf: [], kr_pdf: [])
+    params.require(:healthwise_article).permit(:hwid, :article_or_topic, :en_title, :en_json, :en_translated, :en_pdf_purge, :zh_tw_title, :zh_tw_json, :zh_tw_translated, :zh_tw_pdf_purge, :zh_cn_title, :zh_cn_json, :zh_cn_translated, :zh_cn_pdf_purge, :vi_title, :vi_json, :vi_translated, :vi_pdf_purge, :hm_title, :hm_json, :hm_translated, :hm_pdf_purge, :ko_title, :ko_json, :ko_translated, :ko_pdf_purge, :en_rich_text, :zh_tw_rich_text, :zh_cn_rich_text, :vi_rich_text, :hm_rich_text, :ko_rich_text, :category, :featured, :archive, :languages, :tags, en_pdf: [], zh_tw_pdf: [],  zh_cn_pdf: [], vi_pdf: [], hm_pdf: [], ko_pdf: [])
   end
 
   def set_page

@@ -56,7 +56,7 @@
 
           <div class="col-md-8 col-md-offset-2">
             <div class="field form-group">
-              <%= form.label :languages %> must be en-us / zh-us / hm-us / vi-us
+              <%= form.label :languages %> must be en-us / zh-us / hm-us / vi-us / ko-us
               <%= form.text_area :languages, name: 'healthwise_article[languages][]', size: '70x5', class: 'form-control input-lg', value: form.object.languages.join("\n") %>
             </div>
           </div>
@@ -74,6 +74,7 @@
             <li> Chinese Simplified (zh_cn)</li>
             <li> Vietnamese (vi)</li>
             <li> Hmong (hm)</li>
+            <li> Korean (ko)</li>
           </ul>
           <div class="resp-tabs-container hor_1">
 
@@ -288,6 +289,56 @@
                 </div>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="field form-group">
+                  <%= form.label :ko_title %>
+                  <%= form.text_field :ko_title %>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="field form-group">
+                  <%= form.label :ko_translated? %>
+                  <%= form.check_box :ko_translated %>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="field form-group">
+                  <div class="col-md-12 text-center">
+                    <% if @healthwise_article.ko_pdf.attached? %>
+                      <% @healthwise_article.ko_pdf.each do |pdf| %>
+                        <% if pdf.representable? %>
+                          <%= image_tag pdf.representation(resize_to_limit: [400, 600]), class: "img-fluid" %>
+                        <% else %>
+                          <i class="fh5co-align-left img-responsive ti-layout-placeholder" style="color:red;"></i>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <%= form.label :ko_pdf %>
+                    <%= form.file_field :ko_pdf, multiple: true, direct_upload: true, class: "form-control input-lg"  %>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <% if @healthwise_article.ko_pdf.attached? %>
+                      <%= label_tag(:ko_pdf_purge, "Delete ko_pdf?") %>
+                      <%= check_box_tag(:ko_pdf_purge) %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="field form-group">
+                  <%= form.label :ko_rich_text %>
+                  <%= form.rich_text_area :ko_rich_text, placeholder: "ko_rich_text"  %>
+                </div>
+              </div>
+            </div>
+
           </div> <!-- end resp-tabs-container hor_1 -->
           <div class="fh5co-spacer fh5co-spacer-sm"></div>
 

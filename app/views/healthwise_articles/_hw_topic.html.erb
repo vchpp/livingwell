@@ -24,8 +24,10 @@
       <div class="col-md-12">
         <p>
           <label> Reviewers:</label>
-          <% @healthwise_article.send("#{article_locale}_json")["data"]["topics"][0]["credits"]["primaryReviewers"].map do |r| %>
-            <%= r["name"] %>,
+          <% if @healthwise_article.send("#{article_locale}_json")["data"]["topics"][0]["credits"]["primaryReviewers"] %>%
+            <% @healthwise_article.send("#{article_locale}_json")["data"]["topics"][0]["credits"]["primaryReviewers"].map do |r| %>
+              <%= r["name"] %>, 
+            <% end %>
           <% end %>
         </p>
      </div>

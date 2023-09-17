@@ -25,7 +25,7 @@
               <li> Chinese Simplified (zh_cn)</li>
               <li> Hmong (hm)</li>
               <li> Vietnamese (vi)</li>
-              <li> Korean (kr)</li>
+              <li> Korean (ko)</li>
             </ul>
             <div class="resp-tabs-container hor_1">
               <div>
@@ -167,24 +167,24 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :kr_title %> this doesn't show up publicly - use it to keep your records
-                      <%= form.text_area :kr_title, size:'70x2', class: 'form-control input-lg' %>
+                      <%= form.label :ko_title %> this doesn't show up publicly - use it to keep your records
+                      <%= form.text_area :ko_title, size:'70x2', class: 'form-control input-lg' %>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <% if callout.kr_image.attached? %>
-                        <%= image_tag callout.kr_image.variant(resize_to_limit: [100, 100]), class: "img-fluid" %>
+                      <% if callout.ko_image.attached? %>
+                        <%= image_tag callout.ko_image.variant(resize_to_limit: [100, 100]), class: "img-fluid" %>
                       <% end %>
                       <br>
-                      <%= form.label :kr_image %>
-                      <%= form.file_field :kr_image, direct_upload: true, class: "form-control input-lg"  %>
+                      <%= form.label :ko_image %>
+                      <%= form.file_field :ko_image, direct_upload: true, class: "form-control input-lg"  %>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :kr_link_url %>
-                      <%= form.text_field :kr_link_url, class: 'form-control input-lg' %>
+                      <%= form.label :ko_link_url %>
+                      <%= form.text_field :ko_link_url, class: 'form-control input-lg' %>
                     </div>
                   </div>
                 </div>

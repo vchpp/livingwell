@@ -1,8 +1,8 @@
-kr:
+ko:
   hello: "Hello world"
   welcome: "환영합니다!"
   language: "한국어"
-  locale: "kr"
+  locale: "ko"
   disclaimer: "참고사항: 이 웹사이트의 정보는 교육용 목적으로만 사용됩니다. 본인의 건강 상태에 관한 특정한 정보는 의사의 권고를 구하십시요."
   navbar:
     about: "개요"

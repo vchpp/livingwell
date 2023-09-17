@@ -6,9 +6,9 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] `informed-livingwell.com` and `informed-livingwell.org`
 
-- [x] add KR locale 
+- [x] add ko locale 
 
-- [x] add KR database field migrations
+- [x] add ko database field migrations
 
 - [x] shift `hmn` locale to `hm`
 
@@ -24,11 +24,11 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] Add `tags` to every resource for search hits
 
-- [x] add KR model attributes
+- [x] add ko model attributes
 
 - [x] more GA4 tracking points like clicks, engagements
 
-- [x] add KR controller allowed params
+- [x] add ko controller allowed params
 
 - [x] add tags controller allowed params
 
@@ -36,23 +36,27 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] be able to order Messages by rank(int), and pin by featured (bool)
 
-- [x] add KR form fields
+- [x] add ko form fields
 
 - [x] add view forms to be able to order Messages by priority(int), and pin by featured (bool)
+
+- [x] VIEWS add ko `language` form support on `additionals`, `HWA`, `downloads`
+
+- [x] VIEWS add ko edit buttons for `HWA`
+
+- [x] HealthwiseArticles ko-us languange support
+
+- [x] catch `@healthwise_article.send("#{article_locale}_json")["data"]["credits"]["primaryReviewers"]` when mising (use `@healthwise_article.send("#{article_locale}_json")["data"]["credits"]["author"]["name"]` and do not .map)
 
 - [] gate behind cf access rule
 
 - [] Update Livingwell logo in all languages
 
+- [] CONTROLLER fix logic to sort by priorty, top by featured
+
 - [] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
 
-- [] VIEWS add KR `languages` support on `additionals`, `HWA`
-
-- [] HealthwiseArticles kr-us languange support
-
 - [] CONTROLLER filter logic for new categories
-
-- [] VIEWS add KR edit buttons for `HWA`
 
 - [] Profiles - Janice first, Joyce, JiWon
 
