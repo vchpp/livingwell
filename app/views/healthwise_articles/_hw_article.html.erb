@@ -42,8 +42,10 @@ meta title: "#{@healthwise_article.send("#{article_locale}_json")["data"]["title
         <p><label>Author:</label> <%= @healthwise_article.send("#{article_locale}_json")["data"]["credits"]["author"]["name"] %> </p>
         <p>
           <label> Reviewers:</label>
-          <% @healthwise_article.send("#{article_locale}_json")["data"]["credits"]["primaryReviewers"].map do |r| %>
-            <%= r["name"]%>,
+          <% if @healthwise_article.send("#{article_locale}_json")["data"]["credits"]["primaryReviewers"] %>%
+            <% @healthwise_article.send("#{article_locale}_json")["data"]["credits"]["primaryReviewers"].map do |r| %>
+              <%= r["name"]%>, 
+            <% end %>
           <% end %>
         </p>
         <p><label>Certified Date:</label> <%= @healthwise_article.send("#{article_locale}_json")["data"]["certifiedDate"] %> </p>
