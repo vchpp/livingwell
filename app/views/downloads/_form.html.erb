@@ -25,7 +25,7 @@
               <li> Chinese Simplified (zh_cn)</li>
               <li> Vietnamese (vi)</li>
               <li> Hmong (hm)</li>
-              <li> Korean (kr)</li>
+              <li> Korean (ko)</li>
             </ul>
             <div class="resp-tabs-container hor_1">
                 <div class="row">
@@ -124,18 +124,18 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <% if @download.kr_file.attached? %>
-                        <%= image_tag @download.kr_file.representation(resize_to_limit: [400, 600]), class: "img-fluid" %>
+                      <% if @download.ko_file.attached? %>
+                        <%= image_tag @download.ko_file.representation(resize_to_limit: [400, 600]), class: "img-fluid" %>
                       <% end %>
-                      <%= form.label :kr_file %>
-                      <%= form.file_field :kr_file, direct_upload: true, class: "form-control input-lg"  %>
+                      <%= form.label :ko_file %>
+                      <%= form.file_field :ko_file, direct_upload: true, class: "form-control input-lg"  %>
                     </div>
                   </div>
 
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :kr_title %>
-                      <%= form.text_field :kr_title, class: "form-control input-lg"  %>
+                      <%= form.label :ko_title %>
+                      <%= form.text_field :ko_title, class: "form-control input-lg"  %>
                     </div>
                   </div>
                 </div>
@@ -146,7 +146,7 @@
                   <div class="fh5co-spacer fh5co-spacer-sm"></div>
                   <div class="col-md-8 col-md-offset-2">
                     <div class="field form-group">
-                      <%= form.label :languages %> must be English / 繁體中文 / 简体中文 / lus hmoob / Tiếng Việt
+                      <%= form.label :languages %> must be English / 繁體中文 / 简体中文 / lus hmoob / Tiếng Việt / 한국어
                       <%= form.text_area :languages, name: 'download[languages][]', size: '70x5', class: 'form-control input-lg', placeholder: "English\n繁體中文\n简体中文\nkwv tij hmoob\nTiếng Việt", value: form.object.languages.join("\n") %>
                     </div>
                   </div>

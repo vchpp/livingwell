@@ -79,11 +79,11 @@ ActiveRecord::Schema.define(version: 2023_09_06_041826) do
     t.string "hm_content"
     t.string "hm_external_link"
     t.string "hm_notes"
-    t.string "kr_title"
-    t.string "kr_source"
-    t.string "kr_content"
-    t.string "kr_external_link"
-    t.string "kr_notes"
+    t.string "ko_title"
+    t.string "ko_source"
+    t.string "ko_content"
+    t.string "ko_external_link"
+    t.string "ko_notes"
     t.string "languages", default: [], array: true
     t.string "tags", default: [], array: true
     t.date "last_version_date"
@@ -126,9 +126,9 @@ ActiveRecord::Schema.define(version: 2023_09_06_041826) do
     t.string "hm_title"
     t.string "hm_body"
     t.string "hm_link_name"
-    t.string "kr_title"
-    t.string "kr_body"
-    t.string "kr_link_name"
+    t.string "ko_title"
+    t.string "ko_body"
+    t.string "ko_link_name"
     t.string "link"
     t.boolean "external_link"
     t.boolean "archive"
@@ -140,7 +140,7 @@ ActiveRecord::Schema.define(version: 2023_09_06_041826) do
     t.string "zh_cn_link_url"
     t.string "vi_link_url"
     t.string "hm_link_url"
-    t.string "kr_link_url"
+    t.string "ko_link_url"
     t.integer "priority"
   end
 
@@ -162,13 +162,13 @@ ActiveRecord::Schema.define(version: 2023_09_06_041826) do
     t.string "zh_cn_title"
     t.string "vi_title"
     t.string "hm_title"
-    t.string "kr_title"
+    t.string "ko_title"
     t.string "en_file"
     t.string "zh_tw_file"
     t.string "zh_cn_file"
     t.string "vi_file"
     t.string "hm_file"
-    t.string "kr_file"
+    t.string "ko_file"
     t.string "category"
     t.boolean "archive"
     t.string "tags", default: [], array: true
@@ -183,7 +183,7 @@ ActiveRecord::Schema.define(version: 2023_09_06_041826) do
     t.string "zh_cn_question"
     t.string "hm_question"
     t.string "vi_question"
-    t.string "kr_question"
+    t.string "ko_question"
     t.string "category"
     t.string "tags", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
@@ -222,9 +222,9 @@ ActiveRecord::Schema.define(version: 2023_09_06_041826) do
     t.string "hm_title"
     t.jsonb "hm_json", default: {}
     t.boolean "hm_translated", default: false
-    t.string "kr_title"
-    t.jsonb "kr_json", default: {}
-    t.boolean "kr_translated", default: false
+    t.string "ko_title"
+    t.jsonb "ko_json", default: {}
+    t.boolean "ko_translated", default: false
     t.string "languages", default: [], array: true
     t.string "tags", default: [], array: true
     t.string "category"
@@ -238,7 +238,7 @@ ActiveRecord::Schema.define(version: 2023_09_06_041826) do
     t.string "zh_cn_rich_text"
     t.string "vi_rich_text"
     t.string "hm_rich_text"
-    t.string "kr_rich_text"
+    t.string "ko_rich_text"
     t.index ["slug"], name: "index_healthwise_articles_on_slug", unique: true
   end
 
@@ -266,8 +266,8 @@ ActiveRecord::Schema.define(version: 2023_09_06_041826) do
     t.string "vi_content"
     t.string "hm_name"
     t.string "hm_content"
-    t.string "kr_name"
-    t.string "kr_content"
+    t.string "ko_name"
+    t.string "ko_content"
     t.string "tags", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -276,7 +276,7 @@ ActiveRecord::Schema.define(version: 2023_09_06_041826) do
     t.string "zh_cn_action_item"
     t.string "vi_action_item"
     t.string "hm_action_item"
-    t.string "kr_action_item"
+    t.string "ko_action_item"
     t.string "external_links", default: [], array: true
     t.string "slug"
     t.string "survey_link"
@@ -285,7 +285,7 @@ ActiveRecord::Schema.define(version: 2023_09_06_041826) do
     t.string "zh_cn_external_rich_links"
     t.string "vi_external_rich_links"
     t.string "hm_external_rich_links"
-    t.string "kr_external_rich_links"
+    t.string "ko_external_rich_links"
     t.string "category", default: "general"
     t.boolean "archive", default: false
     t.boolean "featured", default: false
@@ -305,19 +305,19 @@ ActiveRecord::Schema.define(version: 2023_09_06_041826) do
     t.string "zh_cn_project_title"
     t.string "vi_project_title"
     t.string "hm_project_title"
-    t.string "kr_project_title"
+    t.string "ko_project_title"
     t.string "en_affiliation"
     t.string "zh_tw_affiliation"
     t.string "zh_cn_affiliation"
     t.string "vi_affiliation"
     t.string "hm_affiliation"
-    t.string "kr_affiliation"
+    t.string "ko_affiliation"
     t.string "en_bio"
     t.string "zh_tw_bio"
     t.string "zh_cn_bio"
     t.string "vi_bio"
     t.string "hm_bio"
-    t.string "kr_bio"
+    t.string "ko_bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"

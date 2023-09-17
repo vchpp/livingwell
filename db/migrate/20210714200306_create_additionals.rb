@@ -26,11 +26,11 @@ class CreateAdditionals < ActiveRecord::Migration[6.1]
       t.string :hm_content
       t.string :hm_external_link
       t.string :hm_notes
-      t.string :kr_title
-      t.string :kr_source
-      t.string :kr_content
-      t.string :kr_external_link
-      t.string :kr_notes
+      t.string :ko_title
+      t.string :ko_source
+      t.string :ko_content
+      t.string :ko_external_link
+      t.string :ko_notes
       t.string :languages, array: true, default: []
       t.string :tags, array:true, default:[]
       t.date :last_version_date

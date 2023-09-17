@@ -10,7 +10,7 @@ class DownloadsController < ApplicationController
       .with_attached_zh_cn_file
       .with_attached_vi_file
       .with_attached_hm_file
-      .with_attached_kr_file
+      .with_attached_ko_file
       .order('category ASC')
     @admin_downloads = @downloads.sort_by(&:category)
     @downloads = @downloads.where(archive: false)
@@ -46,7 +46,7 @@ class DownloadsController < ApplicationController
     @download.zh_cn_file.attach(params[:download][:zh_cn_file]) if params[:zh_cn_file].present?
     @download.vi_file.attach(params[:download][:vi_file]) if params[:vi_file].present?
     @download.hm_file.attach(params[:download][:hm_file]) if params[:hm_file].present?
-    @download.kr_file.attach(params[:download][:kr_file]) if params[:kr_file].present?
+    @download.ko_file.attach(params[:download][:ko_file]) if params[:ko_file].present?
     @download[:languages] = params[:download][:languages].first.split("\r\n").map(&:strip)
     @download[:tags] = params[:download][:tags].first.split("\r\n").map(&:strip)
     respond_to do |format|
@@ -69,7 +69,7 @@ class DownloadsController < ApplicationController
     @download.zh_cn_file.purge if params[:zh_cn_file].present?
     @download.vi_file.purge if params[:vi_file].present?
     @download.hm_file.purge if params[:hm_file].present?
-    @download.kr_file.purge if params[:kr_file].present?
+    @download.ko_file.purge if params[:ko_file].present?
     @download[:languages] = params[:download][:languages].first.split("\r\n").map(&:strip)
     @download[:tags] = params[:download][:tags].first.split("\r\n").map(&:strip)
     respond_to do |format|
@@ -92,7 +92,7 @@ class DownloadsController < ApplicationController
     @download.zh_cn_file.purge
     @download.vi_file.purge
     @download.hm_file.purge
-    @download.kr_file.purge
+    @download.ko_file.purge
     audit! :destroyed_download, @download, payload: @download.attributes
     @download.destroy
     respond_to do |format|
@@ -109,6 +109,6 @@ class DownloadsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def download_params
-      params.require(:download).permit(:en_file, :zh_tw_file, :zh_cn_file, :vi_file, :hm_file, :kr_file, :en_title, :zh_tw_title, :zh_cn_title, :vi_title, :hm_title, :kr_title, :category, :archive, :search, :languages, :tags)
+      params.require(:download).permit(:en_file, :zh_tw_file, :zh_cn_file, :vi_file, :hm_file, :ko_file, :en_title, :zh_tw_title, :zh_cn_title, :vi_title, :hm_title, :ko_title, :category, :archive, :search, :languages, :tags)
     end
 end

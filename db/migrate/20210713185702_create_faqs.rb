@@ -6,7 +6,7 @@ class CreateFaqs < ActiveRecord::Migration[6.1]
       t.string :zh_cn_question
       t.string :hm_question
       t.string :vi_question
-      t.string :kr_question
+      t.string :ko_question
       t.string :category
       t.string :tags, array:true, default:[]
 

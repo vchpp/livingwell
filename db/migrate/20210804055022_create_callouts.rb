@@ -16,9 +16,9 @@ class CreateCallouts < ActiveRecord::Migration[6.1]
       t.string :hm_title
       t.string :hm_body
       t.string :hm_link_name
-      t.string :kr_title
-      t.string :kr_body
-      t.string :kr_link_name
+      t.string :ko_title
+      t.string :ko_body
+      t.string :ko_link_name
       t.string :link
       t.boolean :external_link
       t.boolean :archive

@@ -24,7 +24,7 @@
               <li> Chinese Simplified (zh_cn)</li>
               <li> Vietnamese (vi)</li>
               <li> Hmong (hm)</li>
-              <li> Korean (kr)</li>
+              <li> Korean (ko)</li>
             </ul>
             <div class="resp-tabs-container hor_1">
                 <div class="row">
@@ -216,36 +216,36 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :kr_title %>
-                      <%= form.text_area :kr_title, size: '70x5', class: 'form-control input-lg' %>
+                      <%= form.label :ko_title %>
+                      <%= form.text_area :ko_title, size: '70x5', class: 'form-control input-lg' %>
                     </div>
                   </div>
 
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :kr_source %>
-                      <%= form.text_area :kr_source, size: '70x5', class: 'form-control input-lg' %>
+                      <%= form.label :ko_source %>
+                      <%= form.text_area :ko_source, size: '70x5', class: 'form-control input-lg' %>
                     </div>
                   </div>
 
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :kr_content %>
-                      <%= form.text_area :kr_content, size: '70x5', class: 'form-control input-lg'  %>
+                      <%= form.label :ko_content %>
+                      <%= form.text_area :ko_content, size: '70x5', class: 'form-control input-lg'  %>
                     </div>
                   </div>
 
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :kr_external_link %>
-                      <%= form.text_area :kr_external_link, size: '70x5', class: 'form-control input-lg' %>
+                      <%= form.label :ko_external_link %>
+                      <%= form.text_area :ko_external_link, size: '70x5', class: 'form-control input-lg' %>
                     </div>
                   </div>
 
                   <div class="col-md-12">
                     <div class="field form-group">
-                      <%= form.label :kr_notes %>
-                      <%= form.text_area :kr_notes, size: '70x5', class: 'form-control input-lg' %>
+                      <%= form.label :ko_notes %>
+                      <%= form.text_area :ko_notes, size: '70x5', class: 'form-control input-lg' %>
                     </div>
                   </div>
                 </div>
@@ -255,8 +255,8 @@
                 <div class="row">
                   <div class="col-md-8 col-md-offset-2">
                     <div class="field form-group">
-                      <%= form.label :languages %> must be English / 繁體中文 / 简体中文 / lus hmoob / Tiếng Việt
-                      <%= form.text_area :languages, name: 'additional[languages][]', size: '70x5', class: 'form-control input-lg', placeholder: "English\n繁體中文\n简体中文\nkwv tij hmoob\nTiếng Việt", value: form.object.languages.join("\n") %>
+                      <%= form.label :languages %> must be English / 繁體中文 / 简体中文 / lus hmoob / Tiếng Việt / 한국어
+                      <%= form.text_area :languages, name: 'additional[languages][]', size: '70x6', class: 'form-control input-lg', placeholder: "English\n繁體中文\n简体中文\nkwv tij hmoob\nTiếng Việt", value: form.object.languages.join("\n") %>
                     </div>
                   </div>
 
