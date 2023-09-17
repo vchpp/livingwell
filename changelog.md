@@ -48,11 +48,9 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] catch `@healthwise_article.send("#{article_locale}_json")["data"]["credits"]["primaryReviewers"]` when mising (use `@healthwise_article.send("#{article_locale}_json")["data"]["credits"]["author"]["name"]` and do not .map)
 
-- [] gate behind cf access rule
+- [x] HealthwiseArticles investigate why articles do not map
 
-- [] Update Livingwell logo in all languages
-
-- [] CONTROLLER fix logic to sort by priorty, top by featured
+- [x] CONTROLLER fix logic to sort by priorty, top by featured
 
 - [] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
 
@@ -60,13 +58,15 @@ https://github.com/vchpp/informed-livingwell
 
 - [] Profiles - Janice first, Joyce, JiWon
 
+- [] gate behind cf access rule
+
+- [] Update Livingwell logo in all languages
+
 - [] Gate `downloads` and `callouts` behind an admin check
 
 - [] Update partner logos (CPR3 and UCSF)
 
 - [] HealthwiseArticles custom translations using `jsonb`
-
-- [] HealthwiseArticles investigate why articles do not map
 
 - [] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
 

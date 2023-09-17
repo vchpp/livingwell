@@ -4,13 +4,8 @@ class DownloadsController < ApplicationController
 
   # GET /downloads or /downloads.json
   def index
-    @downloads = Download.all
-      .with_attached_en_file
-      .with_attached_zh_tw_file
-      .with_attached_zh_cn_file
-      .with_attached_vi_file
-      .with_attached_hm_file
-      .with_attached_ko_file
+    @downloads = Download.where(nil)
+      .send("with_attached_#{I18n.locale}_file".downcase)
       .order('category ASC')
     @admin_downloads = @downloads.sort_by(&:category)
     @downloads = @downloads.where(archive: false)

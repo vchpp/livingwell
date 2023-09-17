@@ -4,7 +4,7 @@ class CalloutsController < ApplicationController
 
   # GET /callouts or /callouts.json
   def index
-    @callouts = Callout.all
+    @callouts = Callout.where(nil)
       .send("with_attached_#{I18n.locale}_image".downcase)
       .order('priority ASC')
   end
