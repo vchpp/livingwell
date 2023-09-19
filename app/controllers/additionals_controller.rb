@@ -6,7 +6,7 @@ class AdditionalsController < ApplicationController
   def index
     @additionals = Additional.where(nil).order('en_title ASC') # creates an anonymous scope
     @admin_additionals = @additionals.sort_by(&:category)
-    @additionals = @additionals.where(archive: false)
+    @additionals = @additionals.where(archive: false) # if current_user.try(:admin?)
     @additionals = @additionals.filter_by_search(params[:search]) if (params[:search].present?)
     # 'general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other'
     @general, @self_care, @strengthen_social_connections, @cope_with_loss, @become_resourceful, @other, @featured = [], [], [], [], [], [], []
@@ -23,7 +23,7 @@ class AdditionalsController < ApplicationController
         @other << e if e.category == "other"
       end
     end
-    @leftovers = @additionals.reject{|d| d.category == "General" || d.category == "Other" || d.category == "Vaccination" || d.category == "Testing"}
+    @leftovers = @additionals.reject{|d| d.category == "general" || d.category == "other" || d.category == "self_care" || d.category == "strengthen_social_connections" || d.category == "cope_with_loss" || d.category == "become_resourceful"}
   end
 
   # GET /additionals/1 or /additionals/1.json
