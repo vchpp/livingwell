@@ -82,7 +82,9 @@
               <ul class="fh5co-sub-menu">
                <li>
                  <a href="/<%=params[:locale]%>/resources/faqs"><%= t('navbar.faqs') %></a>
-                 <a href="/<%=params[:locale]%>/resources/downloads"><%= t('resources.downloads') %></a>
+                 <% if current_user.try(:admin?) %>
+                   <a href="/<%=params[:locale]%>/resources/downloads"><%= t('resources.downloads') %></a>
+                 <% end %>
                  <a href="/<%=params[:locale]%>/resources/additional"><%= t('navbar.additional') %></a>
                  <a href="/<%=params[:locale]%>/resources/healthwise-articles"><%= t('navbar.healthwise') %></a>
                </li>
