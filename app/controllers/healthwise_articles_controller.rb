@@ -10,16 +10,18 @@ class HealthwiseArticlesController < ApplicationController
     @admin_healthwise_articles = @healthwise_articles.sort_by(&:category)
     @healthwise_articles = @healthwise_articles.where(archive: false)
     @healthwise_articles = @healthwise_articles.filter_by_search(params[:search]) if (params[:search].present?)
-    @general, @testing, @vaccination, @wellness, @featured = [], [], [], [], []
-    @healthwise_articles.each do |h|
-      if h.featured == true
-        @featured << h
-        # @featured.sort_by(&:category) but for array methods
-      elsif h.featured == false
-        @general << h if h.category == "General"
-        @testing << h if h.category == "Testing"
-        @vaccination << h if h.category == "Vaccination"
-        @wellness << h if h.category == "Wellness"
+    @general, @self_care, @strengthen_social_connections, @cope_with_loss, @become_resourceful, @other, @featured = [], [], [], [], [], [], []
+    @healthwise_articles.each do |e|
+      if e.featured == true
+        @featured << e
+        # 'general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other'
+      elsif e.featured == false
+        @general << e if e.category == "general"
+        @testing << e if e.category == "self-care"
+        @vaccination << e if e.category == "strengthen social connections"
+        @vaccination << e if e.category == "cope with loss"
+        @vaccination << e if e.category == "become resourceful"
+        @other << e if e.category == "other"
       end
     end
     respond_to do |format|

@@ -1,4 +1,4 @@
-<% @testing.in_groups_of(3, false).each do |item1, item2, item3| %>
+<% @strengthen_social_connections.in_groups_of(3, false).each do |item1, item2, item3| %>
 <div class="row fh5co-pricing-table-1 ">
   <% if item1 %>
     <% if item1.send("#{I18n.locale}_external_link".downcase).present? %>
@@ -25,6 +25,8 @@
             <a href="<%= item1.vi_external_link %>" target="_blank"> <%=l%> </a>
           <% when l.match("hmoob") %>
             <a href="<%= item1.hm_external_link %>" target="_blank"> <%=l%> </a>
+          <% when l.match("한국어") %>
+            <a href="<%= item1.ko_external_link %>" target="_blank"> <%=l%> </a>
           <% end %>
         <% end %>
 
@@ -34,9 +36,9 @@
   </a>
   <% end %>
   <% if item2 %>
-    <% if item2.send("#{I18n.locale}_external_link".downcase).present? %>
-      <a href="<%= item2.send("#{I18n.locale}_external_link".downcase) %>" target="_blank" >
-    <% end %>
+  <% if item2.send("#{I18n.locale}_external_link".downcase).present? %>
+    <a href="<%= item2.send("#{I18n.locale}_external_link".downcase) %>" target="_blank" >
+  <% end %>
     <div class="col-md-4 col-sm-6 fh5co-pricing-table-item">
       <div class="text-center fh5co-pricing-table-item-heading text-uppercase <%= item2.category %>">
         <%= item2.send("#{I18n.locale}_title".downcase) %>
@@ -58,6 +60,8 @@
             <a href="<%= item2.vi_external_link %>" target="_blank"> <%=l%> </a>
           <% when l.match("hmoob") %>
             <a href="<%= item2.hm_external_link %>" target="_blank"> <%=l%> </a>
+          <% when l.match("한국어") %>
+            <a href="<%= item2.ko_external_link %>" target="_blank"> <%=l%> </a>
           <% end %>
         <% end %>
 
@@ -91,6 +95,8 @@
             <a href="<%= item3.vi_external_link %>" target="_blank"> <%=l%> </a>
           <% when l.match("hmoob") %>
             <a href="<%= item3.hm_external_link %>" target="_blank"> <%=l%> </a>
+          <% when l.match("한국어") %>
+            <a href="<%= item3.ko_external_link %>" target="_blank"> <%=l%> </a>
           <% end %>
         <% end %>
 

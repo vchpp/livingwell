@@ -73,23 +73,35 @@ meta title: "COVID-INFORMED - Additional Resources",
         <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.featured')%></h2>
         <%= render 'featured', collection: @featured %>
       <% end %>
-
+<%# @general, @self_care, @strengthen_social_connections, @cope_with_loss, @become_resourceful, @other, @featured %>
       <% if @general.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
         <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.general')%></h2>
         <%= render 'general', collection: @general %>
       <% end %>
 
-      <% if @testing.any? %>
+      <% if @self_care.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.testing')%></h2>
-        <%= render 'testing', collection: @testing %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.self_care')%></h2>
+        <%= render 'self_care', collection: @self_care %>
       <% end %>
 
-      <% if @vaccination.any? %>
+      <% if @strengthen_social_connections.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.vaccination')%></h2>
-        <%= render 'vaccination', collection: @vaccination %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.strengthen_social_connections')%></h2>
+        <%= render 'strengthen_social_connections', collection: @strengthen_social_connections %>
+      <% end %>
+
+      <% if @cope_with_loss.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.cope_with_loss')%></h2>
+        <%= render 'cope_with_loss', collection: @cope_with_loss %>
+      <% end %>
+
+      <% if @become_resourceful.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.become_resourceful')%></h2>
+        <%= render 'become_resourceful', collection: @become_resourceful %>
       <% end %>
 
       <% if @other.any?  %>

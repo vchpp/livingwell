@@ -33,8 +33,8 @@ class CommentsController < ApplicationController
     @comment.dt = cookies[:dt] || '0'
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to message_path(@message), notice: "Comment was successfully created." } if params[:message_id].present?
-        format.html { redirect_to healthwise_article_path(@healthwise_article), notice: "Comment was successfully created." } if params[:healthwise_article_id].present?
+        format.html { redirect_to message_path(@message), notice: "Thanks for your comment!" } if params[:message_id].present?
+        format.html { redirect_to healthwise_article_path(@healthwise_article), notice: "Thanks for your comment!" } if params[:healthwise_article_id].present?
         format.json { render :show, status: :created, location: @message }
         logger.warn "Visitor with DT=#{cookies[:dt]} made a comment on message #{@message.id} with title #{@message.en_name}, saying '#{@comment.content}'" if params[:message_id].present?
         logger.warn "Visitor with DT=#{cookies[:dt]} made a comment on message #{@healthwise_article.id} with title #{@healthwise_article.en_title}, saying '#{@comment.content}'" if params[:healthwise_article_id].present?

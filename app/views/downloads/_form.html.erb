@@ -147,7 +147,7 @@
                   <div class="col-md-8 col-md-offset-2">
                     <div class="field form-group">
                       <%= form.label :languages %> must be English / 繁體中文 / 简体中文 / lus hmoob / Tiếng Việt / 한국어
-                      <%= form.text_area :languages, name: 'download[languages][]', size: '70x5', class: 'form-control input-lg', placeholder: "English\n繁體中文\n简体中文\nkwv tij hmoob\nTiếng Việt", value: form.object.languages.join("\n") %>
+                      <%= form.text_area :languages, name: 'download[languages][]', size: '70x6', class: 'form-control input-lg', placeholder: "English\n繁體中文\n简体中文\nkwv tij hmoob\nTiếng Việt\n한국어", value: form.object.languages.join("\n") %>
                     </div>
                   </div>
                   <div class="col-md-8 col-md-offset-2">
@@ -166,7 +166,8 @@
                   <div class="col-md-12">
                     <div class="field form-group">
                       <%= form.label :category %>
-                      <%= form.select :category, ["Participant_Handouts", "Flipcharts", "Training_Manuals", "Other"], class: 'form-control input-lg' %>
+                      <%# <%= form.select :category, ["Participant_Handouts", "Flipcharts", "Training_Manuals", "Other"], class: 'form-control input-lg' %> %>
+                      <%= form.select :category, ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other'], class: 'form-control input-lg' %>
                     </div>
                   </div>
                 </div>

@@ -41,9 +41,9 @@ class LikesController < ApplicationController
     else
       respond_to do |format|
         if @like.save
-          format.html { redirect_to @model, notice: "Like was successfully created." } if params[:message_id].present?
-          format.html { redirect_to @model, notice: "Like was successfully created." } if params[:healthwise_article_id].present?
-          format.html { redirect_to @model, notice: "Like was successfully created." } if params[:faq_id].present?
+          format.html { redirect_to @model, notice: "Thanks for the like!" } if params[:message_id].present?
+          format.html { redirect_to @model, notice: "Thanks for the like!" } if params[:healthwise_article_id].present?
+          format.html { redirect_to @model, notice: "Thanks for the like!" } if params[:faq_id].present?
           format.json { render :show, status: :created, location: @model }
           logger.info "Visitor #{params[:dt]} liked message #{@model.id} with title #{@model.en_name}" if params[:message_id].present?
           logger.info "Visitor #{params[:dt]} liked healthwise article #{@model.id} with title #{@model.en_title}" if params[:healthwise_article_id].present?
