@@ -115,7 +115,11 @@ meta title: "COVID-INFORMED - FAQs",
             <tr>
               <td><%= faq.en_question %></td>
               <td><%= faq.category %></td>
-              <td><%= faq.archive %></td>
+              <% if faq.archive == true %>
+                <td class="archive-border"><%= faq.archive %></td>
+              <% else %>
+                <td><%= faq.archive %></td>
+              <% end %>
               <td><%= link_to 'Show', faq %></td>
               <td><%= link_to 'Edit', edit_faq_path(faq) %></td>
               <td><%= link_to 'Destroy', faq, method: :delete, data: { confirm: 'Are you sure?' } %></td>

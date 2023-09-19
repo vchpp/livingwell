@@ -58,6 +58,10 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] CONTROLLER filter logic for new categories
 
+- [] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
+
+- [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
+
 - [] all .yml translations for all new categories
 
 - [] 'likes' and 'comments' notice translations for all languages
@@ -71,10 +75,6 @@ https://github.com/vchpp/informed-livingwell
 - [] Update partner logos (CPR3 and UCSF)
 
 - [] HealthwiseArticles custom translations using `jsonb`
-
-- [] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
-
-- [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
 
 - [] `stretch` add tags model search methods
 

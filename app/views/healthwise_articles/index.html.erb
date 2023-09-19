@@ -129,7 +129,11 @@ meta title: "COVID-INFORMED - Healthwise",
             <td><%= healthwise_article.languages %></td>
             <td><%= healthwise_article.category %></td>
             <td><%= healthwise_article.featured %></td>
-            <td><%= healthwise_article.archive %></td>
+            <% if healthwise_article.archive == true %>
+              <td class="archive-border"><%= healthwise_article.archive %></td>
+            <% else %>
+              <td><%= healthwise_article.archive %></td>
+            <% end %>
             <td><%= link_to 'Show', healthwise_article %></td>
             <% if current_user.try(:admin?) %>
               <td><%= link_to 'Edit', edit_healthwise_article_path(healthwise_article) %></td>

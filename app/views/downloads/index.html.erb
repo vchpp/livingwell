@@ -157,7 +157,11 @@ meta title: "COVID-INFORMED - Downloads",
               <td><%= image_tag download.vi_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.vi_file.attached? %></td>
               <td><%= image_tag download.hm_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.hm_file.attached? %></td>
               <td><%= image_tag download.ko_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.ko_file.attached? %></td>
-              <td><%= download.archive %></td>
+              <% if download.archive == true %>
+                <td class="archive-border"><%= download.archive %></td>
+              <% else %>
+                <td><%= download.archive %></td>
+              <% end %>
               <td><%= link_to 'Show', download %></td>
               <td><%= link_to 'Edit', edit_download_path(download) %></td>
               <td><%= link_to 'Destroy', download, method: :delete, data: { confirm: 'Are you sure?' } %></td>

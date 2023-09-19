@@ -11,7 +11,11 @@
     <% @callouts.in_groups_of(4, false).each do |item1, item2, item3, item4| %>
       <div class="row">
         <a href="<%= callout_path(item1) %>">
-        <div class="col-md-3 col-sm-6 fh5co-feature-item">
+        <% if item1.archive == true %>
+          <div class="col-md-3 col-sm-6 fh5co-feature-item archive-border">
+        <% else %>
+          <div class="col-md-3 col-sm-6 fh5co-feature-item">
+        <% end %>
           <span class="fh5co-feature-icon ">
             <% if item1.send("#{I18n.locale}_image".downcase).attached? %>
               <i><%= image_tag item1.send("#{I18n.locale}_image".downcase).variant(resize_to_limit: [350,200]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
@@ -32,7 +36,11 @@
         <!-- item2 -->
       <% if item2 %>
         <a href="<%= callout_path(item2) %>">
+        <% if item2.archive == true %>
+          <div class="col-md-3 col-sm-6 fh5co-feature-item archive-border">
+        <% else %>
           <div class="col-md-3 col-sm-6 fh5co-feature-item">
+        <% end %>
             <span class="fh5co-feature-icon ">
               <% if item2.send("#{I18n.locale}_image".downcase).attached? %>
                 <i><%= image_tag item2.send("#{I18n.locale}_image".downcase).variant(resize_to_limit: [350,200]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
@@ -53,7 +61,11 @@
           <!-- item3 -->
           <% if item3 %>
             <a href="<%= callout_path(item3) %>">
-            <div class="col-md-3 col-sm-6 fh5co-feature-item">
+            <% if item3.archive == true %>
+              <div class="col-md-3 col-sm-6 fh5co-feature-item archive-border">
+            <% else %>
+              <div class="col-md-3 col-sm-6 fh5co-feature-item">
+            <% end %>
               <span class="fh5co-feature-icon ">
                 <% if item3.send("#{I18n.locale}_image".downcase).attached? %>
                   <i><%= image_tag item3.send("#{I18n.locale}_image".downcase).variant(resize_to_limit: [350,200]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>
@@ -75,7 +87,11 @@
         <!-- item4 -->
         <% if item4 %>
           <a href="<%= callout_path(item4) %>">
+          <% if item4.archive == true %>
+            <div class="col-md-3 col-sm-6 fh5co-feature-item archive-border">
+          <% else %>
             <div class="col-md-3 col-sm-6 fh5co-feature-item">
+          <% end %>
               <span class="fh5co-feature-icon ">
                 <% if item4.send("#{I18n.locale}_image".downcase).attached? %>
                   <i><%= image_tag item4.send("#{I18n.locale}_image".downcase).variant(resize_to_limit: [350,200]), class: "img-fluid", :style => "max-width: 90%; height: auto"%></i>

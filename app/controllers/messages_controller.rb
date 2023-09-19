@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
       .send("with_attached_#{I18n.locale}_images".downcase)
       .order("featured DESC NULLS LAST")
       .order("priority ASC")
-    @admin_messages = @messages.sort_by(&:category)
+    @admin_messages = @messages.sort_by(&:priority)
     @messages = @messages.where(archive: false)
     set_message_categories
     @messages = @messages.filter_by_category(params[:category]) if (params[:category].present?)
