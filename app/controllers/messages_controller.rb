@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
       .send("with_attached_#{I18n.locale}_images".downcase)
       .order("featured DESC NULLS LAST")
       .order("priority ASC")
-    @admin_messages = @messages.sort_by(&:category)
+    @admin_messages = @messages.sort_by(&:priority)
     @messages = @messages.where(archive: false)
     set_message_categories
     @messages = @messages.filter_by_category(params[:category]) if (params[:category].present?)
@@ -66,7 +66,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message[:external_links] = params[:message][:external_links].first.split("\r\n").map(&:strip) if params[:message][:external_links].present?
-    @message[:tags] = params[:message][:tags].first.split("\r\n").map(&:strip)
+    @message[:tags] = params[:message][:tags].first.split("\r\n").map(&:strip) if @message[:tags].present?
     @message.en_images.attach(params[:message][:en_images]) if params[:en_images].present?
     @message.vi_images.attach(params[:message][:vi_images]) if params[:vi_images].present?
     @message.zh_cn_images.attach(params[:message][:zh_cn_images]) if params[:zh_cn_images].present?

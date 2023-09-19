@@ -54,11 +54,17 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
 
+- [x] Gate `downloads` and `callouts` behind an admin check
+
+- [x] CONTROLLER filter logic for new categories
+
+- [x] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
+
+- [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
+
 - [] all .yml translations for all new categories
 
 - [] 'likes' and 'comments' notice translations for all languages
-
-- [x] CONTROLLER filter logic for new categories
 
 - [] Profiles - Janice first, Joyce, JiWon
 
@@ -66,15 +72,9 @@ https://github.com/vchpp/informed-livingwell
 
 - [] Update Livingwell logo in all languages
 
-- [] Gate `downloads` and `callouts` behind an admin check
-
 - [] Update partner logos (CPR3 and UCSF)
 
 - [] HealthwiseArticles custom translations using `jsonb`
-
-- [] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
-
-- [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
 
 - [] `stretch` add tags model search methods
 

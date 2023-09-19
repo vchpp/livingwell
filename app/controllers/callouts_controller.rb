@@ -31,7 +31,7 @@ class CalloutsController < ApplicationController
     @callout.zh_tw_image.attach(params[:callout][:zh_tw_image])
     @callout.hm_image.attach(params[:callout][:hm_image])
     @callout.ko_image.attach(params[:callout][:ko_image])
-    @callout[:tags] = params[:callout][:tags].first.split("\r\n").map(&:strip)
+    @callout[:tags] = params[:callout][:tags].first.split("\r\n").map(&:strip) if @callout[:tags].present?
 
     respond_to do |format|
       if @callout.save

@@ -125,7 +125,11 @@ meta title: "COVID-INFORMED - Messages",
                 <tr>
                   <td><%= message.en_name %></td>
                   <td><%= message.category %></td>
-                  <td><%= message.archive %></td>
+                  <% if message.archive == true %>
+                    <td class="archive-border"><%= message.archive %></td>
+                  <% else %>
+                    <td><%= message.archive %></td>
+                  <% end %>
                   <td><%= message.featured %></td>
                   <td><%= message.priority %></td>
                   <td><%= link_to 'Show', message %></td>

@@ -19,8 +19,8 @@ class HealthwiseArticle < ApplicationRecord
                                         where("zh_tw_title ilike ?", "%#{search}%")).or(
                                         where("vi_title ilike ?", "%#{search}%")).or(
                                         where("ko_title ilike ?", "%#{search}%")).or(
-                                        # where("tags ilike ?", "%#{search}%")).or(
-                                        where("hm_title ilike ?", "%#{search}%"))
+                                        where("hm_title ilike ?", "%#{search}%")).or(
+                                        where("category ilike ?", "%#{search}%"))
                                         }
   def self.to_csv
     attributes = %w{created_at

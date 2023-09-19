@@ -46,13 +46,13 @@ meta title: "COVID-INFORMED - Profile: #{@profile.firstname} #{@profile.lastname
     </div>
     <div class="fh5co-spacer fh5co-spacer-lg"></div>
     <div class="fh5co-spacer fh5co-spacer-xs"></div>
-    <div class="col-md-12">
     <% if current_user.try(:admin?) %>
+    <div class="col-md-12">
       <div class="actions">
         <%= link_to 'Edit Profile', edit_profile_path(@profile), class: "btn btn-primary btn-lg btn-block" %>
       </div>
-    <% end %>
     </div>
+    <% end %>
 
     <div class="col-md-12">
       <div class="actions">
