@@ -61,6 +61,11 @@ zh_CN:
       wellness: "更多健康资讯"
       other: "其他"
       featured: "推介"
+      wellness: "Wellness"
+      self_care: "self_care"
+      strengthen_social_connections: "strengthen_social_connections"
+      cope_with_loss: "cope_with_loss"
+      become_resourceful: "become_resourceful"      
       filter: "按县查看"
     statistics: "统计数据"
     layhealthworkers:

@@ -60,6 +60,11 @@ ko:
       wellness: "건강"
       other: "그외"
       featured: "추천"
+      wellness: "Wellness"
+      self_care: "self_care"
+      strengthen_social_connections: "strengthen_social_connections"
+      cope_with_loss: "cope_with_loss"
+      become_resourceful: "become_resourceful"      
       filter: "나라별 검색"
     statistics: "통계"
     layhealthworkers:

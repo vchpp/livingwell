@@ -52,9 +52,13 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] CONTROLLER fix logic to sort by priorty, top by featured
 
-- [] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
+- [x] VIEWS new categories for all resources are ['general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other']
 
-- [] CONTROLLER filter logic for new categories
+- [] all .yml translations for all new categories
+
+- [] 'likes' and 'comments' notice translations for all languages
+
+- [x] CONTROLLER filter logic for new categories
 
 - [] Profiles - Janice first, Joyce, JiWon
 

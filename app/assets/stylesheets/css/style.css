@@ -1403,35 +1403,43 @@ Components
 }
 
 /* custom blocks */
-.General {
+/* 'general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other' */
+.general {
   border: 4px solid #eb5d1f;
   border-radius: 15px;
   background: #eb5d1f;
   color: #ffffff;
   box-shadow: 0 0 20px grey;
 }
-.Testing {
+.self_care {
   border: 4px solid #37c4bc;
   border-radius: 15px;
   background: #37c4bc;
   color: #ffffff;
   box-shadow: 0 0 20px grey;
 }
-.Vaccination {
+.strengthen_social_connections {
   border: 4px solid #262463;
   border-radius: 15px;
   background: #262463;
   color: #ffffff;
   box-shadow: 0 0 20px grey;
 }
-.Other {
+.cope_with_loss {
   border: 4px solid #823D1C;
   border-radius: 15px;
   background: #823D1C;
   color: #ffffff;
   box-shadow: 0 0 20px grey;
 }
-.Wellness {
+.become_resourceful {
+  border: 4px solid #823D1C;
+  border-radius: 15px;
+  background: #823D1C;
+  color: #ffffff;
+  box-shadow: 0 0 20px grey;
+}
+.other {
   border: 4px solid #823D1C;
   border-radius: 15px;
   background: #823D1C;
@@ -1439,31 +1447,37 @@ Components
   box-shadow: 0 0 20px grey;
 }
 /* custom borders */
-.General-border {
+.general-border {
   border: 4px solid #eb5d1f;
   border-radius: 15px;
   color: #000;
   box-shadow: 0 0 20px grey;
 }
-.Testing-border {
+.self_care-border {
   border: 4px solid #37c4bc;
   border-radius: 15px;
   color: #000;
   box-shadow: 0 0 20px grey;
 }
-.Vaccination-border {
+.strengthen_social_connections-border {
   border: 4px solid #262463;
   border-radius: 15px;
   color: #000;
   box-shadow: 0 0 20px grey;
 }
-.Other-border {
+.other-border {
   border: 4px solid #823D1C;
   border-radius: 15px;
   color: #000;
   box-shadow: 0 0 20px grey;
 }
-.Wellness-border {
+.cope_with_loss-border {
+  border: 4px solid #823D1C;
+  border-radius: 15px;
+  color: #000;
+  box-shadow: 0 0 20px grey;
+}
+.become_resourceful-border {
   border: 4px solid #823D1C;
   border-radius: 15px;
   color: #000;

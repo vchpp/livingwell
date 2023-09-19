@@ -8,16 +8,19 @@ class AdditionalsController < ApplicationController
     @admin_additionals = @additionals.sort_by(&:category)
     @additionals = @additionals.where(archive: false)
     @additionals = @additionals.filter_by_search(params[:search]) if (params[:search].present?)
-    @general, @testing, @vaccination, @other, @featured = [], [], [], [], []
+    # 'general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other'
+    @general, @self_care, @strengthen_social_connections, @cope_with_loss, @become_resourceful, @other, @featured = [], [], [], [], [], [], []
     @additionals.each do |e|
       if e.featured == true
         @featured << e
-        # @featured.sort_by(&:category) but for array methods
+        # 'general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other'
       elsif e.featured == false
-        @general << e if e.category == "General"
-        @testing << e if e.category == "Testing"
-        @vaccination << e if e.category == "Vaccination"
-        @other << e if e.category == "Other"
+        @general << e if e.category == "general"
+        @testing << e if e.category == "self-care"
+        @vaccination << e if e.category == "strengthen social connections"
+        @vaccination << e if e.category == "cope with loss"
+        @vaccination << e if e.category == "become resourceful"
+        @other << e if e.category == "other"
       end
     end
     @leftovers = @additionals.reject{|d| d.category == "General" || d.category == "Other" || d.category == "Vaccination" || d.category == "Testing"}
