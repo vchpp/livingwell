@@ -58,7 +58,7 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] CONTROLLER filter logic for new categories
 
-- [] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
+- [x] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
 
 - [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
 
