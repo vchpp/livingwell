@@ -30,7 +30,7 @@ class ProfilesController < ApplicationController
   # POST /profiles or /profiles.json
   def create
     @profile = Profile.new(profile_params)
-    @profile[:external_links] = params[:profile][:external_links].first.split("\r\n").map(&:strip)
+    @profile[:external_links] = params[:profile][:external_links].first.split("\r\n").map(&:strip) if @profile[:external_links].present?
     respond_to do |format|
       if @profile.save
         format.html { redirect_to @profile, notice: "Profile was successfully created." }

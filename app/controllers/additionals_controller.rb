@@ -16,10 +16,10 @@ class AdditionalsController < ApplicationController
         # 'general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other'
       elsif e.featured == false
         @general << e if e.category == "general"
-        @testing << e if e.category == "self-care"
-        @vaccination << e if e.category == "strengthen social connections"
-        @vaccination << e if e.category == "cope with loss"
-        @vaccination << e if e.category == "become resourceful"
+        @self_care << e if e.category == "self_care"
+        @strengthen_social_connections << e if e.category == "strengthen_social_connections"
+        @cope_with_loss << e if e.category == "cope_with_loss"
+        @become_resourceful << e if e.category == "become_resourceful"
         @other << e if e.category == "other"
       end
     end
@@ -50,7 +50,7 @@ class AdditionalsController < ApplicationController
   def create
     @additional = Additional.new(additional_params)
     @additional[:languages] = params[:additional][:languages].first.split("\r\n").map(&:strip)
-    @additional[:tags] = params[:additional][:tags].first.split("\r\n").map(&:strip)
+    @additional[:tags] = params[:additional][:tags].first.split("\r\n").map(&:strip) if @additional[:tags].present?
 
     respond_to do |format|
       if @additional.save

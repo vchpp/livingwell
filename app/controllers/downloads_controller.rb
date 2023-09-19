@@ -43,7 +43,7 @@ class DownloadsController < ApplicationController
     @download.hm_file.attach(params[:download][:hm_file]) if params[:hm_file].present?
     @download.ko_file.attach(params[:download][:ko_file]) if params[:ko_file].present?
     @download[:languages] = params[:download][:languages].first.split("\r\n").map(&:strip)
-    @download[:tags] = params[:download][:tags].first.split("\r\n").map(&:strip)
+    @download[:tags] = params[:download][:tags].first.split("\r\n").map(&:strip) if @download[:tags].present?
     respond_to do |format|
       if @download.save
         format.html { redirect_to @download, notice: "Download was successfully created." }
