@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       get '/mission', to: 'about#index'
       get '/research-team', to: 'about#researchers'
       get '/lay-health-workers', to: 'about#lhw'
-      get '/community-advisory-board', to: 'about#cabmembers'
+      get '/community-advisory-board', to: 'about#cab_members'
     end
     # get '/resources', to: 'resources#index'
     get '/resources', to: redirect("/#{I18n.locale}/resources/faqs")
