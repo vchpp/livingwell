@@ -76,6 +76,7 @@ class HealthwiseArticlesController < ApplicationController
     # take params and make article.new
     @healthwise_article = HealthwiseArticle.new(healthwise_article_params)
     # check if article or topic
+    @healthwise_article.article_or_topic = fetch_content_type(@healthwise_article.hwid)
     # fetch article for available languages
     # store them in @healthwise_article.languages
     @healthwise_article.languages = fetch_languages(@healthwise_article.article_or_topic, @healthwise_article.hwid)
@@ -221,9 +222,25 @@ class HealthwiseArticlesController < ApplicationController
     end
   end
   
-  def fetch_languages(type, hwid)
+  def fetch_content_type(hwid)
     token = fetch_hw_token
     logger.warn("#{token}")
+    url = ENV['HEALTHWISE_CONTENT_URL'] + "/Articles/#{hwid}"
+    begin
+      response = RestClient.get url, { "Authorization": "Bearer #{token}", "X-HW-Version": "1", "Accept": "application/json"}
+      if response.code == 200
+        @healthwise_article.article_or_topic = "Article"
+      else
+        @healthwise_article.article_or_topic = "Topic"
+      end
+    rescue => e
+      e.response
+      response = nil
+    end
+  end
+  
+  def fetch_languages(type, hwid)
+    token = fetch_hw_token
     url = ENV['HEALTHWISE_CONTENT_URL'] + "/#{type}s/#{hwid}"
     response = RestClient.get url, { "Authorization": "Bearer #{token}", "X-HW-Version": "1", "Accept": "application/json"}
     # iterate over json hash to match for available locales #
