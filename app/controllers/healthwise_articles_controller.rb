@@ -224,10 +224,10 @@ class HealthwiseArticlesController < ApplicationController
   
   def fetch_content_type(hwid)
     token = fetch_hw_token
-    logger.warn("#{token}")
     url = ENV['HEALTHWISE_CONTENT_URL'] + "/Articles/#{hwid}"
     begin
       response = RestClient.get url, { "Authorization": "Bearer #{token}", "X-HW-Version": "1", "Accept": "application/json"}
+      logger.warn("fetch_content_type - Response code: #{response.code}")
       if response.code == 200
         @healthwise_article.article_or_topic = "Article"
       else
@@ -242,11 +242,13 @@ class HealthwiseArticlesController < ApplicationController
   def fetch_languages(type, hwid)
     token = fetch_hw_token
     url = ENV['HEALTHWISE_CONTENT_URL'] + "/#{type}s/#{hwid}"
+    logger.warn("fetch_languages - URL: #{url}")
     response = RestClient.get url, { "Authorization": "Bearer #{token}", "X-HW-Version": "1", "Accept": "application/json"}
     # iterate over json hash to match for available locales #
     languages = []
     JSON.parse(response)['links']['localizations'].map {|l| languages << l[0] if l[0].match(LOCALES)}
     # return an array
+    logger.warn("fetch_languages - #{languages.uniq}")
     return languages.uniq
   end
 

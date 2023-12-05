@@ -38,8 +38,9 @@ meta title: "#{@healthwise_article.send("#{article_locale}_json")["data"]["title
           <%= raw t["html"] %>
         <% end %>
       </div>
+      <% if @healthwise_article.send("#{article_locale}_json")["data"]["credits"] == !nil %>
       <div class="col-md-12">
-        <p><label>Author:</label> <%= @healthwise_article.send("#{article_locale}_json")["data"]["credits"]["author"]["name"] %> </p>
+        <p><label>Author:</label> <%= @healthwise_article.send("#{article_locale}_json")["data"]["credits"]["author"]["name"] if @healthwise_article.send("#{article_locale}_json")["data"]["credits"]["author"]["name"] %> </p>
         <p>
           <label> Reviewers:</label>
           <% if @healthwise_article.send("#{article_locale}_json")["data"]["credits"]["primaryReviewers"] %>
@@ -50,6 +51,7 @@ meta title: "#{@healthwise_article.send("#{article_locale}_json")["data"]["title
         </p>
         <p><label>Certified Date:</label> <%= @healthwise_article.send("#{article_locale}_json")["data"]["certifiedDate"] %> </p>
      </div>
+     <% end %>
       <div class="col-md-12">
         <%= raw @healthwise_article.send("#{article_locale}_json")["data"]["legal"]["logo"] %>
         <%= raw @healthwise_article.send("#{article_locale}_json")["data"]["legal"]["copyright"] %>
