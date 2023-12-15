@@ -73,35 +73,41 @@ meta title: "INFORMED - Living Well - Additional Resources",
         <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.featured')%></h2>
         <%= render 'featured', collection: @featured %>
       <% end %>
-<%# @general, @self_care, @strengthen_social_connections, @cope_with_loss, @become_resourceful, @other, @featured %>
-      <% if @general.any? %>
+<%# 'helplines' 'mental Health Services' 'Education Materials' 'Classes and Events' 'Community Resources' 'COVID Related' 'other' 'featured' %>
+      <% if @helplines.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.general')%></h2>
-        <%= render 'general', collection: @general %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.helplines')%></h2>
+        <%= render 'helplines', collection: @helplines %>
       <% end %>
 
-      <% if @self_care.any? %>
+      <% if @mental_health_services.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.self_care')%></h2>
-        <%= render 'self_care', collection: @self_care %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.mental_health_services')%></h2>
+        <%= render 'mental_health_services', collection: @mental_health_services %>
       <% end %>
 
-      <% if @strengthen_social_connections.any? %>
+      <% if @education_materials.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.strengthen_social_connections')%></h2>
-        <%= render 'strengthen_social_connections', collection: @strengthen_social_connections %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.education_materials')%></h2>
+        <%= render 'education_materials', collection: @education_materials %>
       <% end %>
 
-      <% if @cope_with_loss.any? %>
+      <% if @classes_and_events.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.cope_with_loss')%></h2>
-        <%= render 'cope_with_loss', collection: @cope_with_loss %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.classes_and_events')%></h2>
+        <%= render 'classes_and_events', collection: @classes_and_events %>
       <% end %>
 
-      <% if @become_resourceful.any? %>
+      <% if @community_resources.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.become_resourceful')%></h2>
-        <%= render 'become_resourceful', collection: @become_resourceful %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.community_resources')%></h2>
+        <%= render 'community_resources', collection: @community_resources %>
+      <% end %>
+
+      <% if @covid_related.any?  %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.covid_related')%></h2>
+        <%= render 'covid_related', collection: @covid_related %>
       <% end %>
 
       <% if @other.any?  %>
@@ -111,11 +117,6 @@ meta title: "INFORMED - Living Well - Additional Resources",
       <% end %>
 
       <% if current_user.try(:admin?) %>
-        <% if @leftovers.any?  %>
-          <div class="fh5co-spacer fh5co-spacer-md"></div>
-          <h2 class="fh5co-uppercase-heading-lg text-center">Uncategorized Leftovers that need to be saved! (Admin only)</h2>
-          <%= render 'leftovers', collection: @leftovers %>
-        <% end %>
 
     <div class="col-md-12 Admin-border">
       <h1 class="text-center">Additionals Admin List</h1>

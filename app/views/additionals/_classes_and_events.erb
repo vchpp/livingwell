@@ -1,4 +1,4 @@
-<% @become_resourceful.in_groups_of(3, false).each do |item1, item2, item3| %>
+<% @classes_and_events.in_groups_of(3, false).each do |item1, item2, item3| %>
 <div class="row fh5co-pricing-table-1 ">
   <% if item1 %>
     <% if item1.send("#{I18n.locale}_external_link".downcase).present? %>
