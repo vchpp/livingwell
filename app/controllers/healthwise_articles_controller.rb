@@ -10,16 +10,19 @@ class HealthwiseArticlesController < ApplicationController
     @admin_healthwise_articles = @healthwise_articles.sort_by(&:category)
     @healthwise_articles = @healthwise_articles.where(archive: false)
     @healthwise_articles = @healthwise_articles.filter_by_search(params[:search]) if (params[:search].present?)
-    @general, @self_care, @strengthen_social_connections, @cope_with_loss, @become_resourceful, @other, @featured = [], [], [], [], [], [], []
+    @build_resilience, @get_good_sleep, @manage_stress, @mental_health_conditions, @strengthen_social_connections, @suicide_prevention, @become_resourceful, @other, @featured = [], [], [], [], [], [], [], [], []
     @healthwise_articles.each do |e|
       if e.featured == true
         @featured << e
-        # 'general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other'
+        # 'Build Resilience', 'Get Good Sleep', 'Manage Stress', 'Strengthen Social Connections', 
+        # 'Become Resourceful', 'Mental Health Conditions', 'Suicide Prevention'
       elsif e.featured == false
-        @general << e if e.category == "general"
-        @self_care << e if e.category == "self_care"
+        @build_resilience << e if e.category == "build_resilience"
+        @get_good_sleep << e if e.category == "get_good_sleep"
+        @manage_stress << e if e.category == "manage_stress"
+        @mental_health_conditions << e if e.category == "mental_health_conditions"
         @strengthen_social_connections << e if e.category == "strengthen_social_connections"
-        @cope_with_loss << e if e.category == "cope_with_loss"
+        @suicide_prevention << e if e.category == "suicide_prevention"
         @become_resourceful << e if e.category == "become_resourceful"
         @other << e if e.category == "other"
       end

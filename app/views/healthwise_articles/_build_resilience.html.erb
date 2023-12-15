@@ -1,4 +1,4 @@
-<% @cope_with_loss.in_groups_of(3, false).each do |item1, item2, item3| %>
+<% @build_resilience.in_groups_of(3, false).each do |item1, item2, item3| %>
 <div class="row fh5co-pricing-table-1 ">
   <% if item1 %>
     <a href="<%= healthwise_article_path(item1) %>">
@@ -29,6 +29,7 @@
           <% item2.languages.each do |l| %>
             <a href="<%= healthwise_article_path(item2,locale: CI_LOCALE[l]) %>"> <%= VERBOSE_LOCALES[l] %> </a> <br>
           <% end %>
+
         </div>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
       </div>
@@ -46,6 +47,7 @@
           <% item3.languages.each do |l| %>
             <a href="<%= healthwise_article_path(item3,locale: CI_LOCALE[l]) %>"> <%= VERBOSE_LOCALES[l] %> </a> <br>
           <% end %>
+
         </div>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
       </div>

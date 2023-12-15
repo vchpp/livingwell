@@ -59,46 +59,59 @@ meta title: "INFORMED - Living Well - Healthwise",
           </form>
         </div>
       </div>
-<%# @general, @self_care, @strengthen_social_connections, @cope_with_loss, @become_resourceful, @other, @featured %>
+<%# 'Build Resilience', 'Get Good Sleep', 'Manage Stress', 'Strengthen Social Connections', %>
+<%#      'Become Resourceful', 'Mental Health Conditions', 'Suicide Prevention' %>
       <% if @featured.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
         <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.featured')%></h2>
         <%= render 'featured', collection: @featured %>
       <% end %>
 
-      <% if @general.any? %>
+      <% if @build_resilience.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.general')%></h2>
-        <%= render 'general', collection: @general %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.build_resilience')%></h2>
+        <%= render 'build_resilience', collection: @build_resilience %>
       <% end %>
 
-      <% if @self_care.any? %>
+      <% if @get_good_sleep.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.self_care')%></h2>
-        <%= render 'self_care', collection: @self_care %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.get_good_sleep')%></h2>
+        <%= render 'get_good_sleep', collection: @get_good_sleep %>
+      <% end %>
+
+      <% if @manage_stress.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.manage_stress')%></h2>
+        <%= render 'manage_stress', collection: @manage_stress %>
+      <% end %>
+
+      <% if @mental_health_conditions.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.mental_health_conditions')%></h2>
+        <%= render 'mental_health_conditions', collection: @mental_health_conditions %>
       <% end %>
 
       <% if @strengthen_social_connections.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.strengthen_social_connections')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.strengthen_social_connections')%></h2>
         <%= render 'strengthen_social_connections', collection: @strengthen_social_connections %>
       <% end %>
 
-      <% if @cope_with_loss.any?  %>
+      <% if @suicide_prevention.any?  %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.cope_with_loss')%></h2>
-        <%= render 'cope_with_loss', collection: @cope_with_loss %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.suicide_prevention')%></h2>
+        <%= render 'suicide_prevention', collection: @suicide_prevention %>
       <% end %>
 
       <% if @become_resourceful.any?  %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.become_resourceful')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.become_resourceful')%></h2>
         <%= render 'become_resourceful', collection: @become_resourceful %>
       <% end %>
 
       <% if @other.any?  %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.other')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.other')%></h2>
         <%= render 'other', collection: @other %>
       <% end %>
 
