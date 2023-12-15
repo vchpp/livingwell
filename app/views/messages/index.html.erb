@@ -104,19 +104,18 @@ meta title: "INFORMED - Living Well - Messages",
     </div>
 
       <% if current_user.try(:admin?) %>
-      <div class="row">
-      <div class="col-md-8 col-md-offset-2 Admin-border">
-        <h1>Messages Admin View</h1>
+      <div class="col-md-12 Admin-border">
+        <h1 class="text=center">Messages Admin View</h1>
 
-          <table>
+          <table class="table table-sm table-hover table-striped">
             <thead>
               <tr>
-                <th>en_name</th>
-                <th>Category</th>
-                <th>Archived?</th>
-                <th>Featured?</th>
-                <th>Priority</th>
-                <th colspan="3"></th>
+                <th scope="col">en_name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Archived?</th>
+                <th scope="col">Featured?</th>
+                <th scope="col">Priority</th>
+                <th scope="col" colspan="3"></th>
               </tr>
             </thead>
 
@@ -130,7 +129,11 @@ meta title: "INFORMED - Living Well - Messages",
                   <% else %>
                     <td><%= message.archive %></td>
                   <% end %>
-                  <td><%= message.featured %></td>
+                  <% if message.featured == true %>
+                    <td class="featured-border"><%= message.featured %></td>
+                  <% else %>
+                    <td><%= message.featured %></td>
+                  <% end %>
                   <td><%= message.priority %></td>
                   <td><%= link_to 'Show', message %></td>
                   <td><%= link_to 'Edit', edit_message_path(message) %></td>
@@ -139,7 +142,6 @@ meta title: "INFORMED - Living Well - Messages",
               <% end %>
             </tbody>
           </table>
-        </div>
         </div>
       <% end %>
 

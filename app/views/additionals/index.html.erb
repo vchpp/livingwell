@@ -118,22 +118,22 @@ meta title: "INFORMED - Living Well - Additional Resources",
         <% end %>
 
     <div class="col-md-12 Admin-border">
-      <h1>Additionals Admin List</h1>
+      <h1 class="text-center">Additionals Admin List</h1>
 
-      <table>
+      <table class="table table-sm table-hover table-striped">
         <thead>
           <tr>
-            <th>En title</th>
-            <th>En source</th>
-            <th>En content</th>
-            <th>En notes</th>
-            <th>Category</th>
-            <th>Languages</th>
-            <th>Tags</th>
-            <th>Last version date</th>
-            <th>Featured?</th>
-            <th>Archived?</th>
-            <th colspan="3"></th>
+            <th scope="col">En title</th>
+            <th scope="col">En source</th>
+            <th scope="col">En content</th>
+            <th scope="col">En notes</th>
+            <th scope="col">Category</th>
+            <th scope="col">Languages</th>
+            <th scope="col">Tags</th>
+            <th scope="col">Last version date</th>
+            <th scope="col">Featured?</th>
+            <th scope="col">Archived?</th>
+            <th scope="col" colspan="3"></th>
           </tr>
         </thead>
 
@@ -148,8 +148,16 @@ meta title: "INFORMED - Living Well - Additional Resources",
               <td><%= additional.languages %></td>
               <td><%= additional.tags %></td>
               <td><%= additional.last_version_date %></td>
-              <td><%= additional.featured %></td>
-              <td><%= additional.archive %></td>
+              <% if additional.featured == true %>
+                <td class="featured-border"><%= additional.featured %></td>
+              <% else %>
+                <td><%= additional.featured %></td>
+              <% end %>
+              <% if additional.archive == true %>
+                <td class="archive-border"><%= additional.archive %></td>
+              <% else %>
+                <td><%= additional.archive %></td>
+              <% end %>
               <td><%= link_to 'Show', additional %></td>
               <td><%= link_to 'Edit', edit_additional_path(additional) %></td>
               <td><%= link_to 'Destroy', additional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -157,8 +165,6 @@ meta title: "INFORMED - Living Well - Additional Resources",
           <% end %>
         </tbody>
       </table>
-      <br>
-      <%= link_to 'New Additional', new_additional_path %>
     </div>
     <% end %>
 
