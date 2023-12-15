@@ -21,13 +21,13 @@ meta title: "INFORMED - Living Well - Healthwise",
       <div class="col-md-8 col-md-offset-2">
         <% if current_user.try(:admin?) %>
         <div class="fh5co-spacer fh5co-spacer-sm"></div>
-          <div class="actions">
-            <%= link_to 'New Healthwise Article', new_healthwise_article_path, class: "btn btn-primary btn-lg btn-block" %>
-          </div>
-          <div class="actions">
-            <%= link_to 'Export Healthwise Articles to CSV', healthwise_articles_path(format: "csv"), class: "btn btn-primary btn-lg btn-block"  %>
-          </div>
-          <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <div class="actions">
+          <%= link_to 'New Healthwise Article', new_healthwise_article_path, class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+        <div class="actions">
+          <%= link_to 'Export Healthwise Articles to CSV', healthwise_articles_path(format: "csv"), class: "btn btn-primary btn-lg btn-block"  %>
+        </div>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
         <% end %>
       </div>
 
@@ -59,64 +59,77 @@ meta title: "INFORMED - Living Well - Healthwise",
           </form>
         </div>
       </div>
-<%# @general, @self_care, @strengthen_social_connections, @cope_with_loss, @become_resourceful, @other, @featured %>
+<%# 'Build Resilience', 'Get Good Sleep', 'Manage Stress', 'Strengthen Social Connections', %>
+<%#      'Become Resourceful', 'Mental Health Conditions', 'Suicide Prevention' %>
       <% if @featured.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
         <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.featured')%></h2>
         <%= render 'featured', collection: @featured %>
       <% end %>
 
-      <% if @general.any? %>
+      <% if @build_resilience.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.general')%></h2>
-        <%= render 'general', collection: @general %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.build_resilience')%></h2>
+        <%= render 'build_resilience', collection: @build_resilience %>
       <% end %>
 
-      <% if @self_care.any? %>
+      <% if @get_good_sleep.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.self_care')%></h2>
-        <%= render 'self_care', collection: @self_care %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.get_good_sleep')%></h2>
+        <%= render 'get_good_sleep', collection: @get_good_sleep %>
+      <% end %>
+
+      <% if @manage_stress.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.manage_stress')%></h2>
+        <%= render 'manage_stress', collection: @manage_stress %>
+      <% end %>
+
+      <% if @mental_health_conditions.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.mental_health_conditions')%></h2>
+        <%= render 'mental_health_conditions', collection: @mental_health_conditions %>
       <% end %>
 
       <% if @strengthen_social_connections.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.strengthen_social_connections')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.strengthen_social_connections')%></h2>
         <%= render 'strengthen_social_connections', collection: @strengthen_social_connections %>
       <% end %>
 
-      <% if @cope_with_loss.any?  %>
+      <% if @suicide_prevention.any?  %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.cope_with_loss')%></h2>
-        <%= render 'cope_with_loss', collection: @cope_with_loss %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.suicide_prevention')%></h2>
+        <%= render 'suicide_prevention', collection: @suicide_prevention %>
       <% end %>
 
       <% if @become_resourceful.any?  %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.become_resourceful')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.become_resourceful')%></h2>
         <%= render 'become_resourceful', collection: @become_resourceful %>
       <% end %>
 
       <% if @other.any?  %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.other')%></h2>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.other')%></h2>
         <%= render 'other', collection: @other %>
       <% end %>
 
     <% if current_user.try(:admin?) || current_user.try(:healthwise?) %>
     <div class="col-md-12 Admin-border">
-      <h1>Healthwise Articles Admin List</h1>
+      <h1 class="text-center">Healthwise Articles Admin List</h1>
 
-    <table>
+    <table class="table table-sm table-hover table-striped">
       <thead>
         <tr>
-          <th>Hwid</th>
-          <th>article_or_topic</th>
-          <th>En title</th>
-          <th>Languages</th>
-          <th>Category</th>
-          <th>Featured</th>
-          <th>Archive</th>
-          <th colspan="3"></th>
+          <th scope="col">Hwid</th>
+          <th scope="col">article_or_topic</th>
+          <th scope="col">En title</th>
+          <th scope="col">Languages</th>
+          <th scope="col">Category</th>
+          <th scope="col">Featured</th>
+          <th scope="col">Archive</th>
+          <th scope="col" colspan="3"></th>
         </tr>
       </thead>
 
@@ -128,7 +141,11 @@ meta title: "INFORMED - Living Well - Healthwise",
             <td><%= healthwise_article.en_title %></td>
             <td><%= healthwise_article.languages %></td>
             <td><%= healthwise_article.category %></td>
-            <td><%= healthwise_article.featured %></td>
+            <% if healthwise_article.featured == true %>
+              <td class="featured-border"><%= healthwise_article.featured %></td>
+            <%else%>
+              <td><%= healthwise_article.featured %></td>
+            <%end%>
             <% if healthwise_article.archive == true %>
               <td class="archive-border"><%= healthwise_article.archive %></td>
             <% else %>
@@ -143,10 +160,6 @@ meta title: "INFORMED - Living Well - Healthwise",
         <% end %>
       </tbody>
     </table>
-    <br>
-    <% if current_user.try(:admin?) %>
-      <%= link_to 'New Healthwise Article', new_healthwise_article_path %>
-    <% end %>
   </div>
   <% end %>
 

@@ -1403,36 +1403,47 @@ Components
 }
 
 /* custom blocks */
-/* 'general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other' */
-.general {
-  border: 4px solid #eb5d1f;
-  border-radius: 15px;
-  background: #eb5d1f;
-  color: #ffffff;
-  box-shadow: 0 0 20px grey;
+
+/* Additional Resources 
+Helplines
+Mental Health Services
+Education Materials
+Classes and Events
+Community Resources
+COVID Related
+Other */
+
+/* HealthwiseArticles 'Build Resilience', 'Get Good Sleep', 'Manage Stress', 'Strengthen Social Connections', 
+        # 'Become Resourceful', 'Mental Health Conditions', 'Suicide Prevention' */
+.general, .covid_related  {
+border: 4px solid #eb5d1f;
+border-radius: 15px;
+background: #eb5d1f;
+color: #ffffff;
+box-shadow: 0 0 20px grey;
 }
-.self_care {
+.get_good_sleep, .build_resilience, .helplines, .community_resources {
   border: 4px solid #37c4bc;
   border-radius: 15px;
   background: #37c4bc;
   color: #ffffff;
   box-shadow: 0 0 20px grey;
 }
-.strengthen_social_connections {
+.strengthen_social_connections, .manage_stress, .mental_health_services {
   border: 4px solid #262463;
   border-radius: 15px;
   background: #262463;
   color: #ffffff;
   box-shadow: 0 0 20px grey;
 }
-.cope_with_loss {
+.suicide_prevention, .mental_health_conditions, .education_materials {
   border: 4px solid #823D1C;
   border-radius: 15px;
   background: #823D1C;
   color: #ffffff;
   box-shadow: 0 0 20px grey;
 }
-.become_resourceful {
+.become_resourceful, .classes_and_events {
   border: 4px solid #823D1C;
   border-radius: 15px;
   background: #823D1C;
@@ -1447,19 +1458,19 @@ Components
   box-shadow: 0 0 20px grey;
 }
 /* custom borders */
-.general-border {
+.general-border, .covid_related-border {
   border: 4px solid #eb5d1f;
   border-radius: 15px;
   color: #000;
   box-shadow: 0 0 20px grey;
 }
-.self_care-border {
+.get_good_sleep-border, .build_resilience-border, .helplines-border, .community_resources-border {
   border: 4px solid #37c4bc;
   border-radius: 15px;
   color: #000;
   box-shadow: 0 0 20px grey;
 }
-.strengthen_social_connections-border {
+.strengthen_social_connections-border, .manage_stress-border, .mental_health_services-border {
   border: 4px solid #262463;
   border-radius: 15px;
   color: #000;
@@ -1471,13 +1482,13 @@ Components
   color: #000;
   box-shadow: 0 0 20px grey;
 }
-.cope_with_loss-border {
+.suicide_prevention-border, .mental_health_conditions-border, .education_materials-border {
   border: 4px solid #823D1C;
   border-radius: 15px;
   color: #000;
   box-shadow: 0 0 20px grey;
 }
-.become_resourceful-border {
+.become_resourceful-border, .classes_and_events-border {
   border: 4px solid #823D1C;
   border-radius: 15px;
   color: #000;
@@ -1490,8 +1501,14 @@ Components
   box-shadow: 0 0 20px grey;
 }
 .archive-border {
-  border: 2px solid red;
-  border-radius: 15px;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+.featured-border {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
 }
 /* Download categories: participant handouts/flipcharts/training manuals/other */
 .Participant_Handouts {

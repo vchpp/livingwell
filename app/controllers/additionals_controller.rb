@@ -8,22 +8,22 @@ class AdditionalsController < ApplicationController
     @admin_additionals = @additionals.sort_by(&:category)
     @additionals = @additionals.where(archive: false) # if current_user.try(:admin?)
     @additionals = @additionals.filter_by_search(params[:search]) if (params[:search].present?)
-    # 'general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other'
-    @general, @self_care, @strengthen_social_connections, @cope_with_loss, @become_resourceful, @other, @featured = [], [], [], [], [], [], []
+    @helplines, @mental_health_services, @education_materials, @classes_and_events, @community_resources, @covid_related, @other, @featured = [], [], [], [], [], [], [], []
     @additionals.each do |e|
       if e.featured == true
         @featured << e
-        # 'general', 'self-care', 'strengthen social connections', 'cope with loss', 'become resourceful', 'other'
+        # 'helplines' 'mental Health Services' 'Education Materials' 'Classes and Events' 'Community Resources' 'COVID Related' 'other'
       elsif e.featured == false
-        @general << e if e.category == "general"
-        @self_care << e if e.category == "self_care"
-        @strengthen_social_connections << e if e.category == "strengthen_social_connections"
-        @cope_with_loss << e if e.category == "cope_with_loss"
-        @become_resourceful << e if e.category == "become_resourceful"
+        @helplines << e if e.category == "helplines"
+        @mental_health_services << e if e.category == "mental_health_services"
+        @education_materials << e if e.category == "education_materials"
+        @classes_and_events << e if e.category == "classes_and_events"
+        @community_resources << e if e.category == "community_resources"
+        @covid_related << e if e.category == "covid_related"
         @other << e if e.category == "other"
       end
     end
-    @leftovers = @additionals.reject{|d| d.category == "general" || d.category == "other" || d.category == "self_care" || d.category == "strengthen_social_connections" || d.category == "cope_with_loss" || d.category == "become_resourceful"}
+    # @leftovers = @additionals.reject{|d| d.category == "general" || d.category == "other" || d.category == "self_care" || d.category == "strengthen_social_connections" || d.category == "cope_with_loss" || d.category == "become_resourceful"}
   end
 
   # GET /additionals/1 or /additionals/1.json
