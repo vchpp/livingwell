@@ -60,7 +60,7 @@ https://github.com/vchpp/informed-livingwell
 
 - [x] Add abiilty for admins to view an archived asset for previewabiliity, but keep hidden for visitors (display with a red border)
 
-- [] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
+- [x] provide ability for visitor to see messages in non-navigating language (give warning about not in native language)
 
 - [] all .yml translations for all new categories
 
@@ -70,7 +70,7 @@ https://github.com/vchpp/informed-livingwell
 
 - [] gate behind cf access rule
 
-- [] Update Livingwell logo in all languages
+- [x] Update Livingwell logo in all languages
 
 - [] Update partner logos (CPR3 and UCSF)
 
