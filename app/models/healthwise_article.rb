@@ -20,6 +20,7 @@ class HealthwiseArticle < ApplicationRecord
                                         where("vi_title ilike ?", "%#{search}%")).or(
                                         where("ko_title ilike ?", "%#{search}%")).or(
                                         where("hm_title ilike ?", "%#{search}%")).or(
+                                        where("array_to_string(tags,'||') ILIKE :en_title", en_title: "%#{search}%")).or(
                                         where("category ilike ?", "%#{search}%"))
                                         }
   def self.to_csv

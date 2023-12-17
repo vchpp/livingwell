@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
     @admin_messages = @messages.sort_by(&:priority)
     @messages = @messages.where(archive: false)
     set_message_categories
-    @messages = @messages.filter_by_category(params[:category]) if (params[:category].present?)
+    @messages = @messages.filter_by_search(params[:search]) if (params[:search].present?)
     # if @message.empty? redirect to new_message_path
     respond_to do |format|
       format.html
