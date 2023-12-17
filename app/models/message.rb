@@ -34,6 +34,14 @@ class Message < ApplicationRecord
   extend FriendlyId
   friendly_id :en_name, use: %i(slugged history finders)
   scope :filter_by_category, -> (category) { where category: category }
+  scope :filter_by_search, -> (search) { where("en_name ilike ?", "%#{search}%").or(
+                                        where("zh_tw_name ilike ?", "%#{search}%")).or(
+                                        where("vi_name ilike ?", "%#{search}%")).or(
+                                        where("ko_name ilike ?", "%#{search}%")).or(
+                                        where("hm_name ilike ?", "%#{search}%")).or(
+                                        where("category ilike ?", "%#{search}%")).or(
+                                        where("array_to_string(tags,'||') ILIKE :en_name", en_name: "%#{search}%"))
+                                        }
 
   def self.to_csv
     attributes = %w{id

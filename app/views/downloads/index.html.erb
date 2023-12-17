@@ -141,7 +141,8 @@ meta title: "INFORMED - Living Well - Downloads",
             <th scope="col">Zh cn file</th>
             <th scope="col">Vi file</th>
             <th scope="col">Hm file</th>
-            <th scope="col">ko file</th>
+            <th scope="col">Ko file</th>
+            <th scope="col">Tags</th>
             <th scope="col">Archive</th>
             <th scope="col" colspan="3"></th>
           </tr>
@@ -157,6 +158,7 @@ meta title: "INFORMED - Living Well - Downloads",
               <td><%= image_tag download.vi_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.vi_file.attached? %></td>
               <td><%= image_tag download.hm_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.hm_file.attached? %></td>
               <td><%= image_tag download.ko_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.ko_file.attached? %></td>
+              <td><%= download.tags %></td>
               <% if download.archive == true %>
                 <td class="archive-border"><%= download.archive %></td>
               <% else %>

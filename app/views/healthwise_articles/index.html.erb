@@ -127,6 +127,7 @@ meta title: "INFORMED - Living Well - Healthwise",
           <th scope="col">En title</th>
           <th scope="col">Languages</th>
           <th scope="col">Category</th>
+          <th scope="col">Tags</th>
           <th scope="col">Featured</th>
           <th scope="col">Archive</th>
           <th scope="col" colspan="3"></th>
@@ -141,6 +142,7 @@ meta title: "INFORMED - Living Well - Healthwise",
             <td><%= healthwise_article.en_title %></td>
             <td><%= healthwise_article.languages %></td>
             <td><%= healthwise_article.category %></td>
+            <td><%= healthwise_article.tags %></td>
             <% if healthwise_article.featured == true %>
               <td class="featured-border"><%= healthwise_article.featured %></td>
             <%else%>
