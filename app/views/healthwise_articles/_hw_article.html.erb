@@ -38,7 +38,7 @@ meta title: "#{@healthwise_article.send("#{article_locale}_json")["data"]["title
           <%= raw t["html"] %>
         <% end %>
       </div>
-      <% if @healthwise_article.send("#{article_locale}_json")["data"]["credits"] == !nil %>
+      <% if @healthwise_article.send("#{article_locale}_json")["data"]["credits"] %>
       <div class="col-md-12">
         <p><label>Author:</label> <%= @healthwise_article.send("#{article_locale}_json")["data"]["credits"]["author"]["name"] if @healthwise_article.send("#{article_locale}_json")["data"]["credits"]["author"]["name"] %> </p>
         <p>
