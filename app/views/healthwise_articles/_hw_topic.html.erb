@@ -15,22 +15,22 @@
       <% end %>
     <% else %>
       <div class="col-md-12">
-        <% @healthwise_article.send("#{article_locale}_json")["data"]["topics"].map do |t| %>
-          <%= raw t["html"] %>
-        <% end %>
+      <% @healthwise_article.send("#{article_locale}_json")["data"]["topics"].map do |t| %>
+        <%= raw t["html"] %>
+      <% end %>
       </div>
 
-
+      <% if @healthwise_article.send("#{article_locale}_json")["data"]["topics"][0]["credits"]["primaryReviewers"] %>
       <div class="col-md-12">
         <p>
           <label> Reviewers:</label>
-          <% if @healthwise_article.send("#{article_locale}_json")["data"]["topics"][0]["credits"]["primaryReviewers"] %>
-            <% @healthwise_article.send("#{article_locale}_json")["data"]["topics"][0]["credits"]["primaryReviewers"].map do |r| %>
-              <%= r["name"] %>, 
-            <% end %>
+          <% @healthwise_article.send("#{article_locale}_json")["data"]["topics"][0]["credits"]["primaryReviewers"].map do |r| %>
+            <%= r["name"] %>, 
           <% end %>
         </p>
      </div>
+      <% end %>
+
       <div class="col-md-12">
         <%= raw @healthwise_article.send("#{article_locale}_json")["data"]["topics"][0]["legal"]["logoURL"] %>
         <%= raw @healthwise_article.send("#{article_locale}_json")["data"]["topics"][0]["legal"]["copyrightText"] %>
