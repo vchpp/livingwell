@@ -29,8 +29,8 @@ en:
     title1: "Healthy Family Project – "
     title2: "Getting INFORMED to Stay Healthy"
     mission1: "“INFORMED-Living Well” is a research project to facilitate pandemic recovery by promoting emotional wellness among Asian Americans."
-    mission2: "“INFORMED” stands for “Individual and Family Oriented Responsive Messaging Education. The study aims to explore various approaches to build resilience and promote emotional wellness among Asian Californians in a post-pandemic world. We will investigate whether text messaging alone or text messaging combined with lay health worker outreach education can help Asian Americans get informed and learn practical skills for emotional well-being."
-    disclaimer: "The information, including but not limited to, text, graphics, images and other material contained on this website, is for informational purpose only. No material on this site is intended to be a substitute for professional medical advice, diagnosis or treatment. Always seek the advice of your physician or other qualified health care provider for specific recommendation pertaining to your health condition. "  
+    mission2: "“INFORMED” stands for “Individual and Family Oriented Responsive Messaging Education.” The study aims to explore various approaches to build resilience and promote emotional wellness among Asian Californians in a post-pandemic world. We will investigate whether text messaging alone or text messaging combined with lay health worker outreach education can help Asian Americans get informed and learn practical skills for emotional well-being."
+    disclaimer: "The information, including but not limited to, text, graphics, images and other material contained on this website, is for informational purpose only. Some website content and images are adapted from the <a href='https://www.nih.gov/health-information/emotional-wellness-toolkit' target='_blank'>NIH Emotional Wellness Toolkit</a>, which have been modified for our study and tailored for cultural and language appropriateness among diverse Asian American populations. Educational use permission granted by NIH News in Health. No material on this site is intended to be a substitute for professional medical advice, diagnosis or treatment. Always seek the advice of your physician or other qualified health care provider for specific recommendations pertaining to your health condition."  
   messages:
     messages: "Messages"
     read_more: "Read More"
@@ -75,8 +75,8 @@ en:
     layhealthworkers:
       layhealthworkers: "Lay Health Educators"
       project: "About Lay Health Educators of the INFORMED Project:"
-      project1: "A lay health educator in the INFORMED Project is someone who has been selected to teach others in their own communities about how to stay healthy during the COVID-19 pandemic. They have been trained by the research staff to provide up-to-date information about COVID-19."
-      project2: "Our lay health educators are selected because they are warm, friendly, open-minded, and have expressed an interest in improving the health of their communities. They will lead health educational sessions about COVID-19, so that the important health messages will reach members of the communities in a culturally and linguistically appropriate way."
+      project1: "A lay health worker in the INFORMED-Living Well Project is someone selected to educate others in their communities on maintaining health and well-being in the post-pandemic era. Trained by the research staff, these individuals provide up-to-date information on various approaches to building resilience and promoting emotional wellness."
+      project2: "Our lay health workers are chosen for their warmth, friendliness, open-mindedness, and interest in improving the health of their communities. They will lead health educational sessions on emotional wellness, so that the important health messages will reach members of the communities in a culturally and linguistically appropriate way."
       downloads: "Downloads of INFORMED Materials:"
       downloads1: "With support from the National Institutes of Health (Research Grant Number 3R01DA036749-05S1), the training and educational materials used by our lay health workers are made available for research and educational use for free."
       stats: "Statistics About COVID-19 from Selected Sources:"
