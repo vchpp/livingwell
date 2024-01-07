@@ -5,7 +5,7 @@ class HealthwiseArticlesController < ApplicationController
 
   # GET /healthwise_articles or /healthwise_articles.json
   def index
-    @healthwise_articles = HealthwiseArticle.where(nil).order('en_title ASC') # creates an anonymous scope
+    @healthwise_articles = HealthwiseArticle.where(nil).order('priority ASC') # creates an anonymous scope
     @csv_healthwise_articles = @healthwise_articles
     @admin_healthwise_articles = @healthwise_articles.sort_by(&:category)
     @healthwise_articles = @healthwise_articles.where(archive: false)
@@ -294,7 +294,7 @@ class HealthwiseArticlesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def healthwise_article_params
-    params.require(:healthwise_article).permit(:hwid, :article_or_topic, :en_title, :en_json, :en_translated, :en_pdf_purge, :zh_tw_title, :zh_tw_json, :zh_tw_translated, :zh_tw_pdf_purge, :zh_cn_title, :zh_cn_json, :zh_cn_translated, :zh_cn_pdf_purge, :vi_title, :vi_json, :vi_translated, :vi_pdf_purge, :hm_title, :hm_json, :hm_translated, :hm_pdf_purge, :ko_title, :ko_json, :ko_translated, :ko_pdf_purge, :en_rich_text, :zh_tw_rich_text, :zh_cn_rich_text, :vi_rich_text, :hm_rich_text, :ko_rich_text, :category, :featured, :archive, :languages, :tags, en_pdf: [], zh_tw_pdf: [],  zh_cn_pdf: [], vi_pdf: [], hm_pdf: [], ko_pdf: [])
+    params.require(:healthwise_article).permit(:hwid, :article_or_topic, :en_title, :en_json, :en_translated, :en_pdf_purge, :zh_tw_title, :zh_tw_json, :zh_tw_translated, :zh_tw_pdf_purge, :zh_cn_title, :zh_cn_json, :zh_cn_translated, :zh_cn_pdf_purge, :vi_title, :vi_json, :vi_translated, :vi_pdf_purge, :hm_title, :hm_json, :hm_translated, :hm_pdf_purge, :ko_title, :ko_json, :ko_translated, :ko_pdf_purge, :en_rich_text, :zh_tw_rich_text, :zh_cn_rich_text, :vi_rich_text, :hm_rich_text, :ko_rich_text, :category, :featured, :archive, :languages, :tags, :priority, en_pdf: [], zh_tw_pdf: [],  zh_cn_pdf: [], vi_pdf: [], hm_pdf: [], ko_pdf: [])
   end
 
   def set_page
