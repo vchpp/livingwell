@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_09_06_041826) do
+ActiveRecord::Schema.define(version: 2024_01_07_003641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -239,6 +239,7 @@ ActiveRecord::Schema.define(version: 2023_09_06_041826) do
     t.string "vi_rich_text"
     t.string "hm_rich_text"
     t.string "ko_rich_text"
+    t.integer "priority"
     t.index ["slug"], name: "index_healthwise_articles_on_slug", unique: true
   end
 

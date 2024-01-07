@@ -73,22 +73,16 @@ meta title: "INFORMED - Living Well - Healthwise",
         <%= render 'build_resilience', collection: @build_resilience %>
       <% end %>
 
-      <% if @get_good_sleep.any? %>
-        <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.get_good_sleep')%></h2>
-        <%= render 'get_good_sleep', collection: @get_good_sleep %>
-      <% end %>
-
       <% if @manage_stress.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
         <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.manage_stress')%></h2>
         <%= render 'manage_stress', collection: @manage_stress %>
       <% end %>
 
-      <% if @mental_health_conditions.any? %>
+      <% if @get_good_sleep.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.mental_health_conditions')%></h2>
-        <%= render 'mental_health_conditions', collection: @mental_health_conditions %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.get_good_sleep')%></h2>
+        <%= render 'get_good_sleep', collection: @get_good_sleep %>
       <% end %>
 
       <% if @strengthen_social_connections.any? %>
@@ -97,16 +91,22 @@ meta title: "INFORMED - Living Well - Healthwise",
         <%= render 'strengthen_social_connections', collection: @strengthen_social_connections %>
       <% end %>
 
-      <% if @suicide_prevention.any?  %>
-        <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.suicide_prevention')%></h2>
-        <%= render 'suicide_prevention', collection: @suicide_prevention %>
-      <% end %>
-
       <% if @become_resourceful.any?  %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
         <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.become_resourceful')%></h2>
         <%= render 'become_resourceful', collection: @become_resourceful %>
+      <% end %>
+
+      <% if @mental_health_conditions.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.mental_health_conditions')%></h2>
+        <%= render 'mental_health_conditions', collection: @mental_health_conditions %>
+      <% end %>
+
+      <% if @suicide_prevention.any?  %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.suicide_prevention')%></h2>
+        <%= render 'suicide_prevention', collection: @suicide_prevention %>
       <% end %>
 
       <% if @other.any?  %>
@@ -114,57 +114,59 @@ meta title: "INFORMED - Living Well - Healthwise",
         <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.other')%></h2>
         <%= render 'other', collection: @other %>
       <% end %>
+  </div>
 
-    <% if current_user.try(:admin?) || current_user.try(:healthwise?) %>
-    <div class="col-md-12 Admin-border">
-      <h1 class="text-center">Healthwise Articles Admin List</h1>
+  <% if current_user.try(:admin?) || current_user.try(:healthwise?) %>
+  <div class="col-md-12 Admin-border">
+    <h1 class="text-center">Healthwise Articles Admin List</h1>
 
-    <table class="table table-sm table-hover table-striped">
-      <thead>
+  <table class="table table-sm table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Hwid</th>
+        <th scope="col">article_or_topic</th>
+        <th scope="col">En title</th>
+        <th scope="col">Languages</th>
+        <th scope="col">Category</th>
+        <th scope="col">Tags</th>
+        <th scope="col">Featured</th>
+        <th scope="col">Archive</th>
+        <th scope="col">Priority</th>
+        <th scope="col" colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @admin_healthwise_articles.each do |healthwise_article| %>
         <tr>
-          <th scope="col">Hwid</th>
-          <th scope="col">article_or_topic</th>
-          <th scope="col">En title</th>
-          <th scope="col">Languages</th>
-          <th scope="col">Category</th>
-          <th scope="col">Tags</th>
-          <th scope="col">Featured</th>
-          <th scope="col">Archive</th>
-          <th scope="col" colspan="3"></th>
+          <td><%= healthwise_article.hwid %></td>
+          <td><%= healthwise_article.article_or_topic %></td>
+          <td><%= healthwise_article.en_title %></td>
+          <td><%= healthwise_article.languages %></td>
+          <td><%= healthwise_article.category %></td>
+          <td><%= healthwise_article.tags %></td>
+          <% if healthwise_article.featured == true %>
+            <td class="featured-border"><%= healthwise_article.featured %></td>
+          <%else%>
+            <td><%= healthwise_article.featured %></td>
+          <%end%>
+          <% if healthwise_article.archive == true %>
+            <td class="archive-border"><%= healthwise_article.archive %></td>
+          <% else %>
+            <td><%= healthwise_article.archive %></td>
+          <% end %>
+          <td><%= healthwise_article.priority %></td>
+          <td><%= link_to 'Show', healthwise_article %></td>
+          <% if current_user.try(:admin?) %>
+            <td><%= link_to 'Edit', edit_healthwise_article_path(healthwise_article) %></td>
+            <td><%= link_to 'Destroy', healthwise_article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
-      </thead>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<% end %>
 
-      <tbody>
-        <% @admin_healthwise_articles.each do |healthwise_article| %>
-          <tr>
-            <td><%= healthwise_article.hwid %></td>
-            <td><%= healthwise_article.article_or_topic %></td>
-            <td><%= healthwise_article.en_title %></td>
-            <td><%= healthwise_article.languages %></td>
-            <td><%= healthwise_article.category %></td>
-            <td><%= healthwise_article.tags %></td>
-            <% if healthwise_article.featured == true %>
-              <td class="featured-border"><%= healthwise_article.featured %></td>
-            <%else%>
-              <td><%= healthwise_article.featured %></td>
-            <%end%>
-            <% if healthwise_article.archive == true %>
-              <td class="archive-border"><%= healthwise_article.archive %></td>
-            <% else %>
-              <td><%= healthwise_article.archive %></td>
-            <% end %>
-            <td><%= link_to 'Show', healthwise_article %></td>
-            <% if current_user.try(:admin?) %>
-              <td><%= link_to 'Edit', edit_healthwise_article_path(healthwise_article) %></td>
-              <td><%= link_to 'Destroy', healthwise_article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-  <% end %>
-
-  </div>
 </section>
 
