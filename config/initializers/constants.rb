@@ -27,6 +27,6 @@ VERBOSE_LOCALES = {
   "vi-us"  => "Tiếng Việt",
   "hm-us" => "lus hmoob",
   "zh-us" => "简体中文",
-  "ko-us" => "한국인",
+  "ko-us" => "한국어",
   "en-us" => "English"
 }
