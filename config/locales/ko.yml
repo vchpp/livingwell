@@ -92,7 +92,7 @@ ko:
       mental_health_conditions: "정신 건강 문제"
       suicide_prevention: "자살 예방"
       healthwise: "Healthwise자료"
-      missing_article: "해당 정보는 영어로만 제공됩니다. 불편을 드려 죄송합니다."
+      missing_article: "이 정보는 한국어로 제공되지 않습니다. 불편을 드려 죄송합니다."
       disclaimer: "제공된 건강 정보 기사는 본 프로젝트의 비영리 파트너인 Healthwise가 무료로 제공합니다. <a href='https://healthwise.org' target='_blank'>Healthwise</a> 은 지역사회, 병원 및 전자 의료 기록 제공업체를 위해 근거에 기반한 건강 정보를 제공합니다. 많은 사람들이 더 나은 건강 결정을 내리기 위해 Healthwise 정보를 활용해 왔습니다. 이 정보에 대해 자유롭게 댓글을 달고 귀하의 지역사회와 이 정보를 공유해 주십시오."
   faqs:
     faq: "자주 묻는 질문"
