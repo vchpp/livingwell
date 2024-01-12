@@ -8,8 +8,8 @@ class MessagesController < ApplicationController
     @messages = Message.where(nil)
       .send("with_attached_#{I18n.locale}_images".downcase)
       .order("featured DESC NULLS LAST")
-      .order("priority ASC")
-    @admin_messages = @messages.sort_by(&:priority)
+      .order("priority ASC NULLS LAST")
+    @admin_messages = @messages.sort_by(&:category)
     @messages = @messages.where(archive: false)
     set_message_categories
     @messages = @messages.filter_by_search(params[:search]) if (params[:search].present?)
