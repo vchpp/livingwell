@@ -17,38 +17,42 @@ meta title: "INFORMED - Living Well - Mission",
 
 <!-- START #fh5co-hero -->
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-      <div class="fh5co-spacer fh5co-spacer-md"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    <div class="fh5co-spacer fh5co-spacer-md"></div>
 
-        <div class="col-md-6">
-          <img class="fh5co-align-left img-responsive" src="/assets/INFORMED-LivingWell Logo 2023-12.png" alt="livingwell logo" >
-        </div>
-        <div class="col-md-6 clearfix fh5co-header">
-          <div class="fh5co-spacer fh5co-spacer-lg"></div>
-          <h1 class="h1 fh5co-heading fh5co-no-margin-bottom"><%= t('about.title1') %></h1>
-          <h1 class="h1 fh5co-heading fh5co-no-margin-bottom"><%= t('about.title2') %></h1>
-        </div>
-        <% if current_user.try(:admin?) %>
-          <div class="fh5co-spacer fh5co-spacer-sm"></div>
-          <% if @callouts.any? %>
-            <%= render 'callouts', collection: @callouts %>
-          <div class="fh5co-spacer fh5co-spacer-md"></div>
-          <% end %>
+      <div class="col-md-6">
+        <img class="fh5co-align-left img-responsive" src="/assets/INFORMED-LivingWell Logo 2023-12.png" alt="livingwell logo" >
+      </div>
+      <div class="col-md-6 clearfix fh5co-header">
+        <div class="fh5co-spacer fh5co-spacer-lg"></div>
+        <h1 class="h1 fh5co-heading fh5co-no-margin-bottom"><%= t('about.title1') %></h1>
+        <h1 class="h1 fh5co-heading fh5co-no-margin-bottom"><%= t('about.title2') %></h1>
+      </div>
+      <% if current_user.try(:admin?) %>
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
+        <% if @callouts.any? %>
+          <%= render 'callouts', collection: @callouts %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
         <% end %>
-        <div class="clearfix fh5co-header">
-          <div class="fh5co-spacer fh5co-spacer-sm"></div>
-          <h4 class="h5 fh5co-heading-sub"><%= t('about.mission1') %></h4>
-          <div class="fh5co-spacer fh5co-spacer-sm"></div>
-          <h4 class="h5 fh5co-heading-sub"><%= t('about.mission2') %></h4>
-          <div class="fh5co-spacer fh5co-spacer-sm"></div>
-        </div>
+      <% end %>
+      <div class="clearfix fh5co-header">
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
+        <h4 class="h5 fh5co-heading-sub"><%= t('about.mission1') %></h4>
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
+        <h4 class="h5 fh5co-heading-sub"><%= t('about.mission2') %></h4>
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
       </div>
     </div>
   </div>
+</div>
 
-
+<div class="container">
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="<%= t('about.video') %>" title="YouTube video player" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</div>
 
 <!--
       <section>

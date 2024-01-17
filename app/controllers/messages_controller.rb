@@ -14,6 +14,8 @@ class MessagesController < ApplicationController
     set_message_categories
     @messages = @messages.filter_by_search(params[:search]) if (params[:search].present?)
     # if @message.empty? redirect to new_message_path
+    # flash.now[:alert] = "#{t('messages.coming_soon')}"
+    coming_soon
     respond_to do |format|
       format.html
       format.csv { send_data @messages.to_csv, filename: "Messages-#{Date.today}.csv" } if current_user.try(:admin?)
@@ -226,5 +228,9 @@ private
     likes = @message.likes.all
     down = likes.map do |like| like.down end
     @down_likes = down.map(&:to_i).reduce(0, :+)
+  end
+  
+  def coming_soon
+    flash.now[:alert] = "#{t('messages.coming_soon')}"
   end
 end
