@@ -23,6 +23,7 @@ class AdditionalsController < ApplicationController
         @other << e if e.category == "other"
       end
     end
+    hmong_coming_soon
     # @leftovers = @additionals.reject{|d| d.category == "general" || d.category == "other" || d.category == "self_care" || d.category == "strengthen_social_connections" || d.category == "cope_with_loss" || d.category == "become_resourceful"}
   end
 
@@ -101,5 +102,11 @@ class AdditionalsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def additional_params
       params.require(:additional).permit(:en_title, :en_source, :en_content, :en_external_link, :en_notes, :zh_tw_title, :zh_tw_source, :zh_tw_content, :zh_tw_external_link, :zh_tw_notes, :zh_cn_title, :zh_cn_source, :zh_cn_content, :zh_cn_external_link, :zh_cn_notes, :vi_title, :vi_source, :vi_content, :vi_external_link, :vi_notes, :hm_title, :hm_source, :hm_content, :hm_external_link, :hm_notes, :ko_title, :ko_source, :ko_content, :ko_external_link, :ko_notes, :languages, :last_version_date, :search, :category, :featured, :archive, :tags)
+    end
+
+    def hmong_coming_soon    
+      if params[:locale] == "hm"
+        flash.now[:alert] = "Cov khoom siv txhais lus hmoob yuav tawm saib saib tom ntej no"
+      end
     end
 end
