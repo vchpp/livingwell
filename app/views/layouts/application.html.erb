@@ -25,7 +25,6 @@
       var dt = getCookie('dt');
       var locale = getCookie('locale');
     </script>
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -36,6 +35,8 @@
     	<!-- Google Webfont -->
   	<!-- <link href='https://fonts.googleapis.com/css?family=Lato:300,400|Crimson+Text' rel='stylesheet' type='text/css'> -->
     <%= favicon_link_tag asset_path('favicon2.png') %>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MW2ZN7T85S"></script>
     <%= yield :head %>
   </head>
 
