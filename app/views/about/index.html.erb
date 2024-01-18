@@ -8,8 +8,7 @@ meta title: "INFORMED - Living Well - Mission",
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-MW2ZN7T85S', {'custom_map': {'dimension1': 'dt'}});
-    gtag('event','pageview', {'dt': dt});
+    gtag('config', 'G-MW2ZN7T85S', {'dimension1': dt});
     gtag('send','event','eventCategory','eventAction');
   </script>
 <% end %>
@@ -49,7 +48,7 @@ meta title: "INFORMED - Living Well - Mission",
 
 <div class="container">
   <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="<%= t('about.video')%>" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe class="embed-responsive-item" src="<%= t('about.video')%>" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
 
