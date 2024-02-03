@@ -59,7 +59,7 @@ meta title: "INFORMED - Living Well - Downloads",
         <% if item1 %>
 
           <% if item1.send("#{params[:locale]}_file".downcase).attached? %>
-            <%= link_to rails_blob_path(item1.send("#{params[:locale]}_file".downcase), disposition: "attachment") do %>
+            <%= link_to pdfjs.full_path(file: rails_blob_path(item1.send("#{params[:locale]}_file".downcase))), target: :_blank do %>
               <div class="col-md-4 col-sm-6 fh5co-feature-item">
                 <div class="<%=item1.category%> text-center">
                   <span class="fh5co-feature-icon">
@@ -82,7 +82,7 @@ meta title: "INFORMED - Living Well - Downloads",
 
         <% if item2 %>
           <% if item2.send("#{params[:locale]}_file".downcase).attached? %>
-            <%= link_to rails_blob_path(item2.send("#{params[:locale]}_file".downcase), disposition: "attachment") do %>
+            <%= link_to pdfjs.full_path(file: rails_blob_path(item2.send("#{params[:locale]}_file".downcase))), target: :_blank do %>
               <div class="col-md-4 col-sm-6 fh5co-feature-item">
                 <div class="<%=item2.category%> text-center">
                   <span class="fh5co-feature-icon">
@@ -104,7 +104,7 @@ meta title: "INFORMED - Living Well - Downloads",
 
         <% if item3 %>
           <% if item3.send("#{params[:locale]}_file".downcase).attached? %>
-            <%= link_to rails_blob_path(item3.send("#{params[:locale]}_file".downcase), disposition: "attachment") do %>
+            <%= link_to pdfjs.full_path(file: rails_blob_path(item3.send("#{params[:locale]}_file".downcase))), target: :_blank do %>
               <div class="col-md-4 col-sm-6 fh5co-feature-item">
                 <div class="<%=item3.category%> text-center">
                   <span class="fh5co-feature-icon">

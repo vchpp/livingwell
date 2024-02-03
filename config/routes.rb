@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :likes
     resources :comments
     devise_for :users
-
+    
     get '/admin', to: 'admin#index'
     authenticate :user, -> (u) { u.admin? } do
       mount AuditLog::Engine => "/admin/audit-log"
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     # get '/resources', to: 'resources#index'
     get '/resources', to: redirect("/#{I18n.locale}/resources/faqs")
     scope '/resources' do
+      mount PdfjsViewer::Rails::Engine => "downloads/pdfjs", as: 'pdfjs'
       resources :healthwise_articles, :path => '/healthwise-articles' do
         resources :likes
         resources :comments
