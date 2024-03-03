@@ -23,7 +23,6 @@ class AdditionalsController < ApplicationController
         @other << e if e.category == "other"
       end
     end
-    hmong_coming_soon
     # @leftovers = @additionals.reject{|d| d.category == "general" || d.category == "other" || d.category == "self_care" || d.category == "strengthen_social_connections" || d.category == "cope_with_loss" || d.category == "become_resourceful"}
   end
 
