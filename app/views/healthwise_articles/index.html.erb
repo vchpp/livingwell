@@ -72,16 +72,16 @@ meta title: "INFORMED - Living Well - Healthwise",
         <%= render 'build_resilience', collection: @build_resilience %>
       <% end %>
 
-      <% if @manage_stress.any? %>
-        <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.manage_stress')%></h2>
-        <%= render 'manage_stress', collection: @manage_stress %>
-      <% end %>
-
       <% if @get_good_sleep.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
         <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.get_good_sleep')%></h2>
         <%= render 'get_good_sleep', collection: @get_good_sleep %>
+      <% end %>
+
+      <% if @manage_stress.any? %>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.manage_stress')%></h2>
+        <%= render 'manage_stress', collection: @manage_stress %>
       <% end %>
 
       <% if @strengthen_social_connections.any? %>
