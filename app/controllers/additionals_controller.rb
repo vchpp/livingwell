@@ -23,7 +23,7 @@ class AdditionalsController < ApplicationController
         @other << e if e.category == "other"
       end
     end
-    # @leftovers = @additionals.reject{|d| d.category == "general" || d.category == "other" || d.category == "self_care" || d.category == "strengthen_social_connections" || d.category == "cope_with_loss" || d.category == "become_resourceful"}
+    # @leftovers = @additionals.reject{|d| d.category == "general" || d.category == "other" || d.category == "self_care" || d.category == "strengthen_social_connections" || d.category == "cope_with_loss" || d.category == "help_yourself_help_others"}
   end
 
   # GET /additionals/1 or /additionals/1.json
