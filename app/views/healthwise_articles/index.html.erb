@@ -59,7 +59,7 @@ meta title: "INFORMED - Living Well - Healthwise",
         </div>
       </div>
 <%# 'Build Resilience', 'Get Good Sleep', 'Manage Stress', 'Strengthen Social Connections', %>
-<%#      'Become Resourceful', 'Mental Health Conditions', 'Suicide Prevention' %>
+<%#      'Help Yourself Help Others', 'Mental Health Conditions', 'Suicide Prevention' %>
       <% if @featured.any? %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
         <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.additional.featured')%></h2>
@@ -90,10 +90,10 @@ meta title: "INFORMED - Living Well - Healthwise",
         <%= render 'strengthen_social_connections', collection: @strengthen_social_connections %>
       <% end %>
 
-      <% if @become_resourceful.any?  %>
+      <% if @help_yourself_help_others.any?  %>
         <div class="fh5co-spacer fh5co-spacer-md"></div>
-        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.become_resourceful')%></h2>
-        <%= render 'become_resourceful', collection: @become_resourceful %>
+        <h2 class="fh5co-uppercase-heading-lg text-center"><%= t('resources.healthwise.help_yourself_help_others')%></h2>
+        <%= render 'help_yourself_help_others', collection: @help_yourself_help_others %>
       <% end %>
 
       <% if @mental_health_conditions.any? %>

@@ -1415,7 +1415,7 @@ COVID Related
 Other */
 
 /* HealthwiseArticles 'Build Resilience', 'Get Good Sleep', 'Manage Stress', 'Strengthen Social Connections', 
-        # 'Become Resourceful', 'Mental Health Conditions', 'Suicide Prevention' */
+        # 'Help Yourself Help Others', 'Mental Health Conditions', 'Suicide Prevention' */
 .general, .covid_related  {
 border: 4px solid #eb5d1f;
 border-radius: 15px;
@@ -1444,7 +1444,7 @@ box-shadow: 0 0 20px grey;
   color: #ffffff;
   box-shadow: 0 0 20px grey;
 }
-.become_resourceful, .classes_and_events {
+.help_yourself_help_others, .classes_and_events {
   border: 4px solid #823D1C;
   border-radius: 15px;
   background: #823D1C;
@@ -1489,7 +1489,7 @@ box-shadow: 0 0 20px grey;
   color: #000;
   box-shadow: 0 0 20px grey;
 }
-.become_resourceful-border, .classes_and_events-border {
+.help_yourself_help_others-border, .classes_and_events-border {
   border: 4px solid #823D1C;
   border-radius: 15px;
   color: #000;
