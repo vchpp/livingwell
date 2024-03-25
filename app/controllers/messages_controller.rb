@@ -13,8 +13,21 @@ class MessagesController < ApplicationController
     @messages = @messages.where(archive: false)
     set_message_categories
     @messages = @messages.filter_by_search(params[:search]) if (params[:search].present?)
-    # if @message.empty? redirect to new_message_path
-    # flash.now[:alert] = "#{t('messages.coming_soon')}"
+    @build_resilience, @get_good_sleep, @manage_stress, @strengthen_social_connections, @help_yourself_help_others, @other, @featured = [], [], [], [], [], [], []
+    @messages.each do |e|
+      if e.featured == true
+        @featured << e
+        # 'Build Resilience', 'Get Good Sleep', 'Manage Stress', 'Strengthen Social Connections', 
+        # 'Help Yourself Help Others', 'Mental Health Conditions', 'Suicide Prevention'
+      elsif e.featured == false
+        @build_resilience << e if e.category == "build_resilience"
+        @get_good_sleep << e if e.category == "get_good_sleep"
+        @manage_stress << e if e.category == "manage_stress"
+        @strengthen_social_connections << e if e.category == "strengthen_social_connections"
+        @help_yourself_help_others << e if e.category == "help_yourself_help_others"
+        @other << e if e.category == "other"
+      end
+    end
     coming_soon
     respond_to do |format|
       format.html
