@@ -1630,7 +1630,7 @@ Other */
 }
 /* Download categories: participant handouts/flipcharts/training manuals/other */
 .Participant_Handouts {
-  border: 4px solid ;
+  border: 4px solid #007849;
   border-radius: 15px;
   background: ;
   color: #ffffff;
