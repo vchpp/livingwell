@@ -126,55 +126,47 @@ meta title: "INFORMED - Living Well - Downloads",
 
       </div>
     <% end %>
+  </div>
+  
+  <% if current_user.try(:admin?) %>
+  <div class="col-md-12 Admin-border">
+    <h1 class="text-center">Admin Downloads</h1>
 
-    <% if current_user.try(:admin?) %>
-    <div class="col-md-12 Admin-border">
-      <h1 class="text-center">Admin Downloads</h1>
+    <table class="table table-sm table-hover table-striped">
+      <thead>
+        <tr>
+          <th scope="col">En title</th>
+          <th scope="col">En file</th>
+          <th scope="col">Category</th>
+          <th scope="col">Tags</th>
+          <th scope="col">Archive</th>
+          <th scope="col" colspan="3"></th>
+        </tr>
+      </thead>
 
-      <table class="table table-sm table-hover table-striped">
-        <thead>
+      <tbody>
+        <% @admin_downloads.each do |download| %>
           <tr>
-            <th scope="col">En title</th>
-            <th scope="col">En file</th>
-            <th scope="col">Zh tw file</th>
-            <th scope="col">Zh cn file</th>
-            <th scope="col">Vi file</th>
-            <th scope="col">Hm file</th>
-            <th scope="col">Ko file</th>
-            <th scope="col">Tags</th>
-            <th scope="col">Archive</th>
-            <th scope="col" colspan="3"></th>
+            <td><%= download.en_title %></td>
+            <td><%= image_tag download.en_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.en_file.attached? %></td>
+            <td><%= download.category %></td>
+            <td><%= download.tags %></td>
+            <% if download.archive == true %>
+              <td class="archive-border"><%= download.archive %></td>
+            <% else %>
+              <td><%= download.archive %></td>
+            <% end %>
+            <td><%= link_to 'Show', download %></td>
+            <td><%= link_to 'Edit', edit_download_path(download) %></td>
+            <td><%= link_to 'Destroy', download, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
-        </thead>
+        <% end %>
+      </tbody>
+    </table>
 
-        <tbody>
-          <% @admin_downloads.each do |download| %>
-            <tr>
-              <td><%= download.en_title %></td>
-              <td><%= image_tag download.en_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.en_file.attached? %></td>
-              <td><%= image_tag download.zh_tw_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.zh_tw_file.attached? %></td>
-              <td><%= image_tag download.zh_cn_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.zh_cn_file.attached? %></td>
-              <td><%= image_tag download.vi_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.vi_file.attached? %></td>
-              <td><%= image_tag download.hm_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.hm_file.attached? %></td>
-              <td><%= image_tag download.ko_file.representation(resize_to_limit: [100, 200]), class: "img-fluid" if download.ko_file.attached? %></td>
-              <td><%= download.tags %></td>
-              <% if download.archive == true %>
-                <td class="archive-border"><%= download.archive %></td>
-              <% else %>
-                <td><%= download.archive %></td>
-              <% end %>
-              <td><%= link_to 'Show', download %></td>
-              <td><%= link_to 'Edit', edit_download_path(download) %></td>
-              <td><%= link_to 'Destroy', download, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+    <br>
 
-      <br>
-
-      <%= link_to 'New Download', new_download_path %>
-      <% end %>
-    </div>
+    <% end %>
+    
 </section>
 
