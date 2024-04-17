@@ -28,7 +28,6 @@ class MessagesController < ApplicationController
         @other << e if e.category == "other"
       end
     end
-    coming_soon
     respond_to do |format|
       format.html
       format.csv { send_data @messages.to_csv, filename: "Messages-#{Date.today}.csv" } if current_user.try(:admin?)
