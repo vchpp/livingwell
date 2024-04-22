@@ -8,7 +8,7 @@ meta title: "INFORMED - Living Well - Message - #{@message.id}",
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-MW2ZN7T85S', {'DT': dt});
+    gtag('config', 'G-MW2ZN7T85S', {'TID': tid});
     gtag('send','event','eventCategory','eventAction');
   </script>
 <% end %>
@@ -60,7 +60,7 @@ meta title: "INFORMED - Living Well - Message - #{@message.id}",
         <% if @message.survey_link.present? %>
           <div class="fh5co-spacer fh5co-spacer-sm"></div>
           <h4 class="h5 fh5co-heading-sub"><%= t('messages.show.survey_link')%></h4>
-          <a href="<%=@message.survey_link%>?dt=<%=cookies[:dt]%>", target="_blank", style="fh5co-heading-sub-2"><%=@message.survey_link%></a>
+          <a href="<%=@message.survey_link%>?tid=<%=cookies[:tid]%>", target="_blank", style="fh5co-heading-sub-2"><%=@message.survey_link%></a>
         <% end %>
       </div>
     </div>
@@ -104,7 +104,7 @@ meta title: "INFORMED - Living Well - Message - #{@message.id}",
             <thead>
               <tr>
                 <th>Created at</th>
-                <th>DT</th>
+                <th>TID</th>
                 <th>UP</th>
                 <th>Down</th>
                 <th colspan="1"></th>
@@ -115,7 +115,7 @@ meta title: "INFORMED - Living Well - Message - #{@message.id}",
               <% @likes.each do |like| %>
               <tr>
                 <td><%= like.created_at %></td>
-                <td><%= like.dt %></td>
+                <td><%= like.tid %></td>
                 <td><%= like.up %></td>
                 <td><%= like.down %></td>
                 <td><%= link_to 'Destroy', [@message, like], method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -148,7 +148,7 @@ meta title: "INFORMED - Living Well - Message - #{@message.id}",
             <thead>
               <tr>
                 <th>Created at</th>
-                <th>DT</th>
+                <th>TID</th>
                 <th>Content</th>
                 <th colspan="1"></th>
               </tr>
@@ -158,7 +158,7 @@ meta title: "INFORMED - Living Well - Message - #{@message.id}",
               <% @admin_comments.each do |comment| %>
               <tr>
                 <td><%= comment.created_at %></td>
-                <td><%= comment.dt %></td>
+                <td><%= comment.tid %></td>
                 <td><%= comment.content %></td>
                 <td><%= link_to 'Destroy', [@message, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>

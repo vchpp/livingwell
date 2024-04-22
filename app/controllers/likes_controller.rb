@@ -30,11 +30,11 @@ class LikesController < ApplicationController
     @model = Faq.friendly.find(params[:faq_id]) if params[:faq_id].present?
     @model = HealthwiseArticle.friendly.find(params[:healthwise_article_id]) if params[:healthwise_article_id].present?
     existing_likes = []
-    @model.likes.each { |like| existing_likes.push(like.dt)}
+    @model.likes.each { |like| existing_likes.push(like.tid)}
     @like = @model.likes.new(like_params)
-    @like.dt = cookies[:dt] || '0'
-    if existing_likes.include?(@like.dt)
-      logger.info "#{params[:dt]} tried to like a message a second time, but was redirected"
+    @like.tid = cookies[:tid] || '0'
+    if existing_likes.include?(@like.tid)
+      logger.info "#{params[:tid]} tried to like a message a second time, but was redirected"
       redirect_to @model if params[:message_id].present?
       redirect_to @model if params[:healthwise_article_id].present?
       redirect_to @model if params[:faq_id].present?
@@ -45,9 +45,9 @@ class LikesController < ApplicationController
           format.html { redirect_to @model, notice: "Thanks for the like!" } if params[:healthwise_article_id].present?
           format.html { redirect_to @model, notice: "Thanks for the like!" } if params[:faq_id].present?
           format.json { render :show, status: :created, location: @model }
-          logger.info "Visitor #{params[:dt]} liked message #{@model.id} with title #{@model.en_name}" if params[:message_id].present?
-          logger.info "Visitor #{params[:dt]} liked healthwise article #{@model.id} with title #{@model.en_title}" if params[:healthwise_article_id].present?
-          logger.info "Visitor #{params[:dt]} liked FAQ #{@model.id} with title #{@model.en_question}" if params[:faq_id].present?
+          logger.info "Visitor #{params[:tid]} liked message #{@model.id} with title #{@model.en_name}" if params[:message_id].present?
+          logger.info "Visitor #{params[:tid]} liked healthwise article #{@model.id} with title #{@model.en_title}" if params[:healthwise_article_id].present?
+          logger.info "Visitor #{params[:tid]} liked FAQ #{@model.id} with title #{@model.en_question}" if params[:faq_id].present?
         else
           format.html { render :new, status: :unprocessable_entity }
           format.json { render json: @like.errors, status: :unprocessable_entity }
@@ -86,6 +86,6 @@ class LikesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def like_params
-      params.require(:like).permit(:up, :down, :dt, :message_id, :healthwise_article_id, :faq_id)
+      params.require(:like).permit(:up, :down, :tid, :message_id, :healthwise_article_id, :faq_id)
     end
 end

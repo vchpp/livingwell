@@ -2,10 +2,10 @@
 
 one:
   content: MyString
-  dt: MyString
+  tid: MyString
   message: one
 
 two:
   content: MyString
-  dt: MyString
+  tid: MyString
   message: two

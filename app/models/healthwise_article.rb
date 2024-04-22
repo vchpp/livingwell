@@ -43,24 +43,24 @@ class HealthwiseArticle < ApplicationRecord
   end
 
   def comments_to_csv
-    attributes = %w{Created_at DT Content Type ID}
+    attributes = %w{Created_at TID Content Type ID}
     CSV.generate("\uFEFF", headers: true) do |csv|
       csv << attributes
       if comments
         comments.each do |comment|
-          csv << [comment.created_at, comment.dt, comment.content, comment.commentable_type, comment.commentable_id]
+          csv << [comment.created_at, comment.tid, comment.content, comment.commentable_type, comment.commentable_id]
         end
       end
     end
   end
 
   def likes_to_csv
-    attributes = %w{Created_at DT Uplikes Downlikes Type ID}
+    attributes = %w{Created_at TID Uplikes Downlikes Type ID}
     CSV.generate(headers: true) do |csv|
       csv << attributes
       if likes
         likes.each do |likes|
-          csv << [likes.created_at, likes.dt, likes.up, likes.down, likes.likeable_type, likes.likeable_id]
+          csv << [likes.created_at, likes.tid, likes.up, likes.down, likes.likeable_type, likes.likeable_id]
         end
       end
     end

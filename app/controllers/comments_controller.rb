@@ -30,14 +30,14 @@ class CommentsController < ApplicationController
     @healthwise_article = HealthwiseArticle.friendly.find(params[:healthwise_article_id]) if params[:healthwise_article_id].present?
     @model = @message || @healthwise_article
     @comment = @model.comments.new(comment_params)
-    @comment.dt = cookies[:dt] || '0'
+    @comment.tid = cookies[:tid] || '0'
     respond_to do |format|
       if @comment.save
         format.html { redirect_to message_path(@message), notice: "Thanks for your comment!" } if params[:message_id].present?
         format.html { redirect_to healthwise_article_path(@healthwise_article), notice: "Thanks for your comment!" } if params[:healthwise_article_id].present?
         format.json { render :show, status: :created, location: @message }
-        logger.warn "Visitor with DT=#{cookies[:dt]} made a comment on message #{@message.id} with title #{@message.en_name}, saying '#{@comment.content}'" if params[:message_id].present?
-        logger.warn "Visitor with DT=#{cookies[:dt]} made a comment on message #{@healthwise_article.id} with title #{@healthwise_article.en_title}, saying '#{@comment.content}'" if params[:healthwise_article_id].present?
+        logger.warn "Visitor with TID=#{cookies[:tid]} made a comment on message #{@message.id} with title #{@message.en_name}, saying '#{@comment.content}'" if params[:message_id].present?
+        logger.warn "Visitor with TID=#{cookies[:tid]} made a comment on message #{@healthwise_article.id} with title #{@healthwise_article.en_title}, saying '#{@comment.content}'" if params[:healthwise_article_id].present?
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
