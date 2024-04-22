@@ -43,9 +43,9 @@ class MessagesController < ApplicationController
         redirect_to messages_url, alert: "Message not available."
       end
     end
-    @likes = @message.likes.all.order('dt::integer ASC')
+    @likes = @message.likes.all.order('tid::integer ASC')
     @all_comments = @message.comments
-    @admin_comments = @all_comments.order('dt::integer ASC')
+    @admin_comments = @all_comments.order('tid::integer ASC')
     @comments = @all_comments.order(created_at: :desc).limit(10).offset((@page.to_i - 1) * 10)
     @page_count = (@all_comments.count / 10) + 1
     @message_name = @message.send("#{I18n.locale}_name".downcase)

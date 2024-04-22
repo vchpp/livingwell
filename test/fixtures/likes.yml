@@ -3,11 +3,11 @@
 one:
   up: MyString
   down: MyString
-  dt: MyString
+  tid: MyString
   message: one
 
 two:
   up: MyString
   down: MyString
-  dt: MyString
+  tid: MyString
   message: two

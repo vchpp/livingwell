@@ -8,7 +8,7 @@ meta title: "INFORMED - Living Well - Healthwise: #{@healthwise_article.en_title
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-MW2ZN7T85S', {'DT': dt});
+    gtag('config', 'G-MW2ZN7T85S', {'TID': tid});
     gtag('send','event','eventCategory','eventAction');
   </script>
 
@@ -55,7 +55,7 @@ meta title: "INFORMED - Living Well - Healthwise: #{@healthwise_article.en_title
               <thead>
                 <tr>
                   <th>Created at</th>
-                  <th>DT</th>
+                  <th>TID</th>
                   <th>UP</th>
                   <th>Down</th>
                   <th colspan="1"></th>
@@ -66,7 +66,7 @@ meta title: "INFORMED - Living Well - Healthwise: #{@healthwise_article.en_title
                 <% @likes.each do |like| %>
                 <tr>
                   <td><%= like.created_at %></td>
-                  <td><%= like.dt %></td>
+                  <td><%= like.tid %></td>
                   <td><%= like.up %></td>
                   <td><%= like.down %></td>
                   <% if current_user.try(:admin?) %>
@@ -101,7 +101,7 @@ meta title: "INFORMED - Living Well - Healthwise: #{@healthwise_article.en_title
             <thead>
               <tr>
                 <th>Created at</th>
-                <th>DT</th>
+                <th>TID</th>
                 <th>Content</th>
                 <th colspan="1"></th>
               </tr>
@@ -111,7 +111,7 @@ meta title: "INFORMED - Living Well - Healthwise: #{@healthwise_article.en_title
               <% @admin_comments.each do |comment| %>
               <tr>
                 <td><%= comment.created_at %></td>
-                <td><%= comment.dt %></td>
+                <td><%= comment.tid %></td>
                 <td><%= comment.content %></td>
                 <% if current_user.try(:admin?) %>
                   <td><%= link_to 'Destroy', [@healthwise_article, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
