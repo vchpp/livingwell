@@ -1473,9 +1473,9 @@ Other */
   box-shadow: 0 0 20px grey;
 }
 .mental_health_services {
-  border: 4px solid #216da8;
+  border: 4px solid #cd5360;
   border-radius: 15px;
-  background: #216da8;
+  background: #cd5360;
   color: #ffffff;
   box-shadow: 0 0 20px grey;
 }
@@ -1508,9 +1508,9 @@ Other */
   box-shadow: 0 0 20px grey;
 }
 .classes_and_events {
-  border: 4px solid #d9b310;
+  border: 4px solid #216da8;
   border-radius: 15px;
-  background: #d9b310;
+  background: #216da8;
   color: #ffffff;
   box-shadow: 0 0 20px grey;
 }
@@ -1571,7 +1571,7 @@ Other */
   box-shadow: 0 0 20px grey;
 }
 .mental_health_services-border {
-  border: 4px solid #216da8;
+  border: 4px solid #cd5360;
   border-radius: 15px;
   color: #000;
   box-shadow: 0 0 20px grey;
@@ -1607,7 +1607,7 @@ Other */
   box-shadow: 0 0 20px grey;
 }
 .classes_and_events-border {
-  border: 4px solid #d9b310;
+  border: 4px solid #216da8;
   border-radius: 15px;
   color: #000;
   box-shadow: 0 0 20px grey;
