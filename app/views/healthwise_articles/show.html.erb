@@ -9,7 +9,6 @@ meta title: "INFORMED - Living Well - Healthwise: #{@healthwise_article.en_title
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-MW2ZN7T85S', {'TID': tid});
-    gtag('send','event','eventCategory','eventAction');
   </script>
 
 <% end %>
@@ -204,7 +203,7 @@ meta title: "INFORMED - Living Well - Healthwise: #{@healthwise_article.en_title
               <div class="fh5co-spacer fh5co-spacer-xxs"></div>
               <div class="col-md-12">
                 <div class="actions">
-                  <%= form.submit class: "btn btn-primary btn-lg btn-block"%>
+                  <%= form.submit id: "comment", class: "btn btn-primary btn-lg btn-block"%>
                 </div>
               </div>
             <% end %>
@@ -232,3 +231,31 @@ meta title: "INFORMED - Living Well - Healthwise: #{@healthwise_article.en_title
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("click", function(event){
+    // event.preventDefault();
+    console.log(event);
+    if (event.target.id === 'uplike') {
+      gtag ('event', 'form_submit', {
+          'form_name': event.target.id,
+          'form_destination': event.target.baseURI,
+          'TID': tid
+      })
+    },
+    else if (event.target.id === 'downlike') {
+        gtag ('event', 'form_submit', {
+          'form_name': event.target.id,
+          'form_destination': event.target.baseURI,
+          'TID': tid
+      })
+    },
+    else (event.target.tagName === 'comment') {
+        gtag ('event', 'form_submit', {
+          'form_name': event.target.id,
+          'form_destination': event.target.baseURI,
+          'TID': tid
+      })
+    }
+  });
+</script>
