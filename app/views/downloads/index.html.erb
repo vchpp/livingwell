@@ -40,7 +40,7 @@ meta title: "INFORMED - Living Well - Downloads",
             <input class="form-control input-lg" type="text" id="search" name="search" placeholder="Search for Downloads">
           </div>
           <div class="col-md-2 form-group">
-            <button class="form-control btn btn-primary" type="submit">
+            <button id="search-submit" class="form-control btn btn-primary" type="submit">
               <i class="ti-search"></i>
             </button>
           </div>
@@ -61,7 +61,7 @@ meta title: "INFORMED - Living Well - Downloads",
           <% if item1.send("#{params[:locale]}_file".downcase).attached? %>
             <%= link_to pdfjs.full_path(file: rails_blob_path(item1.send("#{params[:locale]}_file".downcase))), target: :_blank do %>
               <div class="col-md-4 col-sm-6 fh5co-feature-item">
-                <div class="<%=item1.category%> text-center">
+                <div id="<%=item1.en_file%>" class="<%=item1.category%> text-center">
                   <span class="fh5co-feature-icon">
                     <% if item1.send("#{params[:locale]}_file".downcase).attached? %>
                       <% if item1.send("#{params[:locale]}_file".downcase).representable? %>
@@ -84,7 +84,7 @@ meta title: "INFORMED - Living Well - Downloads",
           <% if item2.send("#{params[:locale]}_file".downcase).attached? %>
             <%= link_to pdfjs.full_path(file: rails_blob_path(item2.send("#{params[:locale]}_file".downcase))), target: :_blank do %>
               <div class="col-md-4 col-sm-6 fh5co-feature-item">
-                <div class="<%=item2.category%> text-center">
+                <div id="<%=item2.en_file%>" class="<%=item2.category%> text-center">
                   <span class="fh5co-feature-icon">
                     <% if item2.send("#{params[:locale]}_file".downcase).attached? %>
                       <% if item2.send("#{params[:locale]}_file".downcase).representable? %>
@@ -106,7 +106,7 @@ meta title: "INFORMED - Living Well - Downloads",
           <% if item3.send("#{params[:locale]}_file".downcase).attached? %>
             <%= link_to pdfjs.full_path(file: rails_blob_path(item3.send("#{params[:locale]}_file".downcase))), target: :_blank do %>
               <div class="col-md-4 col-sm-6 fh5co-feature-item">
-                <div class="<%=item3.category%> text-center">
+                <div id="<%=item3.en_file%>" class="<%=item3.category%> text-center">
                   <span class="fh5co-feature-icon">
                     <% if item3.send("#{params[:locale]}_file".downcase).attached? %>
                       <% if item3.send("#{params[:locale]}_file".downcase).representable? %>
@@ -170,3 +170,42 @@ meta title: "INFORMED - Living Well - Downloads",
     
 </section>
 
+<script>
+  document.addEventListener("click", function(event){
+    // event.preventDefault();
+    // console.log(event);
+    if (event.target.id === 'search-submit') {
+      gtag ('event', 'form_submit', {
+          'form_name': event.target.id,
+          'form_destination': event.target.baseURI,
+          'TID': tid
+      })
+    },
+    else (event.target.id === 'reset-submit') {
+        gtag ('event', 'form_submit', {
+          'form_name': event.target.id,
+          'form_destination': event.target.baseURI,
+          'TID': tid
+      })
+    }
+  //   else  (event.target.tagName === 'IMG') {
+  //     gtag ('event', 'file_download', {
+  //         'file_name': event.target.innerText,
+  //         'link_id': event.target.id,
+  //         'link_text': event.target.innerText,
+  //         'link_url': event.target.baseURI,
+  //         'file_extension': ,
+  //         'TID': tid
+  //     })
+  //   }
+  });
+  document.addEventListener("submit", function(event){
+    if (event.target.id === 'search-submit') {
+      gtag ('event', 'form_submit', {
+          'form_name': event.target.id,
+          'form_destination': event.target.baseURI,
+          'TID': tid
+      })
+    }
+  });
+</script>
