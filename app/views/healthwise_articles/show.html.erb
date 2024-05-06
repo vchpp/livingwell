@@ -234,8 +234,6 @@ meta title: "INFORMED - Living Well - Healthwise: #{@healthwise_article.en_title
 
 <script>
   document.addEventListener("click", function(event){
-    // event.preventDefault();
-    console.log(event);
     if (event.target.id === 'uplike') {
       gtag ('event', 'form_submit', {
           'form_name': event.target.id,

@@ -42,17 +42,17 @@ meta title: "INFORMED - Living Well - Messages",
           <label for="faq" class="sr-only">Search for Messages (t)</label>
           <form id="search" method="GET" action="/<%=params[:locale]%>/messages" >
             <div class="col-md-8 form-group">
-              <input class="form-control input-lg" type="text" id="search" name="search" placeholder="Search for Messages (t)">
+              <input class="form-control input-lg" type="text" name="search" placeholder="Search for Messages (t)">
             </div>
             <div class="col-md-2 form-group">
-              <button class="form-control btn btn-primary" type="submit">
+              <button id="search-submit" class="form-control btn btn-primary" type="submit">
                 <i class="ti-search"></i>
               </button>
             </div>
           </form>
           <form id="reset" method="GET" action="/<%=params[:locale]%>/messages" >
             <div class="col-md-2 form-group">
-              <input class="form-control btn btn-primary" type="submit" value="<%= t('resources.additional.all')%>">
+              <input id="reset-submit" class="form-control btn btn-primary" type="submit" value="<%= t('resources.additional.all')%>">
             </div>
           </form>
         </div>
@@ -158,4 +158,30 @@ meta title: "INFORMED - Living Well - Messages",
 
 </section>
 
-
+<script>
+  document.addEventListener("click", function(event){
+    if (event.target.id === 'search-submit') {
+      gtag ('event', 'form_submit', {
+          'form_name': event.target.id,
+          'form_destination': event.target.baseURI,
+          'TID': tid
+      })
+    },
+    else (event.target.id === 'reset-submit') {
+        gtag ('event', 'form_submit', {
+          'form_name': event.target.id,
+          'form_destination': event.target.baseURI,
+          'TID': tid
+      })
+    }
+  });
+  document.addEventListener("submit", function(event){
+    if (event.target.id === 'search-submit') {
+      gtag ('event', 'form_submit', {
+          'form_name': event.target.id,
+          'form_destination': event.target.baseURI,
+          'TID': tid
+      })
+    }
+  });
+</script>
