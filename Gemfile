@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.6.1'
+gem 'rails', '~> 6.1.7.7'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -40,6 +40,7 @@ gem "activestorage-office-previewer"
 gem 'metamagic'
 gem 'audit-log', git: 'https://github.com/justincadburywong/audit-log'
 gem 'pdfjs_viewer-rails'
+gem 'store_model'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
