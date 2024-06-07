@@ -240,15 +240,15 @@ meta title: "INFORMED - Living Well - Healthwise: #{@healthwise_article.en_title
           'form_destination': event.target.baseURI,
           'TID': tid
       })
-    },
+    }
     else if (event.target.id === 'downlike') {
         gtag ('event', 'form_submit', {
           'form_name': event.target.id,
           'form_destination': event.target.baseURI,
           'TID': tid
       })
-    },
-    else (event.target.tagName === 'comment') {
+    }
+    else if (event.target.tagName === 'comment') {
         gtag ('event', 'form_submit', {
           'form_name': event.target.id,
           'form_destination': event.target.baseURI,
