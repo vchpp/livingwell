@@ -177,8 +177,8 @@ meta title: "INFORMED - Living Well - Healthwise",
           'form_destination': event.target.baseURI,
           'TID': tid
       })
-    },
-    else (event.target.id === 'reset-submit') {
+    }
+    else if (event.target.id === 'reset-submit') {
         gtag ('event', 'form_submit', {
           'form_name': event.target.id,
           'form_destination': event.target.baseURI,
