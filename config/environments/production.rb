@@ -104,6 +104,20 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  # lograge
+  config.lograge.enabled = true
+  config.lograge.formatter = Lograge::Formatters::Json.new
+  config.lograge.ingore_actions = ['Rails::HealthController#show', 'StatusController#show']
+  config.lograge.custom_options = lambda do |event|
+    { user_IP: event.payload[:request].remote_ip, TID: event.payload[:request].cookies["tid"] }
+  end
+  config.lograge.custom_payload do |controller|
+    {
+      request_id: controller.request.uuid,
+      user_id: controller.current_user.try(:id)
+    }
+  end
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
