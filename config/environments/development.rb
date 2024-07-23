@@ -90,4 +90,18 @@ Rails.application.configure do
   # information to avoid inadvertent exposure of personally identifiable information (PII).
   config.log_level = :info
   config.enable_reloading = true
+
+  # Lograge
+  config.lograge.enabled = false
+  config.lograge.formatter = Lograge::Formatters::Json.new
+  config.lograge.ingore_actions = ['Rails::HealthController#show', 'StatusController#show']
+  config.lograge.custom_options = lambda do |event|
+    { user_ip: event.payload[:request].remote_ip, TID: event.payload[:request].cookies["tid"] }
+  end
+  config.lograge.custom_payload do |controller|
+    {
+      request_id: controller.request.uuid,
+      user_id: controller.current_user.try(:id)
+    }
+  end
 end
