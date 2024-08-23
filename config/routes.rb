@@ -38,6 +38,7 @@ Rails.application.routes.draw do
       resources :faqs do
         resources :likes
       end
+      resources :inspirations, :path => "inspiration"
       resources :downloads
       resources :additionals, :path => "additional"
     end
