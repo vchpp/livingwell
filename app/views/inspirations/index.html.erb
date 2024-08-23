@@ -29,7 +29,7 @@ meta title: "INFORMED - Living Well - Inspirational Quotes",
 
       <div class="col-md-12">
         <label for="faq" class="sr-only"><%= t('resources.additional.search')%></label>
-        <form id="search" method="GET" action="/<%=params[:locale]%>/resources/inspirations" >
+        <form id="search" method="GET" action="/<%=params[:locale]%>/resources/inspiration" >
           <div class="col-md-8 form-group">
             <input class="form-control input-lg" type="text" id="search" name="search" placeholder="Search for inspirations">
           </div>
@@ -39,7 +39,7 @@ meta title: "INFORMED - Living Well - Inspirational Quotes",
             </button>
           </div>
         </form>
-        <form id="reset" method="GET" action="/<%=params[:locale]%>/resources/inspirations" >
+        <form id="reset" method="GET" action="/<%=params[:locale]%>/resources/inspiration" >
           <div class="col-md-2 form-group">
             <input class="form-control btn btn-primary" type="submit" value="<%= t('resources.additional.all')%>">
           </div>
