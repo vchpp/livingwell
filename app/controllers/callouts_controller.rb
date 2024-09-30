@@ -31,7 +31,7 @@ class CalloutsController < ApplicationController
     @callout.zh_tw_image.attach(params[:callout][:zh_tw_image])
     @callout.hm_image.attach(params[:callout][:hm_image])
     @callout.ko_image.attach(params[:callout][:ko_image])
-    @callout[:tags] = params[:callout][:tags].first.split("\r\n").map(&:strip) if @callout[:tags].present?
+    @callout[:tags] = params[:callout][:tags].first.split("\r\n").map(&:strip) if params[:callout][:tags].present?
 
     respond_to do |format|
       if @callout.save
@@ -54,7 +54,7 @@ class CalloutsController < ApplicationController
     @callout.vi_image.purge if params[:vi_image].present?
     @callout.hm_image.purge if params[:hm_image].present?
     @callout.ko_image.purge if params[:ko_image].present?
-    @callout[:tags] = params[:callout][:tags].first.split("\r\n").map(&:strip)
+    @callout[:tags] = params[:callout][:tags].first.split("\r\n").map(&:strip) if params[:callout][:tags].present?
     respond_to do |format|
       if @callout.update(callout_params)
         format.html { redirect_to @callout, notice: "Callout was successfully updated." }

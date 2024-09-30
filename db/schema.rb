@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_04_22_060927) do
+ActiveRecord::Schema.define(version: 2024_08_20_055006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -241,6 +241,18 @@ ActiveRecord::Schema.define(version: 2024_04_22_060927) do
     t.string "ko_rich_text"
     t.integer "priority"
     t.index ["slug"], name: "index_healthwise_articles_on_slug", unique: true
+  end
+
+  create_table "inspirations", force: :cascade do |t|
+    t.string "inspiration"
+    t.string "tags", default: [], array: true
+    t.string "languages"
+    t.string "category"
+    t.boolean "featured"
+    t.boolean "archive"
+    t.integer "priority"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "likes", force: :cascade do |t|

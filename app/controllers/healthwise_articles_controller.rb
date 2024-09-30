@@ -100,7 +100,7 @@ class HealthwiseArticlesController < ApplicationController
 
     backfill_english_json
     set_simplified_chinese
-    @healthwise_article[:tags] = params[:healthwise_article][:tags].first.split("\r\n").map(&:strip)
+    @healthwise_article[:tags] = params[:healthwise_article][:tags].first.split("\r\n").map(&:strip) if params[:healthwise_article][:tags].present?
 
     # save
     respond_to do |format|
@@ -125,7 +125,7 @@ class HealthwiseArticlesController < ApplicationController
     @healthwise_article.en_pdf.purge if params[:en_pdf].present? || params[:en_pdf_purge].present?
     @healthwise_article.zh_tw_pdf.purge if params[:zh_tw_pdf].present? || params[:zh_tw_pdf_purge].present?
     @healthwise_article.zh_cn_pdf.purge if params[:zh_cn_pdf].present? || params[:zh_cn_pdf_purge].present?
-    @healthwise_article[:tags] = params[:healthwise_article][:tags].first.split("\r\n").map(&:strip)
+    @healthwise_article[:tags] = params[:healthwise_article][:tags].first.split("\r\n").map(&:strip) if params[:healthwise_article][:tags].present?
     respond_to do |format|
       if @healthwise_article.update(healthwise_article_params)
         logger.warn healthwise_article_params
