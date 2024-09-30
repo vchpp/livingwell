@@ -46,30 +46,47 @@ meta title: "INFORMED - Living Well - Inspirational Quotes",
         </form>
       </div>
 
+      <div class="col-md-10 col-md-offset-1">
+          <div class="form-group">
+            <label for="faq" class="sr-only">Filter by Language</label>
+            <form id="category" method="GET" action="/<%=params[:locale]%>/resources/inspiration" >
+              <select class="form-control input-lg" name="lang" id="category-form">
+                <option value="">Filter by Language (All)</option>
+                <option value="en">English</option>
+                <option value="zh_tw">Chinese (trad)</option>
+                <option value="zh_cn">Chinese (Simple)</option>
+                <option value="vi">Vietnamese</option>
+                <option value="hm">Hmong</option>
+                <option value="ko">Korean</option>
+              </select>
+            </form>
+          </div>
+        </div>
+
       <div class="fh5co-spacer fh5co-spacer-md"></div>
 
     <% @inspirations.in_groups_of(3, false).each do |item1, item2, item3| %>
       <div class="row fh5co-pricing-table-1">
         <% if item1 %>
           <div class="col-md-4 col-sm-4 col-xs-6 fh5co-pricing-table-item">
-            <div class="fh5co-pricing-table-item-heading <%=item1.category%> text-center">
-              <span><i><%= item1.send("#{params[:locale]}_inspiration".downcase) %></i></span>
+            <div class="fh5co-pricing-table-item-heading <%=item1.languages%> text-center">
+              <span><i><%= item1.inspiration %></i></span>
             </div>
           </div>
         <% end %> <!-- end if item1 -->
 
         <% if item2 %>
           <div class="col-md-4 col-sm-4 col-xs-6 fh5co-pricing-table-item">
-            <div class="fh5co-pricing-table-item-heading <%=item2.category%> text-center">
-              <span><i><%= item2.send("#{params[:locale]}_inspiration".downcase) %></i></span>
+            <div class="fh5co-pricing-table-item-heading <%=item2.languages%> text-center">
+              <span><i><%= item2.inspiration %></i></span>
             </div>
           </div>
         <% end %> <!-- end if item2 -->
 
         <% if item3 %>
           <div class="col-md-4 col-sm-4 col-xs-6 fh5co-pricing-table-item">
-            <div class="fh5co-pricing-table-item-heading <%=item3.category%> text-center">
-              <span><i><%= item3.send("#{params[:locale]}_inspiration".downcase) %></i></span>
+            <div class="fh5co-pricing-table-item-heading <%=item3.languages%> text-center">
+              <span><i><%= item3.inspiration %></i></span>
             </div>
           </div>
         <% end %> <!-- end if item3 -->
@@ -87,13 +104,9 @@ meta title: "INFORMED - Living Well - Inspirational Quotes",
     <table class="table table-sm table-hover table-striped">
       <thead>
         <tr>
-          <th scope="col">En inspiration</th>
-          <th scope="col">Zh cn inspiration</th>
-          <th scope="col">Zh tw inspiration</th>
-          <th scope="col">Vi inspiration</th>
-          <th scope="col">Hm inspiration</th>
-          <th scope="col">Ko inspiration</th>
+          <th scope="col">inspiration</th>
           <th scope="col">Tags</th>
+          <th scope="col">Languages</th>
           <th scope="col">Category</th>
           <th scope="col">Featured</th>
           <th scope="col">Archive</th>
@@ -105,13 +118,9 @@ meta title: "INFORMED - Living Well - Inspirational Quotes",
       <tbody>
         <% @admin_inspirations.each do |inspiration| %>
           <tr>
-            <td><%= inspiration.en_inspiration %></td>
-            <td><%= inspiration.zh_cn_inspiration %></td>
-            <td><%= inspiration.zh_tw_inspiration %></td>
-            <td><%= inspiration.vi_inspiration %></td>
-            <td><%= inspiration.hm_inspiration %></td>
-            <td><%= inspiration.ko_inspiration %></td>
+            <td><%= inspiration.inspiration %></td>
             <td><%= inspiration.tags %></td>
+            <td><%= inspiration.languages %></td>
             <td><%= inspiration.category %></td>
             <td><%= inspiration.featured %></td>
             <% if inspiration.archive == true %>

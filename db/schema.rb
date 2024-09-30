@@ -244,13 +244,9 @@ ActiveRecord::Schema.define(version: 2024_08_20_055006) do
   end
 
   create_table "inspirations", force: :cascade do |t|
-    t.string "en_inspiration"
-    t.string "zh_cn_inspiration"
-    t.string "zh_tw_inspiration"
-    t.string "vi_inspiration"
-    t.string "hm_inspiration"
-    t.string "ko_inspiration"
+    t.string "inspiration"
     t.string "tags", default: [], array: true
+    t.string "languages"
     t.string "category"
     t.boolean "featured"
     t.boolean "archive"
