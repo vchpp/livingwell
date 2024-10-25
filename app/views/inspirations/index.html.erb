@@ -8,7 +8,7 @@ meta title: "INFORMED - Living Well - Inspirational Quotes",
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-MW2ZN7T85S', {'TID': tid});
+    gtag('set', 'user_properties', {'TID': tid });
     gtag('send','event','eventCategory','eventAction');
   </script>
 <% end %>
@@ -156,14 +156,14 @@ meta title: "INFORMED - Living Well - Inspirational Quotes",
     // event.preventDefault();
     // console.log(event);
     if (event.target.id === 'search-submit') {
-      gtag ('event', 'form_submit', {
+      gtag ('event', 'form_submit' {
           'form_name': event.target.id,
           'form_destination': event.target.baseURI,
           'TID': tid
       })
     },
     else (event.target.id === 'reset-submit') {
-        gtag ('event', 'form_submit', {
+        gtag ('event', 'form_submit' {
           'form_name': event.target.id,
           'form_destination': event.target.baseURI,
           'TID': tid
@@ -172,7 +172,7 @@ meta title: "INFORMED - Living Well - Inspirational Quotes",
   });
   document.addEventListener("submit", function(event){
     if (event.target.id === 'search-submit') {
-      gtag ('event', 'form_submit', {
+      gtag ('event', 'form_submit' {
           'form_name': event.target.id,
           'form_destination': event.target.baseURI,
           'TID': tid

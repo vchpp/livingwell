@@ -9,6 +9,7 @@ class InspirationsController < ApplicationController
     @inspirations = @inspirations.where(archive: false)
     @inspirations = @inspirations.filter_by_search(params[:search]) if (params[:search].present?)
     @inspirations = @inspirations.filter_by_lang(params[:lang]) if (params[:lang].present?)
+    p "cookies[:tid] == #{cookies[:tid]}"
   end
 
   # GET /inspirations/1 or /inspirations/1.json

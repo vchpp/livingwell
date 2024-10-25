@@ -11,7 +11,7 @@ private
 
   def count_visits
     value = (cookies[:visits] || 0 ).to_i
-    cookies[:visits] = (value + 1).to_s
+    cookies[:visits] = (value + 1)
     # @visits = cookies[:visits]
   end
 
@@ -37,7 +37,7 @@ private
       }
     else
       cookies[:tid] ||= {
-        value: rand(10001..99999999),
+        value: rand(10001..99999999).to_s,
         path: '/',
         SameSite: 'none',
         secure: 'true'
