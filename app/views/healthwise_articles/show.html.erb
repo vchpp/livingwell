@@ -9,6 +9,8 @@ meta title: "INFORMED - Living Well - Healthwise: #{@healthwise_article.en_title
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('set', 'user_properties', {'TID': tid });
+    gtag('config', 'G-MW2ZN7T85S', {'custom_map': {'dimension1': 'TID'}, 'user_id': tid });
+    gtag('send','event','eventCategory','eventAction');
   </script>
 
 <% end %>
