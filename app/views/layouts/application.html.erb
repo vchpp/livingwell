@@ -36,23 +36,20 @@
   	<!-- <link href='https://fonts.googleapis.com/css?family=Lato:300,400|Crimson+Text' rel='stylesheet' type='text/css'> -->
     <%= favicon_link_tag asset_path('favicon2.png') %>
     <!-- Google tag (gtag.js) -->
-    <%# <script async src="https://www.googletagmanager.com/gtag/js?id=G-MW2ZN7T85S"></script> %>
-    <!-- Google Tag Manager --> 
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-MB92CN2');</script>
-      <!-- gtag('set', 'user_properties', {'TID': tid }); -->
-      <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MW2ZN7T85S"></script>
+
     <%= yield :head %>
   </head>
 
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB92CN2"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('set', 'user_properties', {'TID': tid });
+      gtag('config', 'G-MW2ZN7T85S', {'custom_map': {'dimension1': 'TID'}, 'user_id': tid });
+      gtag('send','event','eventCategory','eventAction');
+    </script>
 
     <!-- START #fh5co-header -->
     <header id="fh5co-header-section" role="header" class="" >
