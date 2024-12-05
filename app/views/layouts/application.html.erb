@@ -37,19 +37,30 @@
     <%= favicon_link_tag asset_path('favicon2.png') %>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MW2ZN7T85S"></script>
-
-    <%= yield :head %>
-  </head>
-
-  <body>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-MW2ZN7T85S', {'TID': tid });
+      // gtag('config', 'G-MW2ZN7T85S', { 'debug_mode':true });
+
+      // GA4 previously used
+      // gtag('config', 'G-MW2ZN7T85S', {'TID': tid });
+      // untested; should be combined with
+      // gtag('event','Page View', { 'send_to': '{G-MW2ZN7T85S}' });
+
+      // GA4 config to set the params within the event call itself
+      gtag("event", "Page View", {'TID': tid });
+
+      // UA config
       // gtag('config', 'G-MW2ZN7T85S', {'custom_map': {'dimension1': 'TID'}, 'user_id': tid });
+      
       gtag('send','event','eventCategory','eventAction');
     </script>
+
+    <%= yield :head %> 
+  </head>
+
+  <body>
 
     <!-- START #fh5co-header -->
     <header id="fh5co-header-section" role="header" class="" >
