@@ -153,17 +153,15 @@ meta title: "INFORMED - Living Well - Inspirational Quotes",
 
 <script>
   document.addEventListener("click", function(event){
-    // event.preventDefault();
-    // console.log(event);
     if (event.target.id === 'search-submit') {
-      gtag ('event', 'form_submit' {
+      gtag ('event', 'form_submit', {
           'form_name': event.target.id,
           'form_destination': event.target.baseURI,
           'TID': tid
       })
-    },
-    else (event.target.id === 'reset-submit') {
-        gtag ('event', 'form_submit' {
+    }
+    else if (event.target.id === 'reset-submit') {
+        gtag ('event', 'form_submit', {
           'form_name': event.target.id,
           'form_destination': event.target.baseURI,
           'TID': tid
@@ -172,7 +170,7 @@ meta title: "INFORMED - Living Well - Inspirational Quotes",
   });
   document.addEventListener("submit", function(event){
     if (event.target.id === 'search-submit') {
-      gtag ('event', 'form_submit' {
+      gtag ('event', 'form_submit', {
           'form_name': event.target.id,
           'form_destination': event.target.baseURI,
           'TID': tid
