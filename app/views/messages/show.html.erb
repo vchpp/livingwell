@@ -4,16 +4,13 @@ meta title: "INFORMED - Living Well - Message - #{@message.id}",
      keywords: %w(free html5, free template, free bootstrap, html5, css3, mobile first, responsive)
 %>
 <% content_for :head do %>
-<!--
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('set', 'user_properties', {'TID': tid });
-    gtag('config', 'G-MW2ZN7T85S', {'custom_map': {'dimension1': 'TID'}, 'user_id': tid });
+    gtag('config', 'G-MW2ZN7T85S', {'TID': tid });
     gtag('send','event','eventCategory','eventAction');
   </script>
--->
 <% end %>
 
 <% if @message.send("#{params[:locale]}_images".downcase).attached? %>
